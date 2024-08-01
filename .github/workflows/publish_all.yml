@@ -1,4 +1,4 @@
-name: publish_libs
+name: publish_all_libs
 
 on:
   push:
