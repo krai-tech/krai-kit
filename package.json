@@ -1,6 +1,6 @@
 {
   "name": "@krai-tech",
-  "version": "1.0.0-alpha",
+  "version": "alpha",
   "description": "KRAIKIT Library is a set of components, services, directives and other tools to build UI using Angular framework",
   "keywords": [
     "angular",

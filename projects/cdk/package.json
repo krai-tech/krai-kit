@@ -1,6 +1,6 @@
 {
   "name": "@krai-tech/cdk",
-  "version": "1.0.0-alpha.1",
+  "version": "alpha",
   "description": "A developer toolkit consisting of low-level tools and abstractions used for developing Angular components",
   "keywords": [
     "angular",
