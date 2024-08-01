@@ -1,0 +1,21 @@
+<label class="kri-radio" [class.active]="ref.checked" [class.disabled]="disabled()">
+  <input
+    #ref
+    type="radio"
+    class="kri-radio-input"
+    [disabled]="disabled()"
+    [name]="name()"
+    [id]="id"
+    [attr.aria-labelledby]="ariaLabelledBy()"
+    [attr.aria-label]="ariaLabel()"
+    [checked]="checked()"
+    [ngModel]="checked() ? value() : inputValue"
+    (change)="onRadioChange($event, value())"
+    [value]="value()"
+  />
+  <span class="kri-radio-material"></span>
+  <span class="kri-radio-label">
+    <ng-container *ngIf="!hasContent()">{{ value() }}</ng-container>
+    <span #radioContent><ng-content></ng-content></span>
+  </span>
+</label>

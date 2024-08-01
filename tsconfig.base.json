@@ -1,0 +1,63 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@krai-tech/cdk": ["projects/cdk/src/index.ts"],
+      "@krai-tech/cdk/classes": ["projects/cdk/classes/src/index.ts"],
+      "@krai-tech/cdk/constants": ["projects/cdk/constants/src/index.ts"],
+      "@krai-tech/cdk/directives/focus": [
+        "projects/cdk/directives/focus/src/index.ts"
+      ],
+      "@krai-tech/cdk/directives/is-disabled": [
+        "projects/cdk/directives/is-disabled/src/index.ts"
+      ],
+      "@krai-tech/cdk/pipes/safe": ["projects/cdk/pipes/safe/src/index.ts"],
+      "@krai-tech/cdk/tokens/is-browser": [
+        "projects/cdk/tokens/is-browser/src/index.ts"
+      ],
+      "@krai-tech/cdk/tokens/is-server": [
+        "projects/cdk/tokens/is-server/src/index.ts"
+      ],
+      "@krai-tech/cdk/utils": ["projects/cdk/utils/src/index.ts"],
+      "@krai-tech/demo": ["projects/demo/src/index.ts"],
+      "@krai-tech/kit/alert": ["projects/kit/alert/src/index.ts"],
+      "@krai-tech/kit/button": ["projects/kit/button/src/index.ts"],
+      "@krai-tech/kit/checkbox": ["projects/kit/checkbox/src/index.ts"],
+      "@krai-tech/kit/common/directives/has-value": [
+        "projects/kit/common/directives/has-value/src/index.ts"
+      ],
+      "@krai-tech/kit/common/directives/reset-input": [
+        "projects/kit/common/directives/reset-input/src/index.ts"
+      ],
+      "@krai-tech/kit/icon": ["projects/kit/icon/src/index.ts"],
+      "@krai-tech/kit/input-text": ["projects/kit/input-text/src/index.ts"],
+      "@krai-tech/kit/radio-button": ["projects/kit/radio-button/src/index.ts"],
+      "@krai-tech/kit/select": ["projects/kit/select/src/index.ts"],
+      "@krai-tech/kit/style/*": ["projects/kit/style/*"],
+      "@krai-tech/kit/textarea": ["projects/kit/textarea/src/index.ts"],
+      "@krai-tech/kit/toggle": ["projects/kit/toggle/src/index.ts"],
+      "@krai-tech/scripts/*": ["projects/scripts/src/*"],
+      "@krai-tech/shared": ["projects/shared/src/index.ts"],
+      "@krai-tech/web-api/tokens": ["projects/web-api/tokens/src/index.ts"],
+      "@ng-doc/generated/en": ["./ng-doc/@krai-kit/en/index.ts"],
+      "@ng-doc/generated/en/*": ["./ng-doc/@krai-kit/en/*"],
+      "@ng-doc/generated/ua": ["./ng-doc/@krai-kit/ua/index.ts"],
+      "@ng-doc/generated/ua/*": ["./ng-doc/@krai-kit/ua/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

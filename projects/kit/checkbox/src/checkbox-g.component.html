@@ -1,0 +1,22 @@
+<div class="kri-checkbox-group">
+  <ul [class.kri-checkbox-list-inline]="direction() === 'row'">
+    <li
+      *ngFor="let item of optionsToDisplay(); let i = index"
+      [class.kri-checkbox-column-margin]="direction() === 'column'"
+    >
+      <span>
+        <kri-checkbox
+          [name]="name()"
+          [label]="item.label"
+          [(ngModel)]="item.isChecked"
+          [isShowTitle]="isShowTitle()"
+          [color]="color()"
+          [disabled]="this.disabled() || item?.disabled ?? false"
+          [showAnimation]="showAnimation()"
+          (ngModelChange)="onToggle($event, i)"
+        >
+        </kri-checkbox>
+      </span>
+    </li>
+  </ul>
+</div>

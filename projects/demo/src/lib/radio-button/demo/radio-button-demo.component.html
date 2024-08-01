@@ -1,0 +1,12 @@
+<h3>Скільки вам років?</h3>
+<kri-radio
+  *ngFor="let item of testItems"
+  name="age"
+  [value]="item"
+  [(ngModel)]="vm"
+  (ngModelChange)="valueChange($event)"
+>
+  <span>{{ item }}</span>
+</kri-radio>
+
+<span class="vm-status">VM: {{ vm }}</span>

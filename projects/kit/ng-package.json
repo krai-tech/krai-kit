@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/projects/kit",
+  "allowedNonPeerDependencies": [
+    "."
+  ],
+  "lib": {
+    "entryFile": "index.ts",
+    "styleIncludePaths": ["projects/kit/style"]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@krai-shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/shared/src",
+  "prefix": "kri",
+  "projectType": "library",
+  "tags": ["shared"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "projects/shared/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/shared/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/shared/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "projects/shared/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import '../../style/theme/color';
+@import "../../style/theme/animation";
+@import "../../style/theme/border";
+@import "../../style/theme/base-colors";
+@import "../../style/theme/font";
+
+:host {
+  display: block;
+}
+
+.kri-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+
+  .kri-checkbox-tick {
+    position: absolute;
+
+    .kri-tick {
+      stroke: $kri-light-text;
+      stroke-dasharray: 13 13;
+      stroke-dashoffset: 13;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      transition:
+        stroke-dashoffset $kri-animation-duration-base $kri-animation-ease-in-out,
+        opacity $kri-animation-duration-base $kri-animation-ease-in-out,
+        transform $kri-animation-duration-base $kri-animation-ease-in-out;
+    }
+  }
+
+  &.active {
+    .kri-checkbox-tick {
+      .kri-tick {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        transform: scale(1);
+        transition:
+          stroke-dashoffset $kri-animation-duration-slow $kri-animation-ease-in,
+          opacity $kri-animation-duration-base $kri-animation-ease-in-out;
+      }
+    }
+
+    .kri-checkbox-material {
+      background-size: 100% 100%;
+      transition: border-color $kri-animation-duration-base $kri-animation-ease-in-out;
+    }
+
+    &:not(.disabled) .kri-checkbox-material:not(.custom-color) {
+      border-color: $kri-controls-500;
+    }
+  }
+
+  &.unchecked:not(.disabled) {
+    .kri-checkbox-material:not(.custom-color) {
+      background-size: 0% 0%;
+      transition: background-size $kri-animation-duration-base $kri-animation-ease-in-out, border-color $kri-animation-duration-base $kri-animation-ease-in-out;
+    }
+
+    &:hover .kri-checkbox-material:not(.custom-color) {
+      border-color: $kri-black-60;
+    }
+
+    .kri-checkbox-material.custom-color {
+      background-size: 0% 0%;
+      transition: border-color $kri-animation-duration-base $kri-animation-ease-in-out;
+    }
+  }
+
+  .kri-checkbox-material {
+    text-align: initial;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    user-select: none;
+    border: 1px solid $kri-black-24;
+    border-radius: $kri-border-radius;
+    background: linear-gradient($kri-controls-500, $kri-controls-500) no-repeat center/0%;
+    margin-right: 8px;
+    vertical-align: text-bottom;
+
+    &.kri-checkbox-default-background {
+      background-color: $kri-base-bg;
+    }
+
+    &.kri-checkbox-no-label {
+      margin-right: 0;
+    }
+
+    & > svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &-input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+  }
+
+  label {
+    position: relative;
+    font-family: $font-family;
+    font-size: $kri-font-size-16;
+    font-weight: normal;
+    height: 20px;
+    line-height: 22px;
+    cursor: pointer;
+    color: $kri-black-87;
+    margin: 0;
+    display: block;
+    flex: 1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    & > span {
+      display: inline-block;
+      box-sizing: content-box;
+      vertical-align: top;
+    }
+  }
+
+  &.disabled {
+    label {
+      cursor: not-allowed;
+      color: $kri-black-38;
+    }
+
+    &.unchecked .kri-checkbox-material {
+      border-color: $kri-black-12;
+      background-color: $kri-white;
+    }
+
+    &.active .kri-checkbox-material {
+      border-color: $kri-controls-200;
+      background: $kri-controls-200;
+
+      .kri-tick {
+        stroke: $kri-light-text;
+      }
+    }
+  }
+}
+
+.kri-no-animation {
+  transition: none !important;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@krai-tech/web-api",
+  "version": "1.0.0-alpha.1",
+  "description": "A set of common tokens for consuming Web API with Angular.",
+  "keywords": [
+    "angular",
+    "ng",
+    "window",
+    "api",
+    "web api",
+    "navigator",
+    "user agent",
+    "local storage",
+    "session storage",
+    "crypt",
+    "animation frame",
+    "locaction",
+    "screen",
+    "page visibility",
+    "history"
+  ],
+  "homepage": "https://krai-kit.dev/en/docs/web-api/getting-started",
+  "bugs": "https://github.com/krai-tech/krai-kit/issues",
+  "repository": "https://github.com/krai-tech/krai-kit",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Eugene Rusakov",
+    "email": "john.rusakov@gmail.com"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0",
+    "rxjs": ">=6.4.0"
+  },
+  "dependencies": {},
+  "sideEffects": false,
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

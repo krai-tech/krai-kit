@@ -1,0 +1,84 @@
+@import "./border";
+@import "./z-index";
+@import "./color";
+@import "./shadow";
+@import "./animation";
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kri-dropdown {
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.kri-dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: $kri-z-index-dropdown;
+  min-width: calc(min(100%, 102px));
+  margin: 4px 0;
+  background-clip: padding-box;
+  background-color: $kri-dropdown-bg;
+  border-radius: $kri-border-radius-8;
+  box-shadow: $kri-shadow-dropdown $kri-dropdown-shadow-color;
+  list-style: none;
+  outline: none;
+
+  .open > & {
+    display: block;
+  }
+
+  > li {
+    position: relative;
+  }
+
+  .kri-dropdown-item {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    line-height: 20px;
+    padding: 8px 12px;
+    border: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: $kri-border-radius;
+    transition:
+      color $kri-animation-duration-fast $kri-animation-ease-in-out-smooth,
+      background-color $kri-animation-duration-fast $kri-animation-ease-in-out-smooth;
+
+    &:not(:first-child) {
+      margin-top: 4px;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: $kri-dropdown-disabled-text;
+    }
+
+    &:not(.disabled) {
+      &:hover:not(.active) {
+        background-color: $kri-dropdown-list-item-hover-bg;
+        color: $kri-dropdown-list-item-hover-text;
+      }
+
+      &.active {
+        color: $kri-dropdown-list-item-active-text;
+
+        &:hover {
+          background-color: $kri-dropdown-list-item-active-bg;
+          color: $kri-dropdown-list-item-active-text;
+        }
+      }
+    }
+  }
+}
+

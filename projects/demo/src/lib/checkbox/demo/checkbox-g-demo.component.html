@@ -1,0 +1,11 @@
+<h4>Ви любите гуляти коли на вулиці</h4>
+<kri-checkbox-g
+  name="demo-g"
+  [direction]="direction()"
+  [options]="data"
+  [isShowTitle]="true"
+  [(ngModel)]="vm"
+  (checkboxChange)="onCheckboxChange($event)"
+>
+</kri-checkbox-g>
+<span class="vm-status">VM: {{ vm | json }}</span>

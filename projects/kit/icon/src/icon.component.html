@@ -1,0 +1,13 @@
+<div [class.kri-icon-active]="active()" class="kri-icon-container" [class.disabled]="disabled()">
+  <ng-template [ngTemplateOutlet]="template || defaultTemplate"> </ng-template>
+  <ng-template #defaultTemplate>
+    <i
+      class="kri-icon icon-{{ icon() }}"
+      [style.font-size]="size() + 'px'"
+      [class.kri-icon-spin]="rotate() === 'infinite'"
+      [style.transform]="'rotate(' + rotate() + 'deg)'"
+      [style.color]="color()"
+    >
+    </i>
+  </ng-template>
+</div>

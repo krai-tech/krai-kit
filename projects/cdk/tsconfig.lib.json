@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "sourceMap": true,
+    "inlineSourceMap": true,
+    "types": []
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "**/**/*.spec.ts",
+    "test-setup.ts",
+    "jest.config.ts",
+    "**/*.test.ts",
+    "**/**/*.test.ts"
+  ],
+  "include": ["**/*.ts", "**/**/*.ts"],
+  "paths": {
+    "@krai-tech/cdk/*": ["./dist/projects/cdk/*"],
+    "@krai-tech/cdk": ["./dist/projects/cdk/index"]
+  }
+}

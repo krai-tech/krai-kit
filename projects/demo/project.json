@@ -1,0 +1,36 @@
+{
+  "name": "@krai-demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/demo/src",
+  "prefix": "kri",
+  "projectType": "library",
+  "tags": ["demo"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "projects/demo/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/demo/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/demo/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "projects/demo/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

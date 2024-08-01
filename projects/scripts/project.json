@@ -1,0 +1,36 @@
+{
+  "name": "@krai-scripts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/scripts/src",
+  "prefix": "kri",
+  "projectType": "library",
+  "tags": ["scripts"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "projects/scripts/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/scripts/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/scripts/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "projects/scripts/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

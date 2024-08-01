@@ -1,0 +1,13 @@
+<kri-select
+  [config]="config"
+  [optionItemTemplate]="optionTemplate"
+  [options]="options"
+  [(ngModel)]="vm"
+  [multiple]="multiple"
+  [floatLabel]="floatLabel"
+></kri-select>
+<ng-template #optionTemplate let-item="item">
+  <kri-icon icon="add-to-card"></kri-icon>
+  {{ item.name }}
+  <span class="new badge"></span>
+</ng-template>

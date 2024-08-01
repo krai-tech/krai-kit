@@ -1,0 +1,226 @@
+
+@import "font";
+@import "color";
+@import "border";
+@import "animation";
+
+$default-font-size: $kri-font-size-16;
+$small-font-size: $kri-font-size-14;
+$large-font-size: $kri-font-size-18;
+$label-top-default: 14px;
+$label-top-small: 12px;
+$label-top-large: 18px;
+$label-color-default: $kri-form-control-placeholder;
+$label-color-active: $kri-form-control-label-active;
+$label-bg-color: $kri-white;
+
+@mixin active-label-styles {
+  top: -8px;
+  left: 12px;
+  font-size: $kri-font-size-12;
+  color: $label-color-active;
+  background-color: $label-bg-color;
+}
+
+.kri-float-label {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: $label-top-default;
+    left: 16px;
+    font-size: $default-font-size;
+    font-family: $font-family;
+    font-weight: 500;
+    font-style: normal;
+    color: $label-color-default;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    line-height: normal;
+    padding: 0 4px;
+    border-radius: $kri-border-radius-4;
+
+    &.kri-input-label-small {
+      font-size: $small-font-size;
+      top: $label-top-small;
+    }
+
+    &.kri-input-label-large {
+      font-size: $large-font-size;
+      top: $label-top-large;
+    }
+  }
+}
+
+.kri-float-label {
+  > [kriInputText],
+  > [kriTextarea] {
+    &:not(:placeholder-shown):not(:focus) + label {
+      top: $label-top-default;
+      left: 16px;
+      font-size: $default-font-size;
+      color: $label-color-default;
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus + label,
+    &.has-value + label {
+      @include active-label-styles;
+    }
+  }
+}
+
+[kriInputText] {
+  width: 100%;
+  height: 48px;
+  font-size: $default-font-size;
+  font-family: $font-family;
+  font-weight: 500;
+  font-style: normal;
+  text-overflow: ellipsis;
+
+  &.kri-textinput-sm {
+    font-size: $small-font-size;
+    height: 40px;
+  }
+
+  &.kri-textinput-lg {
+    font-size: $large-font-size;
+    height: 56px;
+  }
+}
+
+[kriInputText],
+[kriTextarea] {
+  box-sizing: border-box;
+  padding: 12px 12px 12px 16px;
+  color: $kri-black-87;
+  vertical-align: middle;
+  border: 1px solid $kri-form-control-line;
+  border-radius: $kri-border-radius-8;
+  outline: none;
+  background-color: $kri-form-control-bg;
+  box-shadow: 0 0 0 0 $kri-form-control-interactive-outline;
+
+  &:not([disabled]):not(.disabled):not(.kri-disabled):not(.error):not(.kri-error) {
+    &:hover {
+      border-color: $kri-form-control-line-hover;
+      color: $kri-form-control-line-hover;
+
+      + label {
+        color: $kri-form-control-label-hover;
+      }
+    }
+
+    &:focus {
+      border-color: $kri-form-control-label-active;
+    }
+
+    &:focus + label,
+    &.focused + label,
+    &.has-value + label {
+      @include active-label-styles;
+    }
+  }
+
+  &[disabled],
+  &.disabled,
+  &.kri-disabled {
+    &,
+    &:hover {
+      cursor: not-allowed;
+      background-color: $kri-form-control-disabled-bg;
+      border-color: $kri-form-control-disabled-line;
+      color: $kri-form-control-disabled-text;
+    }
+  }
+
+  &::placeholder {
+    color: $kri-form-control-placeholder;
+  }
+
+  &:focus {
+    &:placeholder-shown::placeholder {
+      color: transparent;
+      transition: all $kri-animation-duration-slow $kri-animation-ease-in-out-smooth;
+    }
+  }
+
+  &[disabled],
+  &.disabled,
+  &.kri-disabled,
+  &.error,
+  &.kri-error {
+    &:focus + label,
+    &.focused + label,
+    &.has-value + label {
+      @include active-label-styles;
+      color: $kri-form-control-danger-label;
+    }
+  }
+}
+
+.kri-float-label > [kriInputText]::placeholder,
+.kri-float-label > [kriTextarea]::placeholder {
+  color: transparent;
+}
+
+.kri-float-label > [kriInputText]:focus::placeholder,
+.kri-float-label > [kriTextarea]:focus::placeholder {
+  color: transparent;
+}
+
+[kriInputText]:not([disabled]):not(.disabled):not(.kri-disabled).error,
+[kriTextarea]:not([disabled]):not(.disabled):not(.kri-disabled).error,
+[kriInputText]:not([disabled]):not(.disabled):not(.kri-disabled).kri-error,
+[kriTextarea]:not([disabled]):not(.disabled):not(.kri-disabled).kri-error {
+  border-color: $kri-form-control-danger-line;
+  background-color: $kri-form-control-bg;
+
+  + label {
+    color: $kri-form-control-danger-label;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+[kriTextarea] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 36px;
+  min-height: 28px;
+  font-size: $default-font-size;
+  font-family: $font-family;
+  font-weight: 500;
+  font-style: normal;
+}
+
+[kriTextarea] + .kri-textarea-counter {
+  float: left;
+  display: block;
+  position: relative;
+  pointer-events: none;
+  overflow: visible;
+  color: $kri-textarea-aide-text;
+  font-size: $kri-font-size-12;
+  width: 0 !important;
+
+  & > i {
+    display: block;
+    font-style: normal;
+    white-space: nowrap;
+    text-align: right;
+    position: relative;
+    right: 10px;
+    bottom: 7px;
+  }
+}
+
+.no-animation + label {
+  transition: none;
+}

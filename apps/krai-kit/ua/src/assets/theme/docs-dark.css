@@ -1,0 +1,52 @@
+@import 'hljs-dark.css';
+
+/* Base colors */
+:root {
+  --ng-doc-base-0: #000000;
+  --ng-doc-base-1: #111111;
+  --ng-doc-base-2: #222222;
+  --ng-doc-base-3: #333333;
+  --ng-doc-base-4: #444444;
+  --ng-doc-base-5: #555555;
+  --ng-doc-base-6: #666666;
+  --ng-doc-base-7: #777777;
+  --ng-doc-base-8: #888888;
+  --ng-doc-base-9: #999999;
+  --ng-doc-base-10: #AAAAAA;
+
+  /* Text colors */
+  --ng-doc-text: #FFFFFF;
+  --ng-doc-text-muted: var(--ng-doc-base-9);
+  --ng-doc-text-selection: #4373c2;
+
+  /* Other colors */
+  --ng-doc-shadow-color: rgba(0, 0, 0, 0.4);
+  --ng-doc-link-color: #82aaff;
+  --ng-doc-inline-code-background: #222222;
+
+  /* Primary and info colors */
+  --ng-doc-primary: #7e57c2;
+  --ng-doc-info: #21c7a8;
+
+  /* Highlighting and search result colors */
+  --ng-doc-mark-background: rgba(100, 181, 246, 0.3);
+  --ng-doc-search-result-color: #FFFFFF;
+
+  /* Tag colors */
+  --ng-doc-api-tag-background: #ef5350;
+  --ng-doc-api-tag-color: var(--ng-doc-base-0);
+  --ng-doc-guide-tag-background: #ffca28;
+  --ng-doc-guide-tag-color: var(--ng-doc-base-0);
+
+  /* Input and Button colors */
+  --ng-doc-input-background: #111111;
+  --ng-doc-input-border: #555555;
+  --ng-doc-input-foreground: #ffffffcc;
+  --ng-doc-input-placeholder: #777777;
+  --ng-doc-button-foreground: #ffffffcc;
+
+  /* Badge and Progress colors */
+  --ng-doc-badge-background: #555555;
+  --ng-doc-badge-foreground: #ffffff;
+  --ng-doc-progress-background: #7e57c2;
+}

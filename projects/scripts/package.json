@@ -1,0 +1,16 @@
+{
+  "name": "@krai-tech/scripts",
+  "version": "0.0.1",
+  "peerDependencies": {},
+  "dependencies": {},
+  "scripts": {
+    "tsc": "tsc",
+    "generate-icon-types": "npm run tsc && node dist/lib/generate-icon-types.js",
+    "generate-icon-list": "npm run tsc && node dist/lib/generate-icon-list.js"
+
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/node": "^20.14.0"
+  }
+}

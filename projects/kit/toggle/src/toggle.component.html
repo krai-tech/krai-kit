@@ -1,0 +1,11 @@
+<span
+  class="kri-toggle {{ size() ? 'kri-toggle-' + size() : '' }}"
+  [ngClass]="{ 'kri-checked': checked(), 'kri-disabled': disabled() }"
+  [style.background]="checked() && !disabled() ? color() : ''"
+  [style.border-color]="checked() && !disabled() ? color() : ''"
+>
+  <span class="kri-toggle-inner-wrapper">
+    <div class="kri-toggle-inner"></div>
+  </span>
+  <small></small>
+</span>

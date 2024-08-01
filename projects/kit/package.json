@@ -1,0 +1,30 @@
+{
+  "name": "@krai-tech/kit",
+  "version": "1.0.0-alpha.1",
+  "description": "The primary set of components used to build your applications",
+  "keywords": [
+    "angular",
+    "kit",
+    "component"
+  ],
+  "homepage": "https://krai-kit.dev/en/docs/getting-started",
+  "repository": "https://github.com/krai-tech/krai-kit",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/forms": "~17.3.0",
+    "lodash": "^4.17.21",
+    "rxjs": "~7.8.0"
+  },
+  "optionalDependencies": {
+    "@krai-tech/cdk": "1.0.0-alpha.1"
+  },
+  "dependencies": {},
+  "sideEffects": false,
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

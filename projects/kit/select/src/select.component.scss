@@ -1,0 +1,72 @@
+@import "../../style/theme/color";
+@import "../../style/theme/font";
+@import "../../style/theme/shadow";
+@import "../../style/theme/dropdown";
+
+.kri-select {
+  .kri-select-input {
+    cursor: pointer;
+    padding-right: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .kri-dropdown-menu {
+    display: block;
+    width: calc(100% - 4px);
+    left: 2px;
+    margin: 4px 0;
+    cursor: pointer;
+    min-width: auto;
+    max-height: 256px;
+    overflow-y: auto;
+    box-shadow: $kri-shadow-select $kri-select-shadow-color;
+
+    .kri-dropdown-menu-wrap {
+      position: relative;
+
+      .kri-select-list,
+      .kri-select-list > ul {
+
+        li ::ng-deep .kri-checkbox label {
+          font-size: $kri-font-size-14;
+        }
+
+        li:hover:not(.active):not(.disabled) {
+          background-color: $kri-select-list-item-hover-bg;
+        }
+
+        li.active,
+        li.active ::ng-deep .kri-checkbox label {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .kri-dropdown-item {
+    font-family: $font-family;
+    clear: both;
+    color: $kri-select-dropdown-item-text;
+    font-size: $kri-font-size-14;
+    padding: 0.5em 1em;
+
+    &.disabled {
+      cursor: not-allowed;
+      color: $kri-select-list-item-disabled-text;
+    }
+  }
+}
+
+hr {
+  height: 1px;
+  border: none;
+  margin: 0 12px;
+  background-color: $kri-select-hr-color;
+}
+
+.no-results {
+  cursor: default;
+  padding: 16px 12px;
+}

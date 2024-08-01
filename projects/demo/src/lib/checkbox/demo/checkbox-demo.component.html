@@ -1,0 +1,8 @@
+<div>
+  <kri-checkbox
+    label="Хліб"
+    (checkboxChange)="onCheckboxChange($event)"
+    [(ngModel)]="vm"
+  />
+</div>
+<span class="vm-status">VM: {{ vm }}</span>

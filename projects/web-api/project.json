@@ -1,0 +1,43 @@
+{
+  "name": "@krai-web-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/web-api",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["web-api"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "projects/web-api/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/web-api/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/web-api/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "projects/web-api/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "outputPath": "dist/projects/web-api",
+        "buildTarget": "@krai-web-api:build:production"
+      }
+    }
+  }
+}

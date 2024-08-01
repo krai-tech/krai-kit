@@ -1,0 +1,10 @@
+<div class="icon-container">
+  <ng-container *ngFor="let icon of icons">
+    <div class="icon-item">
+      <kri-icon [icon]="icon" [active]="true"></kri-icon>
+      <div class="icon-desc">
+        {{ icon }}
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,292 @@
+@import "../../style/theme/border";
+@import "../../style/theme/font";
+@import "../../style/theme/color";
+@import "../../style/theme/animation";
+
+$kri-btn-padding: var(--kri-btn-padding, 10px 22px);
+$kri-btn-font-size: $kri-font-size-16;
+$kri-btn-font-weight: 600;
+$kri-btn-height: 40px;
+$kri-btn-line-height: $kri-line-height-base;
+$kri-btn-border-radius: $kri-border-radius-24;
+$kri-btn-min-width: 64px;
+
+$kri-btn-32-height: 32px;
+$kri-btn-40-height: 40px;
+$kri-btn-48-height: 48px;
+
+$kri-btn-32-padding: 10px 18px;
+$kri-btn-40-padding: 10px 22px;
+$kri-btn-48-padding: 10px 24px;
+
+$kri-btn-32-min-width: 56px;
+$kri-btn-40-min-width: 64px;
+$kri-btn-48-min-width: 72px;
+
+$kri-btn-icon-height: var(--kri-btn-icon-height, 24px);
+$kri-btn-icon-border-radius: var(--kri-btn-icon-border-radius, 8px);
+
+$kri-btn-icon-height: var(--kri-icon-height, 24px);
+$kri-btn-icon-border-radius: var(--kri-icon-border-radius, 8px);
+
+$kri-btn-config: (
+  primary: (
+    color: $kri-primary-btn-text,
+    min-width: $kri-btn-min-width,
+    background-color: $kri-primary-btn-bg,
+  ),
+  secondary: (
+    color: $kri-secondary-btn-text,
+    min-width: $kri-btn-min-width,
+    background-color: $kri-secondary-btn-bg,
+    border-color: $kri-secondary-btn-border-color,
+  ),
+  tertiary: (
+    color: $kri-tertiary-btn-text,
+    min-width: $kri-btn-min-width,
+    background-color: $kri-tertiary-btn-bg,
+  ),
+  ghost: (
+    color: $kri-ghost-btn-text,
+    min-width: $kri-btn-min-width,
+    background-color: $kri-ghost-btn-bg,
+  ),
+  ghost-color: (
+    color: $kri-ghost-color-btn-text,
+    min-width: $kri-btn-min-width,
+    background-color: $kri-ghost-color-btn-bg,
+  ),
+  link: (
+    color: $kri-btn-link-text,
+    padding: 0,
+  ),
+);
+
+$kri-btn-pseudo-classes-config: (
+  primary: (
+    hover: (
+      background-color: $kri-primary-btn-hover,
+    ),
+    active: (
+      background-color: $kri-primary-btn-active,
+    ),
+  ),
+  secondary: (
+    hover: (
+      background-color: $kri-secondary-btn-hover,
+    ),
+    active: (
+      background-color: $kri-secondary-btn-active,
+    ),
+  ),
+  tertiary: (
+    hover: (
+      background-color: $kri-tertiary-btn-hover,
+    ),
+    active: (
+      background-color: $kri-tertiary-btn-active,
+    ),
+  ),
+  ghost: (
+    hover: (
+      background-color: $kri-ghost-btn-hover,
+    ),
+    active: (
+      background-color: $kri-ghost-btn-active,
+    ),
+  ),
+  ghost-color: (
+    hover: (
+      background-color: $kri-ghost-color-btn-hover,
+    ),
+    active: (
+      background-color: $kri-ghost-color-btn-active,
+    ),
+  ),
+);
+
+$kri-btn-size-config: (
+  32: (
+    height: $kri-btn-32-height,
+    padding: $kri-btn-32-padding,
+    font-size: $kri-font-size-14,
+    min-width: $kri-btn-32-min-width,
+  ),
+  40: (
+    height: $kri-btn-40-height,
+    padding: $kri-btn-40-padding,
+    font-size: $kri-font-size-14,
+    min-width: $kri-btn-40-min-width,
+  ),
+  48: (
+    height: $kri-btn-48-height,
+    padding: $kri-btn-48-padding,
+    font-size: $kri-font-size-16,
+    min-width: $kri-btn-48-min-width,
+  )
+);
+
+$kri-btn-icon-size-config: (
+  32: (
+    font-size: 20px,
+    color: inherit,
+  ),
+  40: (
+    font-size: 24px,
+    color: inherit,
+  ),
+  48: (
+    font-size: 24px,
+    color: inherit,
+  )
+);
+
+:host {
+  display: inline-block;
+}
+
+[kriButton],
+[kriButtonPrimary],
+[kriButtonSecondary],
+[kriButtonTertiary],
+[kriButtonGhost],
+[kriButtonGhostColor],
+[kriButtonLink],
+.kri-btn {
+  border-style: solid;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $kri-btn-padding;
+  font-family: $font-family;
+  font-size: $kri-btn-font-size;
+  font-weight: $kri-btn-font-weight;
+  min-height: $kri-btn-height;
+  line-height: $kri-btn-line-height;
+  border-radius: $kri-btn-border-radius;
+  border-width: 1px;
+  border-color: transparent;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  cursor: pointer;
+  @each $type in primary, secondary, tertiary, ghost, ghost-color, link {
+    &.kri-btn-#{$type} {
+      @each $key, $value in map-get($kri-btn-config, $type) {
+        #{$key}: $value;
+      }
+    }
+  }
+  @each $type in 32, 40, 48 {
+    &.kri-btn-#{$type} {
+      @each $key, $value in map-get($kri-btn-size-config, $type) {
+        #{$key}: $value;
+      }
+      .kri-btn-icon {
+        @each $key, $value in map-get($kri-btn-icon-size-config, $type) {
+          #{$key}: $value;
+        }
+      }
+    }
+  }
+  @each $type in primary, secondary, tertiary, ghost, ghost-color {
+    &.kri-btn-#{$type} {
+      @each $pseudo, $value in map-get($kri-btn-pseudo-classes-config, $type) {
+        &:#{$pseudo} {
+          @each $key, $value2 in map-get(map-get($kri-btn-pseudo-classes-config, $type), $pseudo) {
+            #{$key}: $value2;
+          }
+        }
+      }
+    }
+  }
+  &.kri-btn-primary {
+    &:disabled {
+      color: $kri-primary-btn-disabled-text;
+      background: $kri-primary-btn-disabled-bg;
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &.kri-btn-secondary {
+    &:disabled {
+      color: $kri-secondary-btn-disabled-text;
+      background: $kri-secondary-btn-disabled-bg;
+      border: 1px solid $kri-secondary-btn-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
+  &.kri-btn-tertiary {
+    &:disabled {
+      color: $kri-tertiary-btn-disabled-text;
+      background: $kri-tertiary-btn-disabled-bg;
+      border: 1px solid $kri-tertiary-btn-disabled-border-color;
+      cursor: not-allowed;
+    }
+  }
+  &.kri-btn-ghost {
+    &:disabled {
+      color: $kri-ghost-btn-disabled-text;
+      background: $kri-ghost-btn-disabled-bg;
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+  &.kri-btn-ghost-color {
+    &:disabled {
+      color: $kri-ghost-color-btn-disabled-text;
+      background: $kri-ghost-color-btn-disabled-bg;
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+  &.kri-btn-link {
+    &:disabled {
+      color: $kri-btn-link-disabled-text;
+      background: transparent;
+      border-color: transparent;
+      cursor: default;
+    }
+  }
+  &.kri-btn-full-width {
+    width: 100%;
+  }
+}
+
+.kri-btn-icon-container {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+
+  .kri-btn-icon {
+    font-size: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all $kri-animation-duration-slow $kri-animation-ease-in-out-smooth;
+  }
+
+  .kri-btn-icon-spin {
+    animation: iconSpin 2.5s linear infinite;
+  }
+
+  .kri-btn-icon-rotate {
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+@keyframes iconSpin {
+  0% { transform: rotate(0deg); }
+
+  50% { transform: rotate(180deg); }
+
+  100% { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Inter Thin'), local('Inter-Thin'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCo3FwrBQW8TNGRAE29Ivo.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Inter Thin Italic'), local('Inter-ThinItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKwxn3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Inter Extra Light'), local('Inter-ExtraLight'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKk3i3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 200;
+  src: local('Inter Extra Light Italic'), local('Inter-ExtraLightItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKk3n3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Inter Light'), local('Inter-Light'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKqwi3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Inter Light Italic'), local('Inter-LightItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKqwn3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inter Regular'), local('Inter-Regular'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCo3FwrBQW8TNGRAH29Ivo.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Inter Italic'), local('Inter-Italic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKqzi3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Inter Medium'), local('Inter-Medium'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAK4zi3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Inter Medium Italic'), local('Inter-MediumItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAK4zn3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Inter Semi Bold'), local('Inter-SemiBold'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKkzi3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Inter Semi Bold Italic'), local('Inter-SemiBoldItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKkzn3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Bold'), local('Inter-Bold'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKv5i3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Inter Bold Italic'), local('Inter-BoldItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKv5n3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Inter Extra Bold'), local('Inter-ExtraBold'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKwxi3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Inter Extra Bold Italic'), local('Inter-ExtraBoldItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKwzn3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Inter Black'), local('Inter-Black'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKv1i3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Inter Black Italic'), local('Inter-BlackItalic'),
+  url('https://fonts.gstatic.com/s/inter/v3/UcCn3FwrBQW8TNGRAKv1n3E.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Fira Code Light'), local('FiraCode-Light'),
+  url('https://fonts.gstatic.com/s/firacode/v10/uU9MCBsR6vA8H6wS-KEFwr-7DIbpKA.woff2') format('woff2');
+  unicode-range: U+000-5FF; /* Basic Latin + Latin Supplement */
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.eot');
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+  url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.woff2') format('woff2'),
+  url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.woff') format('woff'),
+  url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.ttf') format('truetype'),
+  url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.svg#fontawesome') format('svg');
+}

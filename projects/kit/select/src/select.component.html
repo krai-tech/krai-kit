@@ -1,0 +1,86 @@
+<div class="kri-select kri-drop{{ state.config().direction === 'bottom' ? 'down' : 'up' }}">
+  <div [class.disabled]="inputs.disabled()" (click)="onDropdownClick($event)">
+    <ng-container [ngTemplateOutlet]="inputTemplate"></ng-container>
+  </div>
+  <div class="kri-dropdown-menu"
+       [class.kri-dropdown-menu-multiple]="inputs.multiple()"
+       *ngIf="state.toggleDropdown()">
+    <ng-container *ngIf="state.config()?.enableSelectAll && inputs.multiple() && !state.showNotFound()">
+      <ul>
+        <li class="kri-dropdown-item" (click)="toggleSelectAll({ close: true, emitChange: true })">
+          <kri-checkbox [label]="state.config().selectAllLabel!" [checked]="state.selectAll()"/>
+        </li>
+      </ul>
+    </ng-container>
+    <hr *ngIf="state.availableItems().length && inputs.multiple() && !state.showNotFound()" />
+    <ul class="kri-dropdown-menu-wrap">
+      <ul class="kri-select-list" #availableOption
+          *ngFor="let item of state.availableItems()
+          | filterBy: state.selectTextInSearch():state.config().searchOnKey
+          | limitTo: state.config().limitTo"
+          [ngClass]="{
+            active: selectService.isItemSelected(item) && !item.disabled,
+            disabled: item.disabled
+          }"
+          (click)="toggleItem(item)"
+          (mousedown)="state.availableOptionMouseDown.set(true)">
+        <ng-container [ngTemplateOutlet]="inputs.optionItemTemplate() || availableItemTemplate"
+                      [ngTemplateOutletContext]="{ item: item, config: state.config(), selectedItems: state.selectedItems() }">
+        </ng-container>
+      </ul>
+      <ng-container [ngTemplateOutlet]="inputs.notFoundTemplate() || notFound"></ng-container>
+    </ul>
+  </div>
+</div>
+
+<ng-template #inputTemplate>
+  <ng-container *ngIf="inputs.floatLabel(); else noLabel">
+    <div class="kri-float-label">
+      <ng-template [ngTemplateOutlet]="inputTemplate"></ng-template>
+      <label kriInputTextLabel [size]="state.config().size!">{{ inputs.floatLabel() }}</label>
+    </div>
+  </ng-container>
+
+  <ng-template #noLabel>
+    <ng-template [ngTemplateOutlet]="inputTemplate"></ng-template>
+  </ng-template>
+
+  <ng-template #inputTemplate>
+    <input name="select-input"
+           class="kri-select-input"
+           kriInputText
+           [showCounter]="true"
+           [selectedItems]="state.selectedItems()"
+           (resetInput)="reset()"
+           [value]="state.displayText()"
+           (focus)="onSearchFocus()"
+           (blur)="onSearchBlur()"
+           (input)="searchTextInput($event)"
+           (change)="searchTextChanged()"
+           [size]="state.config().size!"
+           [placeholder]="state.config().placeholder"
+           [disabled]="inputs.disabled()"
+           [readonly]="!state.config().search"
+           autocomplete="off">
+  </ng-template>
+</ng-template>
+
+<ng-template #notFound>
+  <div class="no-results" *ngIf="state.showNotFound()">{{ state.config().noResultsFound }}</div>
+</ng-template>
+
+<ng-template #availableItemTemplate let-item="item" let-config="config">
+  <ng-container *ngIf="inputs.multiple(); else singleItemTemplate">
+    <li class="kri-dropdown-item" [class.active]="selectService.isItemSelected(item)" [class.disabled]="item.disabled">
+      <kri-checkbox class="kri-select-checkbox"
+                   [label]="config.displayFn ? config.displayFn(item) : item[config.displayKey] || item"
+                   [checked]="selectService.isItemSelected(item)"
+                   [disabled]="item.disabled" />
+    </li>
+  </ng-container>
+  <ng-template #singleItemTemplate>
+    <li class="kri-dropdown-item" [class.active]="selectService.isItemSelected(item)" [class.disabled]="item.disabled">
+      {{ config.displayFn ? config.displayFn(item) : item[config.displayKey] || item }}
+    </li>
+  </ng-template>
+</ng-template>

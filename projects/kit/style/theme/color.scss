@@ -1,0 +1,113 @@
+@import "base-colors";
+
+// global
+$kri-base-bg: var(--kri-base-bg, $kri-white);
+$kri-line: var(--kri-line, $kri-controls-500);
+$kri-light-text: var(--kri-light-text, $kri-white);
+$kri-default-color-text: var(--kri-text, $kri-black-87);
+
+// button colors
+$kri-tertiary-btn-text: var(--kri-tertiary-btn-text, $kri-black-87);
+$kri-tertiary-btn-bg: var(--kri-tertiary-btn-bg, $kri-black-8);
+$kri-tertiary-btn-disabled-text: var(--kri-tertiary-btn-disabled-text, $kri-black-24);
+$kri-tertiary-btn-disabled-bg: var(--kri-tertiary-btn-disabled-bg, $kri-black-4);
+$kri-tertiary-btn-disabled-border-color: var(--kri-tertiary-btn-disabled-border-color, $kri-black-24);
+$kri-tertiary-btn-hover: var(--kri-tertiary-btn-hover, $kri-black-12);
+$kri-tertiary-btn-active: var(--kri-tertiary-btn-active, $kri-black-24);
+
+$kri-ghost-btn-text: var(--kri-tertiary-btn-text, $kri-black-87);
+$kri-ghost-btn-bg: var(--kri-tertiary-btn-bg, none);
+$kri-ghost-btn-disabled-text: var(--kri-ghost-btn-disabled-text, $kri-black-38);
+$kri-ghost-btn-disabled-bg: var(--kri-ghost-btn-disabled-bg, transparent);
+$kri-ghost-btn-hover: var(--kri-ghost-btn-hover, $kri-black-4);
+$kri-ghost-btn-active: var(--kri-ghost-btn-active, $kri-black-8);
+
+$kri-ghost-color-btn-text: var(--kri-tertiary-btn-text, $kri-controls-500);
+$kri-ghost-color-btn-bg: var(--kri-tertiary-btn-bg, none);
+$kri-ghost-color-btn-disabled-text: var(--kri-ghost-btn-disabled-text, $kri-black-38);
+$kri-ghost-color-btn-disabled-bg: var(--kri-ghost-btn-disabled-bg, transparent);
+$kri-ghost-color-btn-hover: var(--kri-ghost-btn-hover, $kri-black-4);
+$kri-ghost-color-btn-active: var(--kri-ghost-btn-active, $kri-black-8);
+
+$kri-secondary-btn-text: var(--kri-secondary-btn-text, $kri-controls-500);
+$kri-secondary-btn-bg: var(--kri-secondary-btn-bg, $kri-white);
+$kri-secondary-btn-border-color: var(--kri-secondary-btn-border-color, $kri-line);
+$kri-secondary-btn-disabled-text: var(--kri-secondary-btn-disabled-text, $kri-black-38);
+$kri-secondary-btn-disabled-bg: var(--kri-secondary-btn-disabled-bg, $kri-white);
+$kri-secondary-btn-disabled-border-color: var(--kri-secondary-btn-disabled-border-color, $kri-black-38);
+$kri-secondary-btn-hover: var(--kri-secondary-btn-hover, $kri-controls-100);
+$kri-secondary-btn-active: var(--kri-secondary-btn-active, $kri-controls-a100);
+
+$kri-primary-btn-text: var(--kri-primary-btn-text, $kri-white);
+$kri-primary-btn-bg: var(--kri-primary-btn-bg, $kri-controls-500);
+$kri-primary-btn-disabled-text: var(--kri-primary-btn-disabled-text, $kri-black-38);
+$kri-primary-btn-disabled-bg: var(--kri-primary-btn-disabled-bg, $kri-black-12);
+$kri-primary-btn-hover: var(--kri-primary-btn-hover, $kri-controls-400);
+$kri-primary-btn-active: var(--kri-primary-btn-active, $kri-controls-500);
+
+$kri-btn-link-text: var(--kri-btn-link-text, $kri-controls-500);
+$kri-btn-link-disabled-text: var(--kri-btn-link-disabled, $kri-black-38);
+
+// radio
+$kri-radio-border: var(--kri-radio-border, $kri-black-38);
+$kri-radio-disabled-text: var(--kri-radio-disabled-text, $kri-black-38);
+$kri-radio-disabled-color-border: var(--kri-disabled-color-border, $kri-black-24);
+$kri-radio-disabled-active-color-border: var(--kri-disabled-active-color-border, $kri-controls-200);
+$kri-radio-disabled-active-color-bg-after: var(--kri-disabled-active-color-bg-after, $kri-controls-200);
+$kri-radio-active-color-border: var(--kri-radio-active-color-border, $kri-controls-500);
+
+// form
+$kri-form-control-line: var(--kri-form-control-line, #cccccc);
+$kri-form-control-bg: var(--kri-form-control-bg, #FFF);
+$kri-form-control-interactive-outline: var(--kri-form-control-interactive-outline, rgba(94, 124, 224, 0.08));
+$kri-form-control-line-hover: var(--kri-form-control-line-hover, $kri-black-87);
+$kri-form-control-label-hover:  var(--kri-form-control-label-hover, $kri-black-87);
+$kri-form-control-line-active: var(--kri-form-control-line-active, $kri-controls-500);
+$kri-form-control-label-active: var(--kri-form-control-label-active, $kri-controls-500);
+$kri-form-control-disabled-bg:  var(--kri-form-control-disabled-bg, $kri-black-4);
+$kri-form-control-disabled-line: var(--kri-form-control-disabled-line, $kri-black-12);
+$kri-form-control-disabled-text: var(--kri-form-control-disabled-text, $kri-black-38);
+$kri-form-control-placeholder: var(--kri-form-control-placeholder, $kri-black-38);
+$kri-form-control-danger-line: var(--kri-form-control-danger-line, $kri-error-700);
+$kri-form-control-danger-label: var(--kri-form-control-label-line, $kri-error-700);
+$kri-textarea-aide-text: var(--kri-textarea-aide-text, $kri-black-87);
+
+// icons
+$kri-icon-color: var(--kri-icon-color, $kri-black-87);
+$kri-icon-hover-color: var(--kri-icon-hover-color, $kri-black-87);
+$kri-icon-hover-bg: var(--kri-icon-hover-bg, $kri-black-8);
+$kri-icon-active-color: var(--kri-icon-active-color, $kri-black-87);
+$kri-icon-active-bg: var(--kri-icon-active-bg, $kri-black-12);
+$kri-icon-disabled-color: var(--kri-icon-disabled-color, $kri-black-38);
+
+// alert
+$kri-alert-text: var(--kri-alert-text, $kri-black-100);
+$kri-alert-success-bg: var(--kri-alert-success-bg, $kri-success-100);
+$kri-alert-success-text: var(--kri-alert-success-text, $kri-black-87);
+$kri-alert-info-bg: var(--kri-alert-info-bg, #F2F4F9);
+$kri-alert-info-text: var(--kri-alert-info-text, $kri-black-72);
+$kri-alert-warning-bg: var(--kri-alert-warning-bg, $kri-warning-100);
+$kri-alert-warning-text:  var(--kri-alert-warning-text, $kri-black-100);
+$kri-alert--warning-border: var(--kri-alert--warning-border, $kri-warning-300);
+$kri-alert-danger-bg: var(--kri-alert-danger-bg, $kri-error-100);
+$kri-alert-danger-border: var(--kri-alert-danger-border, $kri-error-700);
+$kri-alert-danger-text:  var(--kri-alert-danger-text, $kri-black-100);
+$kri-alert-default-bg: var(--kri-alert-default-bg, $kri-black-4);
+
+//select
+$kri-select-dropdown-item-text: var(--kri-select-dropdown-item-text, $kri-black-87);
+$kri-select-shadow-color: var(--kri-select-shadow-color, rgba(32, 33, 36, 0.20));
+$kri-select-list-item-hover-bg: var(--kri-select-list-item-hover-bg, $kri-black-4);
+$kri-select-list-item-active-text: var(--kri-select-list-item-active-text, $kri-black-87);
+$kri-select-list-item-active-bg: var(--kri-select-list-item-active-bg, $kri-white);
+$kri-select-list-item-disabled-text: var(--kri-select-list-item-disabled-text, $kri-black-38);
+$kri-select-hr-color: var(--kri-select-hr-color, #E3E3EA);
+
+//dropdown
+$kri-dropdown-bg: var(--kri-dropdown-bg, $kri-white);
+$kri-dropdown-shadow-color: var(--kri-dropdown-shadow-color, rgba(32, 33, 36, 0.20));
+$kri-dropdown-disabled-text: var(--kri-dropdown-disabled-text, $kri-black-38);
+$kri-dropdown-list-item-hover-bg: var(--kri-dropdown-list-item-hover-bg, $kri-black-4);
+$kri-dropdown-list-item-hover-text: var(--kri-dropdown-list-item-hover-text, $kri-black-87);
+$kri-dropdown-list-item-active-text: var(--kri-dropdown-list-item-active-text, $kri-black-87);
+$kri-dropdown-list-item-active-bg: var(--kri-dropdown-list-item-active-bg, $kri-black-4);

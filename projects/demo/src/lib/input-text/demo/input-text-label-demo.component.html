@@ -1,0 +1,11 @@
+<div class="kri-float-label">
+  <input
+    kriInputText
+    id="textInput"
+    [showReset]="showReset"
+    [disabled]="disabled"
+    [size]="size"
+    [(ngModel)]="vm"
+  />
+  <label for="textInput" kriInputTextLabel [size]="size">{{ label }}</label>
+</div>

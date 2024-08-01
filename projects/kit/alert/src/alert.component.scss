@@ -1,0 +1,69 @@
+@import "../../style/theme/color";
+@import "../../style/theme/font";
+@import "../../style/theme/border";
+
+:host {
+  display: block;
+}
+
+.kri-alert {
+  color: $kri-alert-text;
+  font-family: $font-family;
+  font-size: $kri-font-size-14;
+  border: 1px solid transparent;
+  padding: 12px;
+  line-height: 24px;
+  border-radius: $kri-border-radius-8;
+  word-break: normal;
+  word-wrap: break-word;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .kri-alert-container {
+    flex: 1;
+  }
+
+  &.kri-alert-success {
+    background-color: $kri-alert-success-bg;
+    color: $kri-alert-success-text;
+  }
+
+  &.kri-alert-info {
+    background-color: $kri-alert-info-bg;
+    color: $kri-alert-info-text;
+  }
+
+  &.kri-alert-warning {
+    background-color: $kri-alert-warning-bg;
+    border-color: $kri-alert--warning-border;
+    color: $kri-alert-warning-text;
+  }
+
+  &.kri-alert-danger {
+    background-color: $kri-alert-danger-bg;
+    border-color: $kri-alert-danger-border;
+    color: $kri-alert-danger-text;
+  }
+
+  &.kri-alert-default {
+    background-color: $kri-alert-default-bg;
+    color: $kri-alert-text;
+  }
+
+  .kri-alert-icon {
+    display: flex;
+    padding-right: 8px;
+    align-items: start;
+  }
+
+  .kri-close {
+    flex-grow: 0;
+    flex-shrink: 1;
+    color: $kri-alert-text;
+    opacity: 1;
+    line-height: 26px;
+    height: 24px;
+    padding-left: 8px;
+    cursor: pointer;
+  }
+}

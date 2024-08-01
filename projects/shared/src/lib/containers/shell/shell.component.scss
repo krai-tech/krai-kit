@@ -1,0 +1,126 @@
+:host {
+  &[data-is-landing='true'] {
+    --ng-doc-page-max-width: auto;
+    --ng-doc-page-padding: 0;
+    --ng-doc-main-padding: 0;
+
+    ng-doc-navbar {
+      transition: 300ms ease-in-out;
+
+      &:before {
+        transition: 300ms ease-in-out;
+      }
+
+      &:not(.has-shadow) {
+        --ng-doc-navbar-background: transparent;
+      }
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  img {
+    min-width: 173px;
+    width: auto;
+    height: 42px;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  a {
+    color: var(--ng-doc-text-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ddd;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      background: #fff;
+      left: 50%;
+      bottom: -5px;
+      transition: width 0.3s, left 0.3s;
+    }
+
+    i {
+      transition: none;
+    }
+
+    &:hover i {
+      transform: none;
+    }
+  }
+
+  .theme-switch {
+    cursor: pointer;
+  }
+
+  .language-switch {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--ng-doc-border-color);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    .flag-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    .language-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--ng-doc-text-color);;
+    }
+
+    &:hover {
+      color: var(--ng-doc-text-color);;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    .language-switch {
+      margin-right: 5px;
+      padding: 5px 8px;
+
+      .flag-icon {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    .social {
+      display: none;
+
+      a i {
+        margin: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "sourceMap": true,
+    "inlineSourceMap": true,
+    "types": []
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "test-setup.ts",
+    "jest.config.ts",
+    "**/*.test.ts"
+  ],
+  "include": ["**/*.ts"],
+  "paths": {
+    "@krai-tech/kit/*": ["./dist/projects/kit/*"],
+    "@krai-tech/kit": ["./dist/projects/kit/index"]
+  }
+}

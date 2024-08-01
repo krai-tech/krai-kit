@@ -1,0 +1,103 @@
+{
+  "name": "@krai-kit/en",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/krai-kit/en/src",
+  "tags": ["krai-kit-en"],
+  "targets": {
+    "build": {
+      "executor": "@ng-doc/builder:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/krai-kit/en",
+        "index": "apps/krai-kit/en/src/index.html",
+        "browser": "apps/krai-kit/en/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/krai-kit/en/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "node_modules/@ng-doc/app/assets",
+            "output": "assets/ng-doc/app"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@ng-doc/ui-kit/assets",
+            "output": "assets/ng-doc/ui-kit"
+          },
+          {
+            "glob": "**/*",
+            "input": "ng-doc/@krai-kit/en/assets",
+            "output": "assets/ng-doc"
+          },
+          "apps/krai-kit/en/src/favicon.ico",
+          "apps/krai-kit/en/src/assets"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["projects/kit/style"]
+        },
+        "styles": [
+          "node_modules/flag-icons/sass/flag-icons.scss",
+          "node_modules/@ng-doc/app/styles/global.css",
+          "apps/krai-kit/en/src/styles.scss"
+        ],
+        "scripts": [],
+        "allowedCommonJsDependencies": ["@ng-doc/core"]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "1mb",
+              "maximumError": "2mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "200kb",
+              "maximumError": "400kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "outputHashing": "media"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@ng-doc/builder:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "@krai-kit/en:build:production"
+        },
+        "development": {
+          "buildTarget": "@krai-kit/en:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "@krai-kit/en:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/krai-kit/en/jest.config.ts"
+      }
+    }
+  }
+}

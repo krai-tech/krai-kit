@@ -1,0 +1,93 @@
+@import "../../style/theme/font";
+@import "../../style/theme/animation";
+@import "../../style/theme/color";
+
+:host {
+  display: inline-flex;
+}
+
+$kri-icon-height: var(--kri-icon-height, 24px);
+$kri-icon-border-radius: var(--kri-icon-border-radius, 8px);
+
+.kri-icon {
+  font-size: $kri-font-size-24;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all $kri-animation-duration-slow $kri-animation-ease-in-out-smooth;
+}
+
+.kri-icon-active {
+  &:not(.disabled) {
+    cursor: pointer;
+    transition: color $kri-animation-duration-slow $kri-animation-ease-in-out-smooth;
+
+    .kri-icon {
+      cursor: pointer;
+    }
+  }
+
+  &:hover:not(.disabled) {
+    color: $kri-icon-hover-color;
+
+    &.kri-icon-container {
+      background-color: $kri-icon-hover-bg;
+    }
+
+    .kri-icon {
+      color: $kri-icon-hover-color;
+    }
+  }
+
+  &:active:not(.disabled) {
+    color: $kri-icon-active-color;
+
+    &.kri-icon-container {
+      background-color: $kri-icon-active-bg;
+    }
+
+    .kri-icon {
+      color: $kri-icon-active-color;
+    }
+  }
+
+  &.kri-icon-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    min-height: $kri-icon-height;
+    padding: 10px 10px;
+    border-radius: $kri-icon-border-radius;
+    transition: all $kri-animation-duration-slow $kri-animation-ease-in-out-smooth;
+  }
+}
+
+.kri-icon-container {
+  display: inline-flex;
+  align-items: center;
+  color: $kri-icon-color;
+}
+
+.disabled {
+  color: $kri-icon-disabled-color;
+  cursor: not-allowed;
+
+  .kri-icon {
+    color: $kri-icon-disabled-color;
+  }
+}
+
+.kri-icon-spin {
+  animation: iconSpin 2.5s linear infinite;
+}
+
+@keyframes iconSpin {
+  0% { transform: rotate(0deg); }
+
+  50% { transform: rotate(180deg); }
+
+  100% { transform: rotate(360deg); }
+}
+
+.kri-icon-rotate {
+  transition: transform 0.2s ease-in-out;
+}

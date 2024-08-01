@@ -1,0 +1,48 @@
+<ng-doc-root
+  [sidebar]="!isLandingPage"
+  [noWidthLimit]="isLandingPage">
+  <ng-doc-navbar
+    class="header"
+    [glassEffect]="true"
+    [leftContent]="leftContent"
+    [rightContent]="rightContent"
+    [hamburger]="!isLandingPage">
+    <ng-template #leftContent>
+      <a class="logo" routerLink="/">
+        <img
+          [src]="themesService.currentTheme.id === 'docs-dark' ? 'assets/krai.svg' : 'assets/krai-black.svg'"
+          alt="logo" />
+      </a>
+    </ng-template>
+    <ng-template #rightContent>
+      <div class="controls">
+        <div class="theme-switch icon" (click)="themesService.set()">
+          <i class="fa-solid"
+             [ngClass]="{
+             'fa-sun': themesService.currentTheme.id === 'docs-dark',
+             'fa-moon': themesService.currentTheme.id === 'docs-light'
+             }">
+          </i>
+        </div>
+        <a routerLink="ua" class="language-switch">
+          <span class="fi fi-ua flag-icon"></span>
+          <span class="language-text">UA</span>
+        </a>
+        <span class="social">
+          <a href="https://github.com/krai-tech/krai-kit" class="icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://x.com" class="icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://discord.com/" class="icon">
+            <i class="fab fa-discord"></i>
+          </a>
+        </span>
+      </div>
+    </ng-template>
+  </ng-doc-navbar>
+
+  <ng-doc-sidebar></ng-doc-sidebar>
+  <router-outlet></router-outlet>
+</ng-doc-root>

@@ -1,0 +1,124 @@
+/*!
+  Theme: Custom Dark Theme
+  Description: Dark theme inspired by GitHub Dark Dimmed
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Colors taken from GitHub's CSS
+*/
+
+.hljs {
+  color: #e1e4e8;
+  background: #2d333b;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #f97583;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #c8e1ff;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #79b8ff;
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #b392f0;
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #f69d50;
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #959da5;
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #34d058;
+}
+
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #e1e4e8;
+}
+
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #0366d6;
+  font-weight: bold;
+}
+
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #dbab09;
+}
+
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #e1e4e8;
+  font-style: italic;
+}
+
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #e1e4e8;
+  font-weight: bold;
+}
+
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #85e89d;
+  background-color: #144620;
+}
+
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #ffa198;
+  background-color: #78191b;
+}
+
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+}
