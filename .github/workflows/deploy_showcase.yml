@@ -30,7 +30,7 @@ jobs:
       - name: Run deploy
         run: |
           prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+          if [[ ${GITHUB_REF} == "refs/heads/alpha" ]]; then
             prodRun="--prod"
           fi
 
