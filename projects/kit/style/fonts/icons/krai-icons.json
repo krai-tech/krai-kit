@@ -4432,19 +4432,6 @@
       "autoHost": true,
       "postfix": ""
     },
-    "imagePref": {
-      "prefix": "icon-",
-      "png": false,
-      "useClassSelector": true,
-      "color": 0,
-      "bgColor": 16777215,
-      "classSelector": ".icon",
-      "name": "silpo-icons",
-      "height": 24,
-      "columns": 16,
-      "margin": 16,
-      "overrideSize": true
-    },
     "historySize": 50,
     "showCodes": false,
     "gridSize": 16,

@@ -1,10 +1,9 @@
-<div class="alert-demo-container">
-  <kri-alert
-    [type]="type"
-    [showIcon]="showIcon"
-    [icon]="icon"
-    [iconColor]="iconColor"
-    [showCloseBtn]="showCloseBtn"
-    ><span [innerHTML]="text | safe : 'html'"></span
-  ></kri-alert>
-</div>
+<kri-alert
+  [type]="type"
+  [showIcon]="showIcon"
+  [icon]="icon"
+  [iconColor]="iconColor"
+  [showCloseBtn]="showCloseBtn"
+>
+  <span [innerHTML]="text | safe : 'html'"></span>
+</kri-alert>

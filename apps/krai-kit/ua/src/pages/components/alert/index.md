@@ -24,7 +24,7 @@ import { AlertComponent } from '@krai-tech/kit/alert';
 <kri-alert>alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {text: "System updates will occur tonight from 11:00 PM to 1:00 AM."} }) }}
 
 #### Інформаційне
 
@@ -34,7 +34,7 @@ import { AlertComponent } from '@krai-tech/kit/alert';
 <kri-alert type="info">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", text: "Please review the updated privacy policy in your account settings."} }) }}
 
 #### Успіх
 
@@ -44,7 +44,7 @@ import { AlertComponent } from '@krai-tech/kit/alert';
 <kri-alert type="success">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "success", text: "Збирання вашого замовлення в <strong>фірмові пакети «Сільпо»</strong> успішне!"} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "success", text: "Your changes have been successfully saved!"} }) }}
 
 #### Попередження
 
@@ -84,7 +84,7 @@ import { AlertComponent } from '@krai-tech/kit/alert';
 <kri-alert type="info" [showCloseBtn]="true" (closeAlert)="myFunction($event)">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", showCloseBtn: true, text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", showCloseBtn: true, text: "Ви отримали нове повідомлення. Перевірте свій вхідний ящик."} }) }}
 
 ### Пісочниця
 

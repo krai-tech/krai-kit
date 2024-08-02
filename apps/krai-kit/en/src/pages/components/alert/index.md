@@ -1,93 +1,106 @@
 # {{ NgDocPage.title }}
 
-Повідомлення використовуються для відображення вбудованих сповіщень. Вони допомагають користувачам швидко отримувати важливу інформацію або попередження під час взаємодії з додатком.
-
-### API
-
-Посилання на **API** - `AlertComponent`
-
-### Імпорт
+Alerts are used to display inline notifications. They help users quickly receive important information or warnings while interacting with the application.
 
 ```ts
 import { AlertComponent } from '@krai-tech/kit/alert';
 ```
 
-### Типи
+## Types
 
-`AlertComponent` підтримує кілька типів сповіщень, кожен з яких має своє призначення та вигляд.
+`AlertComponent` - supports multiple types of notifications, each with its own purpose and appearance.
 
-#### За замовчуванням
 
-Використовується для відображення звичайних повідомлень без особливого стилістичного акценту. Це сповіщення не має спеціального значення і підходить для загальних інформаційних повідомлень.
+### Default
 
-```html name="alert.component.ts"
+Used to display regular messages without any special stylistic emphasis.
+<br>
+This notification has no special significance and is suitable for general informational messages.
+
+```html
 <kri-alert>alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {text: "System updates will occur tonight from 11:00 PM to 1:00 AM."} }) }}
 
-#### Інформаційне
 
-Використовується для відображення інформаційних повідомлень, що мають значення для користувача. Цей тип сповіщень забезпечує користувачів корисною інформацією.
+### Informational
 
-```html name="alert.component.ts"
+Used to display informational messages that are relevant to the user. This type of notification provides users with useful information.
+
+```html
 <kri-alert type="info">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", text: "Please review the updated privacy policy in your account settings."} }) }}
 
-#### Успіх
 
-Використовується для повідомлень про успішне виконання дій або операцій. Цей тип сповіщень інформує користувачів про те, що все пройшло вдало.
+### Success
 
-```html name="alert.component.ts"
+Used for messages about the successful completion of actions or operations. <br>
+This type of notification informs users that everything went smoothly.
+
+```html
 <kri-alert type="success">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "success", text: "Збирання вашого замовлення в <strong>фірмові пакети «Сільпо»</strong> успішне!"} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "success", text: "Your changes have been successfully saved!"} }) }}
 
-#### Попередження
+### Warning
 
-Використовується для відображення попереджень про можливі проблеми або необхідність уваги. Цей тип сповіщень звертає увагу користувачів на важливі деталі або потенційні проблеми.
+Used to display warnings about possible issues or the need for attention. <br>
+This type of notification draws users attention to important details or potential problems.
 
-```html name="alert.component.ts"
+```html
 <kri-alert type="warning">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "warning", text: "Вартість товарів на вагу може трішки змінитися після збирання. Дяка за розуміння! 🧡 "} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "warning", text: "Your session is about to expire. Please save your work to avoid losing any changes."} }) }}
 
-#### Небезпека
+### Danger
 
-Використовується для відображення критичних попереджень про помилки або небезпечні ситуації. Цей тип сповіщень допомагає користувачам уникати серйозних проблем або помилок.
+Used to display critical warnings about errors or dangerous situations. <br>
+This type of notification helps users avoid serious problems or mistakes.
 
-```html name="alert.component.ts"
+```html
 <kri-alert type="danger">alert message</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "danger", text: "<strong>Овва, надто важко.</strong> <br> Знаємо, кортить всього й одразу. 😳 Але можемо доставити не більше 30 кг."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "danger", text: "<strong>Critical Error Detected.</strong> <br> An unexpected error has occurred. Please contact support immediately."} }) }}
 
-### Змінити іконку
+## Change the icon
 
-Сповіщення також підтримують зміну іконки для більшої гнучкості та інформативності. Це дозволяє використовувати спеціальні іконки `IconComponent` для певних типів сповіщень, що робить їх більш виразними та зрозумілими.
+Notifications also support changing the icon for greater flexibility and informativeness. <br>
+This allows the use of custom IconComponent icons for specific types of notifications, making them more expressive and understandable.
 
-```html name="alert.component.ts"
-<kri-alert type="danger" icon="products" [iconColor]="#DA291C">alert message</kri-alert>
+```html
+<kri-alert type="danger" 
+           icon="cancel" 
+           [iconColor]="#DA291C">
+  alert message
+</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "danger", icon: "products", iconColor: "#DA291C", text: "<strong>Овва, надто важко.</strong> <br> Знаємо, кортить всього й одразу. 😳 Але можемо доставити не більше 30 кг."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "danger", icon: "cancel", iconColor: "#DA291C", text: "<strong>Critical Error Detected.</strong> <br> An unexpected error has occurred. Please contact support immediately."} }) }}
 
-### Закрити алерт
+## Close alert
 
-Для сповіщень, що потребують можливості закриття користувачем, можна додати кнопку закриття. Це зручно для користувачів, оскільки вони можуть самостійно закрити сповіщення після ознайомлення з інформацією.
+For notifications that require the ability to be closed by the user, a close button can be added. <br>
+This is convenient for users as they can close the notification themselves after reading the information.
 
-```html name="alert.component.ts"
-<kri-alert type="info" [showCloseBtn]="true" (closeAlert)="myFunction($event)">alert message</kri-alert>
+```html
+<kri-alert 
+  type="info" 
+  [showCloseBtn]="true" 
+  (closeAlert)="handlerCloseAlert($event)">
+  alert message
+</kri-alert>
 ```
 
-{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", showCloseBtn: true, text: "Дбайливо все спакуємо в обрані торбинки. Але, якщо їх буде замало, додамо фірмові пакети «Сільпо»."} }) }}
+{{ NgDocActions.demo("AlertDemoComponent", { container: false, inputs: {type: "info", showCloseBtn: true, text: "Our website will be undergoing scheduled maintenance tonight from 12:00 AM to 2:00 AM. Please plan accordingly."} }) }}
 
-### Пісочниця
+## Sandbox
 
-Цей розділ дозволяє взаємодіяти з різними варіантами алертів та налаштовувати їх параметри у реальному часі, щоб побачити, як вони будуть виглядати та поводитися в інтерфейсі.
+This section allows you to interact with different alert variants and configure their parameters in real-time to see how they will look and behave in the interface.
 
 {{ NgDocActions.playground("AlertPlayground") }}
