@@ -1,11 +1,11 @@
-<div class="kri-alert kri-alert-{{ type() }} {{ customClass() }}" *ngIf="!isHidden()">
-  <span class="kri-alert-icon" *ngIf="isShowIcon()">
+<div class="kri-alert kri-alert--{{ type() }} {{ customClass() }}" *ngIf="!isHidden()">
+  <span class="kri-alert__icon" *ngIf="isShowIcon()">
     <kri-icon [icon]="icon() || iconType()" [color]="iconColor()"></kri-icon>
   </span>
-  <div class="kri-alert-container">
+  <div class="kri-alert__container">
     <ng-content></ng-content>
   </div>
-  <div class="kri-close" (click)="onCloseAlert()" *ngIf="showCloseBtn()">
+  <div class="kri-alert__close" (click)="onCloseAlert()" *ngIf="showCloseBtn()">
     <kri-icon icon="cancel" size="16"></kri-icon>
   </div>
 </div>

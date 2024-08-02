@@ -83,14 +83,14 @@ $kri-icon-disabled-color: var(--kri-icon-disabled-color, $kri-black-38);
 // alert
 $kri-alert-text: var(--kri-alert-text, $kri-black-100);
 $kri-alert-success-bg: var(--kri-alert-success-bg, $kri-success-100);
-$kri-alert-success-text: var(--kri-alert-success-text, $kri-black-87);
+$kri-alert-success-text: var(--kri-alert-success-text, $kri-black-100);
 $kri-alert-info-bg: var(--kri-alert-info-bg, #F2F4F9);
-$kri-alert-info-text: var(--kri-alert-info-text, $kri-black-72);
+$kri-alert-info-text: var(--kri-alert-info-text, $kri-black-100);
 $kri-alert-warning-bg: var(--kri-alert-warning-bg, $kri-warning-100);
 $kri-alert-warning-text:  var(--kri-alert-warning-text, $kri-black-100);
-$kri-alert--warning-border: var(--kri-alert--warning-border, $kri-warning-300);
+$kri-alert-warning-border: var(--kri-alert--warning-border, $kri-warning-300);
 $kri-alert-danger-bg: var(--kri-alert-danger-bg, $kri-error-100);
-$kri-alert-danger-border: var(--kri-alert-danger-border, $kri-error-700);
+$kri-alert-danger-border: var(--kri-alert-danger-border, $kri-error-300);
 $kri-alert-danger-text:  var(--kri-alert-danger-text, $kri-black-100);
 $kri-alert-default-bg: var(--kri-alert-default-bg, $kri-black-4);
 

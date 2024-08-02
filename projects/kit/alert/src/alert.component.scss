@@ -18,54 +18,56 @@
   word-wrap: break-word;
   display: flex;
   flex-wrap: nowrap;
+  align-items: flex-start;
 
-  .kri-alert-container {
-    flex: 1;
-    margin: 0;
-    padding: 0;
-  }
-
-  &.kri-alert-success {
+  &--success {
     background-color: $kri-alert-success-bg;
     color: $kri-alert-success-text;
   }
 
-  &.kri-alert-info {
+  &--info {
     background-color: $kri-alert-info-bg;
     color: $kri-alert-info-text;
   }
 
-  &.kri-alert-warning {
+  &--warning {
     background-color: $kri-alert-warning-bg;
-    border-color: $kri-alert--warning-border;
+    border-color: $kri-alert-warning-border;
     color: $kri-alert-warning-text;
   }
 
-  &.kri-alert-danger {
+  &--danger {
     background-color: $kri-alert-danger-bg;
     border-color: $kri-alert-danger-border;
     color: $kri-alert-danger-text;
   }
 
-  &.kri-alert-default {
+  &--default {
     background-color: $kri-alert-default-bg;
     color: $kri-alert-text;
   }
 
-  .kri-alert-icon {
-    display: flex;
-    padding-right: 8px;
-    align-items: start;
+  &__container {
+    flex: 1;
+    margin: 0;
+    padding: 0;
   }
 
-  .kri-close {
-    flex-grow: 0;
-    flex-shrink: 1;
+  &__icon {
+    display: flex;
+    padding-right: 8px;
+    align-items: center;
+  }
+
+  &__close {
+    flex-shrink: 0;
     color: $kri-alert-text;
     opacity: 1;
     line-height: 26px;
     height: 24px;
     padding-left: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 }
