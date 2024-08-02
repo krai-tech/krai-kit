@@ -1,6 +1,6 @@
 {
   "name": "@krai-tech/web-api",
-  "version": "alpha",
+  "version": "1.0.0",
   "description": "A set of common tokens for consuming Web API with Angular.",
   "keywords": [
     "angular",
