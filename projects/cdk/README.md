@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">KRAI Kit</h1>
+<h1 align="center">KRAI CDK</h1>
 
 <div align="center">
   <a href="https://npmjs.com/package/@krai-tech/cdk">
