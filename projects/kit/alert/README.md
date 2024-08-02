@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## AlertComponent
 
 The `AlertComponent` is a reusable component for displaying alert messages with various customizable properties.

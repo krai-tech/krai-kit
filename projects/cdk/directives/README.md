@@ -1,4 +1,4 @@
-# @krai-cdk 
+# KRAI CDK
 ## Directives
 
 This library contains a set of Angular directives that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

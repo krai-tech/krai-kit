@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## HasValue Directive
 
 The `HasValueDirective` is designed to add a ‘has-value’ class and ‘data-has-value’ attribute to an element based on its value. 

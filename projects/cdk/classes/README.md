@@ -1,5 +1,4 @@
-
-# @krai-cdk
+# KRAI CDK
 ## Base Classes
 
 This library contains a set of base classes that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

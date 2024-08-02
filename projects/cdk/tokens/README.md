@@ -1,4 +1,4 @@
-# @krai-cdk 
+# KRAI CDK
 ## Tokens
 
 This library contains a set of Angular tokens that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

@@ -1,4 +1,4 @@
-# @krai-cdk
+# KRAI CDK
 ## Constants
 
 This library contains a set of constants that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

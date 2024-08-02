@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 # RadioButtonComponent
 
 The `RadioButtonComponent` is a custom radio button element that extends AbstractControl and includes additional theming capabilities.

@@ -1,4 +1,4 @@
-# @krai-cdk
+# KRAI CDK
 ## Disabled Directive
 
 Provides a directive to manage the `disabled`, `aria-disabled`, `attr.aria-disabled` attributes of an element.

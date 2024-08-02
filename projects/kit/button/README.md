@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## ButtonDirective
 
 The `ButtonDirective` adds custom behavior and theming capabilities to button elements.

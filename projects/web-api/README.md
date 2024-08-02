@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://krai-kit.dev">
-      <img alt="KRAI WEB API Logo" src="../../assets/krai-web-api.svg" width="280" style="max-width:100%;">
+      <img alt="KRAI WEB API Logo" src="https://github.com/krai-tech/krai-kit/raw/alpha/assets/krai-web-api.svg" width="280" style="max-width:100%;">
   </a>
 </p>
 
-<h1 align="center">@krai-web-api</h1>
+<h1 align="center">KRAI Web API</h1>
 
 <div align="center">
   <a href="https://npmjs.com/package/@krai-tech/kit">

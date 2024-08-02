@@ -1,4 +1,4 @@
-# @krai-cdk
+# KRAI CDK
 ## Utils
 
 This library contains a set of utility functions that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

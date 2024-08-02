@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## InputTextDirective
 
 The `InputTextDirective` enhances standard input elements with custom styles and behavior. It provides support for error state, size variants (small, medium, large), and an additional title attribute for disabled inputs.

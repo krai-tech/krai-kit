@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## IconComponent
 
 The `IconComponent` is a reusable component for displaying icons with various customizable properties.

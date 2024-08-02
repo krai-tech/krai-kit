@@ -1,5 +1,4 @@
-
-# @krai-cdk
+# KRAI CDK
 ## Pipes
 
 This library contains a set of Angular pipes that are part of the [**@krai-kit**](https://github.com/krai-tech/krai-kit).

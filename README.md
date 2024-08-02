@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://krai-kit.dev" target="_blank" rel="noopener noreferrer">
-    <img alt="KRAI KIT Logo" src="./assets/krai-kit.svg" width="280" style="max-width:100%;">
+    <img alt="KRAI KIT Logo" src="https://github.com/krai-tech/krai-kit/raw/alpha/assets/krai-kit.svg" width="280" style="max-width:100%;">
   </a>
 </p>
 <p align="center">
@@ -13,7 +13,7 @@
   <a href="https://www.npmjs.com/package/krai-tech"><img src="https://img.shields.io/npm/v/@krai-tech/kit" alt="Npm"></a>
 </p>
 
-<h1 align="center">KRAIKIT - Angular UI Component Library</h1>
+<h1 align="center">KRAI Kit - Angular UI Component Library</h1>
 
 The primary set of components used to build your applications
 

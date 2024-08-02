@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## ToggleComponent
 
 The `ToggleComponent` is a customizable toggle switch component that extends AbstractControl and implements OnChanges. It can be used within forms and other interactive elements.

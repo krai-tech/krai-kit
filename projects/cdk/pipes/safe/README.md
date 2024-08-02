@@ -1,4 +1,4 @@
-# @krai-cdk
+# KRAI CDK
 ## SafePipe
 
 The **SafePipe** is an Angular pipe that bypasses Angular's built-in sanitization for specific content types. This is useful when you trust the content and need to insert it into the DOM without Angular stripping potentially unsafe elements.

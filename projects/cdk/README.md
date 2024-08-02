@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://krai-kit.dev">
-      <img alt="KRAI CDK Logo" src="../../assets/krai-cdk.svg" width="280" style="max-width:100%;">
+      <img alt="KRAI CDK Logo" src="https://github.com/krai-tech/krai-kit/raw/alpha/assets/krai-cdk.svg" width="280" style="max-width:100%;">
   </a>
 </p>
 
-<h1 align="center">@krai-cdk</h1>
+<h1 align="center">KRAI Kit</h1>
 
 <div align="center">
   <a href="https://npmjs.com/package/@krai-tech/cdk">

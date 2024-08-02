@@ -1,4 +1,4 @@
-# @krai-kit
+# KRAI Kit
 ## TextareaDirective
 
 The `TextareaDirective` enhances standard textarea elements with custom styles and behavior. It provides support for error state, resize options, and character counter.

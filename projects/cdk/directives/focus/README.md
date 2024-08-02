@@ -1,4 +1,4 @@
-# @krai-cdk
+# KRAI CDK
 ## Focus Directive
 
 Provides a directive to automatically focus.
