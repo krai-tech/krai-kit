@@ -1,16 +1,13 @@
 {
   "changelog": false,
   "npm": true,
-  "git": false,
-  "github": false,
+  "git": true,
+  "github": true,
   "repositoryUrl": "https://github.com/krai-tech/krai-kit",
   "buildTarget": "",
   "tagFormat": "${PROJECT_NAME}/@${VERSION}",
   "branches": [
-    "main",
-    "next",
-    { "name": "beta", "prerelease": true },
-    { "name": "alpha", "prerelease": true }
+    "alpha"
   ],
   "releaseRules": [
     { "type": "feat", "release": "minor" },
@@ -18,7 +15,7 @@
     { "type": "perf", "release": "patch" },
     { "type": "refactor", "release": "patch" },
     { "type": "chore", "release": "patch" },
-    { "type": "docs", "release": "patch" },
+    { "type": "docs", "release": false },
     { "type": "style", "release": "patch" },
     { "type": "test", "release": false },
     { "type": "build", "release": false },
