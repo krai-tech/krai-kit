@@ -42,7 +42,7 @@ export class AlertComponent {
    * Set icon from `IconTypes` to apply to the alert.
    * Default empty `string`.
    */
-  icon: InputSignal<IconTypes | undefined> = input<IconTypes>();
+  icon: InputSignal<IconTypes> = input<IconTypes>('' as IconTypes);
 
   /**
    * Optional.
@@ -89,20 +89,15 @@ export class AlertComponent {
    * @internal
    * Computes the type of icon based on the alert type.
    */
-  iconType: Signal<any> = computed((): string => {
-    if (this.type() === 'info') {
-      return 'info';
-    }
-    if (this.type() === 'success') {
-      return 'ok';
-    }
-    if (this.type() === 'warning') {
-      return 'warning';
-    }
-    if (this.type() === 'danger') {
-      return 'attention';
-    }
-    return '';
+  iconType: Signal<IconTypes> = computed((): IconTypes => {
+    const typeMap: Record<string, string> = {
+      info: 'info',
+      success: 'ok',
+      warning: 'warning',
+      danger: 'attention'
+    };
+
+    return (typeMap[this.type()] || '') as IconTypes;
   });
 
   /**
