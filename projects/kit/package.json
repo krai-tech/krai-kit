@@ -18,7 +18,7 @@
     "rxjs": "~7.8.0"
   },
   "optionalDependencies": {
-    "@krai-tech/cdk": "1.0.0-alpha.1"
+    "@krai-tech/cdk": "1.0.0"
   },
   "dependencies": {},
   "sideEffects": false,
