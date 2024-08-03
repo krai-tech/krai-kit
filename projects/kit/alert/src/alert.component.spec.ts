@@ -45,7 +45,7 @@ describe('AlertComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestHostComponent, AlertComponent, TestHostComponent]
+      imports: [CommonModule, IconComponent, AlertComponent, TestHostComponent]
     }).compileComponents();
   });
 
@@ -62,7 +62,7 @@ describe('AlertComponent', () => {
 
   it('should apply default CSS class', () => {
     const alertElement = fixture.debugElement.query(By.css('.kri-alert'));
-    expect(alertElement.nativeElement.classList).toContain('kri-alert-default');
+    expect(alertElement.nativeElement.classList).toContain('kri-alert--default');
   });
 
   it('should apply custom CSS class', () => {
@@ -77,36 +77,36 @@ describe('AlertComponent', () => {
     hostComponent.showIcon = true;
     hostComponent.type = 'default'
     fixture.detectChanges();
-    let icon = fixture.debugElement.query(By.css('.kri-alert-icon'));
+    let icon = fixture.debugElement.query(By.css('.kri-alert__icon'));
     expect(icon).not.toBeNull();
 
     hostComponent.showIcon = false;
     fixture.detectChanges();
-    icon = fixture.debugElement.query(By.css('.kri-alert-icon'));
+    icon = fixture.debugElement.query(By.css('.kri-alert__icon'));
     expect(icon).toBeNull();
   });
 
   it('should emit closeAlert event and hide alert on close button click', () => {
-    jest.spyOn(component, 'onCloseAlert');
+    jest.spyOn(hostComponent, 'onCloseAlert');
     hostComponent.showCloseBtn = true;
     fixture.detectChanges();
-    const closeButton = fixture.debugElement.query(By.css('.kri-close'));
+    const closeButton = fixture.debugElement.query(By.css('.kri-alert__close'));
     closeButton.triggerEventHandler('click', null);
     fixture.detectChanges();
-    expect(component.onCloseAlert).toHaveBeenCalled();
+    expect(hostComponent.onCloseAlert).toHaveBeenCalled();
   });
 
   it('should not display close button if showCloseBtn is false', () => {
     hostComponent.showCloseBtn = false;
     fixture.detectChanges();
-    const closeButton = fixture.debugElement.query(By.css('.kri-close'));
+    const closeButton = fixture.debugElement.query(By.css('.kri-alert__close'));
     expect(closeButton).toBeNull();
   });
 
   it('should display close button if showCloseBtn is true', () => {
     hostComponent.showCloseBtn = true;
     fixture.detectChanges();
-    const closeButton = fixture.debugElement.query(By.css('.kri-close'));
+    const closeButton = fixture.debugElement.query(By.css('.kri-alert__close'));
     expect(closeButton).not.toBeNull();
   });
 });
