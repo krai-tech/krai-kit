@@ -1,4 +1,4 @@
-import { IconTypes } from '@krai-tech/kit';
+import { IconTypes } from './icons.type';
 
 export const iconList: IconTypes[] = [
   'sale',

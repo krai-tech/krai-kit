@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { SELECT_INPUTS } from '../directives';
-import { SelectConfig } from '@krai-tech/kit/select';
+import { SelectConfig } from '../select.type';
 
 /**
  * Service to manage the state for the select component.

@@ -9,7 +9,7 @@ const icons = JSON.parse(rawData).selection;
 const iconNames: string[] = icons.map((icon: { name: string }) => icon.name);
 
 const iconNamesContent = `
-import { IconTypes } from '@krai-tech/kit';
+import { IconTypes } from './icons.type';
 
 export const iconList: IconTypes[] = [
   ${iconNames.map(name => `'${name}'`).join(',\n  ')}

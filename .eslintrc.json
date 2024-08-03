@@ -21,8 +21,16 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "kit",
+                "onlyDependOnLibsWithTags": ["kit", "cdk", "web-api"]
+              },
+              {
+                "sourceTag": "cdk",
+                "onlyDependOnLibsWithTags": ["cdk"]
+              },
+              {
+                "sourceTag": "web-api",
+                "onlyDependOnLibsWithTags": ["web-api"]
               }
             ]
           }
