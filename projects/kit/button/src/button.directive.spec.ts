@@ -1,6 +1,6 @@
 import { Component, DebugElement } from '@angular/core';
 import { ButtonDirective } from './button.directive';
-import { ButtonStyle } from './button.type';
+import { ButtonAppearance } from './button.type';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
@@ -10,7 +10,7 @@ import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
   imports: [ButtonDirective, IsDisabledDirective],
   template: `
     <button kriButton
-            [style]="style"
+            [appearance]="style"
             (buttonClick)="increment()"
             [disabled]="isDisabled"
     >
@@ -19,7 +19,7 @@ import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
   `
 })
 class TestButtonComponent {
-  style: ButtonStyle = 'primary';
+  style: ButtonAppearance = 'primary';
   clickCount = 0;
   isDisabled = false;
   text = 'Button text';

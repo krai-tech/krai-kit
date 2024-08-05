@@ -1,15 +1,12 @@
 # {{ NgDocPage.title }}
 
-Alerts are used to display inline notifications. They help users quickly receive important information or warnings while interacting with the application.
+`AlertComponent` are used to display inline notifications. They help users quickly receive important information or warnings while interacting with the application.
 
 ```ts
 import { AlertComponent } from '@krai-tech/kit/alert';
 ```
 
 ## Types
-
-`AlertComponent` - supports multiple types of notifications, each with its own purpose and appearance.
-
 
 ### Default
 

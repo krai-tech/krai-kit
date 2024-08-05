@@ -1,28 +1,22 @@
 # {{ NgDocPage.title }}
 
-Є розширенням стандартного елемента кнопки з стилізацією.
-
-### API
-
-Посилання на **API** - `ButtonDirective`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`ButtonDirective` – an enhanced version of the standard button element, featuring custom styling.
 
 ```ts
 import { ButtonDirective } from '@krai-tech/kit/button';
 ```
 
-### Типи
+## Types
 
-#### Primary
+### Primary
 
-Використовується для дій, які потребують максимальної уваги. Рекомендуємо використовувати тільки одну таку кнопку на сторінці.
+Used for actions that require the highest level of attention. We recommend using only one such button on a page.
 
-```html name="button.directive.ts"
-<button kriButton style="primary">Text Button</button>
-або
+```html
+<button kriButton appearance="primary">Text Button</button>
+```
+
+```html
 <button kriButtonPrimary>Text Button</button>
 ```
 
@@ -30,11 +24,13 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 
 #### Secondary
 
-Використовується для вторинних дій або для інтерфейсів з низьким ступенем контрастності. В залежності від контексту інтерфейсу може мати синє або сіре обведення.
+Used for secondary actions or for interfaces with low contrast. Depending on the context of the interface, it may have either a blue or gray border.
 
-```html name="button.directive.ts"
-<button kriButton style="secondary">Text Button</button>
-або
+```html
+<button kriButton appearance="secondary">Text Button</button>
+```
+
+```html
 <button kriButtonSecondary>Text Button</button>
 ```
 
@@ -42,11 +38,13 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 
 #### Tertiary
 
-Використовується для дій, які потребують найменшої уваги на сторінці.
+Used for actions that require the least attention on the page.
 
-```html name="button.directive.ts"
-<button kriButton style="tertiary">Text Button</button>
-або
+```html
+<button kriButton appearance="tertiary">Text Button</button>
+```
+
+```html
 <button kriButtonTertiary>Text Button</button>
 ```
 
@@ -54,75 +52,85 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 
 #### Ghost
 
-Використовується для дій, які потребують найменшої уваги на сторінці.
+Used for actions that require minimal attention on the page.
 
-```html name="button.directive.ts"
-<button kriButton style="ghost">Text Button</button>
-або
+```html
+<button kriButton appearance="ghost">Text Button</button>
+```
+
+```html
 <button kriButtonGhost>Text Button</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: {style: 'ghost'} }) }}
 
-#### Ghost кольоровий
+#### Ghost color
 
-Використовується для дій, які потребують найменшої уваги на сторінці.
+Used for actions that require the least attention on the page.
 
-```html name="button.directive.ts"
-<button kriButton style="ghost-color">Text Button</button>
-або
+```html
+<button kriButton appearance="ghost-color">Text Button</button>
+```
+
+```html
 <button kriButtonGhostColor>Text Button</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: {style: 'ghost-color'} }) }}
 
-#### Посилання
+#### Link
 
-Використовується для посилань.
+Used for links.
 
-```html name="button.directive.ts"
-<button kriButton style="link">Text Button</button>
-або
+```html
+<button kriButton appearance="link">Text Button</button>
+```
+
+```html
 <button kriButtonLink>Text Button</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: {style: 'link'} }) }}
 
-### Стани
+### States
 
-#### Вимкнений
+#### Disabled
 
-Стан кнопки, коли взаємодія з нею з якихось причин недоступна. Варто через інші елементи інтерфейсу очевидно відобразити для користувача, чому кнопка недоступна в даний момент.
+The state of the button when interaction is unavailable for some reason. <br>
+It is important to clearly indicate to the user, through other interface elements, why the
 
-```html name="button.directive.ts"
+```html
 <button kriButton [disabled]="true">Text Button</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: { disabled: true } }) }}
 
-#### На всю ширину
+#### Full width
 
-Стан `fullWidth` визначає, чи буде кнопка займати всю доступну ширину свого батьківського контейнера.
-Це корисно для створення кнопок, які повинні займати всю ширину доступного простору, наприклад, у мобільних інтерфейсах або в елементах управління формою.
+The `fullWidth` state determines whether the button will occupy the entire width of its parent container. <br>
+This is useful for creating buttons that need to fill the available space, such as in mobile interfaces or form controls.
 
-```html name="button.directive.ts"
+```html
 <button kriButton [fullWidth]="true">Text Button</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: { fullWidth: true } }) }}
 
-#### Іконка
+#### Icon
 
-Іконка може бути налаштована з різними властивостями, такими як колір, розмір, позиція відносно тексту та кут повороту.
+The icon can be customized with various properties, such as color, size, position relative to the text, and rotation angle.
 
-```html name="button.directive.ts"
-<button kriButton icon="add-to-card">Text Button</button>
+```html
+<button kriButton 
+        kriButtonIcon 
+        icon="add-to-card">Text Button
+</button>
 ```
 
 {{ NgDocActions.demo("ButtonDirectiveComponent", {container: false, inputs: { icon: "add-to-card" } }) }}
 
-### Пісочниця
+### Sandbox
 
-Цей розділ дозволяє взаємодіяти з різними варіантами кнопок та налаштовувати їх параметри у реальному часі, щоб побачити, як вони будуть виглядати та поводитися в інтерфейсі.
+This section allows you to interact with different button variants and configure their parameters in real time, so you can see how they will look and behave in the interface.
 
 {{ NgDocActions.playground("ButtonPlayground") }}

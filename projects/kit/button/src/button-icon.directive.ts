@@ -15,7 +15,7 @@ import { IconTypes } from '@krai-tech/kit/icon';
  * that have various customizable properties such as position, color, size, and rotation.
  */
 @Directive({
-  selector: '[kriIcon]',
+  selector: '[kriButtonIcon]',
   standalone: true
 })
 export class ButtonIconDirective {

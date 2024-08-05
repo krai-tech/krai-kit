@@ -4,21 +4,21 @@ import {
   ButtonDirective,
   ButtonIconPosition,
   ButtonSize,
-  ButtonStyle,
-  ButtonType,
+  ButtonAppearance,
+  ButtonType, ButtonIconDirective
 } from '@krai-tech/kit/button';
 import { IconTypes } from '@krai-tech/kit/icon';
 
 @Component({
   selector: 'kri-button-directive',
   standalone: true,
-  imports: [CommonModule, ButtonDirective],
+  imports : [CommonModule, ButtonDirective, ButtonIconDirective],
   templateUrl: './button-directive.component.html',
   styleUrl: './button-directive.component.scss',
 })
 export class ButtonDirectiveComponent {
   @Input() type: ButtonType = 'button';
-  @Input() style: ButtonStyle = 'primary';
+  @Input() style: ButtonAppearance = 'primary';
   @Input() size: ButtonSize = '32';
   @Input() disabled = false;
   @Input() fullWidth = false;

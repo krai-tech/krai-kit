@@ -21,7 +21,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для дій, які потребують максимальної уваги. Рекомендуємо використовувати тільки одну таку кнопку на сторінці.
 
 ```html name="button.directive.ts"
-<button kriButton style="primary">Text Button</button>
+<button kriButton appearance="primary">Text Button</button>
 або
 <button kriButtonPrimary>Text Button</button>
 ```
@@ -33,7 +33,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для вторинних дій або для інтерфейсів з низьким ступенем контрастності. В залежності від контексту інтерфейсу може мати синє або сіре обведення.
 
 ```html name="button.directive.ts"
-<button kriButton style="secondary">Text Button</button>
+<button kriButton appearance="secondary">Text Button</button>
 або
 <button kriButtonSecondary>Text Button</button>
 ```
@@ -45,7 +45,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для дій, які потребують найменшої уваги на сторінці.
 
 ```html name="button.directive.ts"
-<button kriButton style="tertiary">Text Button</button>
+<button kriButton appearance="tertiary">Text Button</button>
 або
 <button kriButtonTertiary>Text Button</button>
 ```
@@ -57,7 +57,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для дій, які потребують найменшої уваги на сторінці.
 
 ```html name="button.directive.ts"
-<button kriButton style="ghost">Text Button</button>
+<button kriButton appearance="ghost">Text Button</button>
 або
 <button kriButtonGhost>Text Button</button>
 ```
@@ -69,7 +69,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для дій, які потребують найменшої уваги на сторінці.
 
 ```html name="button.directive.ts"
-<button kriButton style="ghost-color">Text Button</button>
+<button kriButton appearance="ghost-color">Text Button</button>
 або
 <button kriButtonGhostColor>Text Button</button>
 ```
@@ -81,7 +81,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 Використовується для посилань.
 
 ```html name="button.directive.ts"
-<button kriButton style="link">Text Button</button>
+<button kriButton appearance="link">Text Button</button>
 або
 <button kriButtonLink>Text Button</button>
 ```

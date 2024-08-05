@@ -9,7 +9,7 @@ import { ButtonIconPosition } from './button.type';
     ButtonIconDirective
   ],
   template   : `
-    <button kriIcon
+    <button kriButtonIcon
             [icon]="icon"
             [iconColor]="iconColor"
             [iconSize]="iconSize"

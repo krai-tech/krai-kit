@@ -12,10 +12,9 @@ import {
   Renderer2,
   ViewEncapsulation
 } from '@angular/core';
-import { ButtonSize, ButtonStyle, ButtonType } from './button.type';
+import { ButtonSize, ButtonAppearance, ButtonType } from './button.type';
 import { withStyles } from '@krai-tech/cdk/utils';
 import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
-import { ButtonIconDirective } from './button-icon.directive';
 
 const SELECTOR_CLASS_PAIR: { selector: string; class: string }[] = [
   {
@@ -72,10 +71,6 @@ class ButtonComponent {}
     {
       directive: IsDisabledDirective,
       inputs: ['disabled']
-    },
-    {
-      directive: ButtonIconDirective,
-      inputs: ['icon', 'iconColor', 'iconSize', 'iconRotate', 'iconPosition']
     }
   ]
 })
@@ -88,9 +83,9 @@ export class ButtonDirective {
 
   /**
    * Optional.
-   * Specifies the style of the button.
+   * Specifies the appearance of the button.
    */
-  style: InputSignal<ButtonStyle> = input<ButtonStyle>('primary');
+  appearance: InputSignal<ButtonAppearance> = input<ButtonAppearance>('primary');
 
   /**
    * Optional.
@@ -138,7 +133,7 @@ export class ButtonDirective {
     const hasButton = this.el.nativeElement.hasAttribute('kriButton');
     const baseClasses = `kri-btn-${this.size()}`;
     const widthClass = this.fullWidth() ? 'kri-btn-full-width' : '';
-    return hasButton ? `${baseClasses} kri-btn-${this.style()} ${widthClass}` : `${baseClasses} ${widthClass}`;
+    return hasButton ? `${baseClasses} kri-btn-${this.appearance()} ${widthClass}` : `${baseClasses} ${widthClass}`;
   }
 
   /**

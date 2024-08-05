@@ -22,7 +22,7 @@ import { ButtonDirective } from '@krai-tech/kit/button';
 ```html
 <button kriButton
   [type]="buttonType"
-  [style]="buttonStyle"
+  [appearance]="buttonStyle"
   [size]="buttonSize"
   [disabled]="isDisabled" 
   [fullWidth]="isFullWidth"
