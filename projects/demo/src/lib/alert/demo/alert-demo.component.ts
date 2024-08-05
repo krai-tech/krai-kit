@@ -14,7 +14,7 @@ import { IconTypes } from '@krai-tech/kit/icon';
 export class AlertDemoComponent {
   @Input() type: AlertType = 'default';
 
-  @Input() text = 'Дбайливо все спакуємо в обрані торбинки!';
+  @Input() text = 'Please review the updated privacy policy in your account settings.';
 
   @Input() showIcon = true;
 
