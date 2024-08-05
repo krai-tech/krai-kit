@@ -1,133 +1,163 @@
 # {{ NgDocPage.title }}
 
-Є розширенням стандартного елемента чекбокса з стилізацією.
-
-### API
-
-Посилання на **API** - `CheckboxComponent`, `CheckboxGComponent`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`CheckboxComponent` - It is an extension of the standard checkbox element with styling.
 
 ```ts
 import { CheckboxComponent, CheckboxGComponent } from '@krai-tech/kit/checkbox';
 ```
 
-### Базовий приклад
+## Basic
 
-Чекбокси дозволяють вибирати безліч елементів.
+Checkboxes allow for the selection of multiple items.
 
 > **Note**
-> Назва групи чекбоксів має явно вказувати на те, що в ній можна вибрати кілька пунктів.
+> The name of a group of checkboxes should clearly indicate that multiple options can be selected.
 
-```html name="checkbox.component.ts"
-<kri-checkbox label="Хліб" (checkboxChange)="onCheckboxChange($event)" [(ngModel)]="vm"> </kri-checkbox>
+```html
+<kri-checkbox 
+  label="Хліб" 
+  (checkboxChange)="onCheckboxChange($event)" 
+  [(ngModel)]="vm">
+</kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxDemoComponent", { container: true }) }}
 
-### Група
+## Group
 
-```html name="checkbox-g.component.ts"
-<kri-checkbox-g name="demo-g" [options]="data" [isShowTitle]="true" [(ngModel)]="vm" (checkboxChange)="onCheckboxChange($event)"> </kri-checkbox-g>
+```html
+<kri-checkbox-g 
+  name="demo-g" 
+  [options]="data" 
+  [isShowTitle]="true" 
+  [(ngModel)]="vm" 
+  (checkboxChange)="onCheckboxChange($event)">
+</kri-checkbox-g>
 ```
 
 {{ NgDocActions.demo("CheckboxGDemoComponent", { container: true }) }}
 
-```html name="checkbox-g.component.ts"
-<kri-checkbox-g name="demo-g" direction="row" [options]="data" [isShowTitle]="true" [(ngModel)]="vm" (checkboxChange)="onCheckboxChange($event)"> </kri-checkbox-g>
+Direction - row
+
+```html
+<kri-checkbox-g 
+  name="demo-g" 
+  direction="row" 
+  [options]="data" 
+  [isShowTitle]="true" 
+  [(ngModel)]="vm" 
+  (checkboxChange)="onCheckboxChange($event)">
+</kri-checkbox-g>
 ```
 
 {{ NgDocActions.demo("CheckboxGDemoComponent", { container: true, inputs: { direction: "row" } }) }}
 
-### Стани
+## States
 
-#### Неактивний
+### Inactive
 
-Використовується за замовчуванням, коли чекбокс доступний для вибору і ще не обраний користувачем.
+Used by default when the checkbox is available for selection and has not yet been chosen by the user.
 
-```html name="checkbox.component.ts"
+```html
 <kri-checkbox label="Хліб" [checked]="false"></kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Хліб", checked: false } }) }}
 
-#### Обраний
+### Checked
 
-Використовується, коли чекбокс обраний користувачем. Це вказує на те, що відповідна опція або елемент вибрані.
+Used when the checkbox is checked by the user. <br>
+This indicates that the corresponding option or item is chosen.
 
-```html name="checkbox.component.ts"
+```html
 <kri-checkbox label="Хліб" [checked]="true"></kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Хліб", checked: true } }) }}
 
-#### Вимкнений
+### Disabled
 
-Використовується, коли чекбокс не повинен бути доступний для взаємодії. Це може бути корисно для вказівки на тимчасово недоступні опції або елементи.
+Used when the checkbox should not be available for interaction. <br>
+This can be useful for indicating temporarily unavailable options or items.
 
-```html name="checkbox.component.ts"
-<kri-checkbox label="Хліб" [disabled]="true" [checked]="false"></kri-checkbox>
+```html
+<kri-checkbox label="Хліб" 
+              [disabled]="true" 
+              [checked]="false">
+</kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Хліб", disabled: true, checked: false } }) }}
 
-#### Обраний і вимкнений
+### Checked and disabled
 
-Використовується, коли опція повинна бути за замовчуванням обрана, але користувач не може змінити її стан. Це часто застосовується для обов’язкових параметрів або умов.
+Used when an option should be checked by default, but the user cannot change its state. <br>
+This is often applied to mandatory parameters or conditions.
 
-```html name="checkbox.component.ts"
-<kri-checkbox label="Хліб" [disabled]="true" [checked]="true"></kri-checkbox>
+```html
+<kri-checkbox label="Хліб" 
+              [disabled]="true" 
+              [checked]="true">
+</kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Хліб", disabled: true, checked: true } }) }}
 
-#### Індивідуальний колір
+## Custom color
 
-Використовується, коли необхідно виділити певний чекбокс або групу чекбоксів, надавши їм унікальний колір.
+Used when it is necessary to highlight a specific checkbox or group of checkboxes by giving them a unique color.
 
-```html name="checkbox.component.ts"
-<kri-checkbox label="Custom color" color="#e30dbf" [checked]="true"> </kri-checkbox>
+```html
+<kri-checkbox label="Custom color" 
+              color="#e30dbf"
+              [checked]="true">
+</kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Custom color", checked: true, color: "#e30dbf" } }) }}
 
-#### Вимкнути анмімацію
+## Disable animation
 
-Використовується, коли анімація вибору/скасування вибору не потрібна або небажана. Це може бути корисно для покращення продуктивності або для створення більш стриманого інтерфейсу.
+Used when the checked/unchecked animation is not needed or desired. <br>
+This can be useful for improving performance or creating a more subdued interface.
 
-```html name="checkbox.component.ts"
-<kri-checkbox label="Хліб без анімації" [showAnimation]="false"></kri-checkbox>
+```html
+<kri-checkbox 
+  label="Хліб без анімації" 
+  [showAnimation]="false">
+</kri-checkbox>
 ```
 
 {{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Хліб без анімації", checked: true, showAnimation: false } }) }}
 
-### Тексти
+## Label naming
 
-#### Назва чекбоксу
+The checkbox is always used with a label that explains its meaning. <br>
+It is better to avoid using sentences with negative wording for the label.
 
-Чекбокс завжди застосовується разом з лейблом, що пояснюють його значення.
-Для лейбла краще не використовувати речення з негативним формулюванням.
+> **Alert** **Bad naming**
+> 
+{{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Do not show notifications" } }) }}
 
-> **Alert** > **Не вірно** - _Не показувати сповіщення_
+> **Note** **Great naming**
 
-> **Note** > **Вірно** - _Показувати сповіщення_
+{{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "Show notifications" } }) }}
 
-Іноді для підтвердження згоди користувача з умовами роботи використовується чекбокс.
-У такому випадку важливо використовувати короткі формулювання і використовувати посилання тільки на частині тексту.
 
-> Я погоджуюся з [умовами обробки персональних даних]() і даю згоду на їх використання
+Sometimes a checkbox is used to confirm the user's agreement with terms of service. <br>
+In such cases, it is important to use concise wording and include links only in part of the text.
 
-### Доступність
+{{ NgDocActions.demo("CheckboxComponent", { container: false, inputs: { label: "I agree to the terms of personal data processing and consent to their use." } }) }}
 
-#### Screen Reader
+## Accessibility
 
-Компонент `Checkbox` використовує прихований нативний елемент `checkbox`, який видимий лише для скрінрідерів.
-Значення для опису компонента можна надати за допомогою атрибутів `ariaLabelledBy` та `ariaLabel`.
+### Screen Reader
+
+The `Checkbox` component uses a hidden native `checkbox` element that is only visible to screen readers. <br>
+The description for the component can be provided using the `aria-labelledby` and `aria-label` attributes.
 
 > **Note**
-> Забезпечте доступність вашого інтерфейсу для користувачів із вадами зору, використовуючи атрибути ariaLabelledBy та ariaLabel, щоб надати чіткі описи елементів інтерфейсу.
+> Ensure the accessibility of your interface for users with visual impairments by using the `aria-labelledby` and `aria-label` attributes to provide clear descriptions of interface elements.
 
 ```html
 <span id="checkbox2">Remember Me</span>
