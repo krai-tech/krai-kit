@@ -8,10 +8,8 @@ import { CheckboxComponent, CheckboxGComponent } from '@krai-tech/kit/checkbox';
 
 ## Basic
 
-Checkboxes allow for the selection of multiple items.
-
-> **Note**
-> The name of a group of checkboxes should clearly indicate that multiple options can be selected.
+Checkboxes allow for the selection of multiple items. <br>
+The name of a group of checkboxes should clearly indicate that multiple options can be selected.
 
 ```html
 <kri-checkbox 

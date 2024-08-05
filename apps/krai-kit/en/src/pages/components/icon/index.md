@@ -1,22 +1,14 @@
 # {{ NgDocPage.title }}
 
-Базовий набір іконок який задіяний в наших компонентах.
-
-### API
-
-Посилання на **API** - `IconComponent`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`IconComponent` - A basic set of icons used in our components.
 
 ```ts
 import { IconComponent } from '@krai-tech/kit/icon';
 ```
 
-### Базовий приклад
+## Base
 
-Цей приклад показує, як використати базову іконку.
+This shows how to use a basic icon.
 
 ```html
 <kri-icon icon="add-to-card"></kri-icon>
@@ -24,13 +16,14 @@ import { IconComponent } from '@krai-tech/kit/icon';
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "add-to-card" } }) }}
 
-### Стани
+## States
 
-Іконки можуть мати різні стани, в залежності від їх використання.
+Icons can have different states depending on their usage.
 
-#### Активний
+### Active
 
-Цей стан показує, як виглядає активна іконка.
+Active icons are best used to indicate interactive state. <br>
+They help highlight the current focus or action within the interface, providing clear visual feedback to users about their current selection or activity.
 
 ```html
 <kri-icon icon="add-to-card" [active]="true"></kri-icon>
@@ -38,9 +31,9 @@ import { IconComponent } from '@krai-tech/kit/icon';
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "add-to-card", active: true } }) }}
 
-#### Вимкнений
+### Disabled
 
-Цей стан показує, як виглядає вимкнена іконка.
+The disabled state for an icon should be used to indicate that the icon represents a feature or action that is currently unavailable or non-interactive.
 
 ```html
 <kri-icon icon="add-to-card" [disabled]="true"></kri-icon>
@@ -48,9 +41,9 @@ import { IconComponent } from '@krai-tech/kit/icon';
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "add-to-card", disabled: true } }) }}
 
-#### Колір
+## Color
 
-Іконки можуть бути змінені за кольором. У цьому прикладі іконка має червоний колір.
+Icons can be customized by color.
 
 ```html
 <kri-icon icon="add-to-card" color="red"></kri-icon>
@@ -58,19 +51,18 @@ import { IconComponent } from '@krai-tech/kit/icon';
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "add-to-card", color: "red" } }) }}
 
-#### Обертання
+## Rotation
 
-Іконки можуть обертатися. Нижче наведено приклад безкінечного обертання.
-
+Continuous rotation of icons is commonly used for loading indicators, animated feedback, and progress indicators to show ongoing activities or processes.
 ```html
 <kri-icon icon="loader" rotate="infinite"></kri-icon>
 ```
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "loader", rotate: "infinite" } }) }}
 
-#### Обертання на {n} кількість градусів
+## Rotation by {n} degrees
 
-Іконка може обертатися на задану кількість градусів. У цьому прикладі іконка обертається на 180 градусів.
+Rotation by a specific number of degrees can be used to adjust icon orientation, enhance animations, or create visually dynamic layouts.
 
 ```html
 <kri-icon icon="add-to-card" rotate="180"></kri-icon>
@@ -78,22 +70,22 @@ import { IconComponent } from '@krai-tech/kit/icon';
 
 {{ NgDocActions.demo("IconComponent", { container: false, inputs: { icon: "add-to-card", rotate: "180" } }) }}
 
-### Шаблон
+## Template
 
-Можна використовувати власні SVG шаблони для іконок. Нижче наведено приклад використання користувацького шаблону.
-
+Custom SVG templates for icons can be used to maintain design consistency, match branding requirements, and provide unique visual elements in the UI.
 ```html
 <kri-icon [icon]="customTemplate"></kri-icon>
 
 <ng-template #customTemplate>
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18 12L16.11 9.79C15.54 9.11 14.81 8.61 14 8.31V3C14 2.45 13.55 2 13 2H7C6.45 2 6 2.45 6 3V8.14C4.28 8.59 3 10.14 3 12C3 12.09 3.03 12.17 3.05 12.25C2.43 12.59 2 13.24 2 14V18C2 19.1 2.9 20 4 20H5.05C5.28 21.14 6.29 22 7.5 22C8.71 22 9.72 21.14 9.95 20H15.05C15.28 21.14 16.29 22 17.5 22C18.71 22 19.72 21.14 19.95 20H20C21.1 20 22 19.1 22 18V16C22 13.79 20.21 12 18 12ZM15.36 12H11V10H12.28C13.17 10 14.01 10.39 14.58 11.07L15.36 12ZM8 4H9V5C9 5.55 9.45 6 10 6C10.55 6 11 5.55 11 5V4H12V8H8V4ZM7 10H9V12H5C5 10.9 5.9 10 7 10ZM7.5 20C7.22 20 7 19.78 7 19.5C7 19.22 7.22 19 7.5 19C7.78 19 8 19.22 8 19.5C8 19.78 7.78 20 7.5 20ZM17.5 20C17.22 20 17 19.78 17 19.5C17 19.22 17.22 19 17.5 19C17.78 19 18 19.22 18 19.5C18 19.78 17.78 20 17.5 20ZM20 18H19.49C19.03 17.4 18.32 17 17.5 17C16.68 17 15.97 17.4 15.51 18H9.49C9.03 17.4 8.32 17 7.5 17C6.68 17 5.97 17.4 5.51 18H4V14H18C19.1 14 20 14.9 20 16V18Z" fill="#202124" fill-opacity="0.72" />
-  </svg>
+  <svg width="56px" height="56px" viewBox="0 -6.234 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><g><path d="M47.437 3.631A45.609 45.609 0 0 0 35.884 0c-0.498 0.9 -1.079 2.11 -1.48 3.073q-6.461 -0.972 -12.804 0c-0.401 -0.963 -0.995 -2.173 -1.498 -3.073a45.456 45.456 0 0 0 -11.562 3.64C1.229 14.688 -0.753 25.463 0.238 36.084c4.849 3.621 9.549 5.821 14.17 7.261A35.219 35.219 0 0 0 17.442 38.347a29.838 29.838 0 0 1 -4.779 -2.326 23.844 23.844 0 0 0 1.172 -0.927c9.214 4.31 19.226 4.31 28.33 0a28.875 28.875 0 0 0 1.171 0.927 29.75 29.75 0 0 1 -4.788 2.33c0.876 1.754 1.89 3.428 3.035 4.998 4.625 -1.439 9.329 -3.639 14.178 -7.265 1.163 -12.313 -1.986 -22.988 -8.325 -32.454M18.697 29.552c-2.766 0 -5.035 -2.582 -5.035 -5.727s2.22 -5.731 5.035 -5.731 5.083 2.582 5.035 5.731c0.004 3.145 -2.22 5.727 -5.035 5.727m18.605 0c-2.766 0 -5.034 -2.582 -5.034 -5.727s2.22 -5.731 5.034 -5.731c2.815 0 5.083 2.582 5.035 5.731 0 3.145 -2.22 5.727 -5.035 5.727" fill="#5865F2" fill-rule="nonzero"/></g></svg>
 </ng-template>
 ```
 
-### Список іконок
+{{ NgDocActions.demo("IconCustomSvgDemoComponent", { container: false }) }}
 
-Цей розділ містить повний список іконок:
+
+## Icon list
+
+This section contains the complete list of icons:
 
 {{ NgDocActions.demo("IconListDemoComponent", { container: false }) }}
