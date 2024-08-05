@@ -1,7 +1,7 @@
 import { NgDocPage } from '@ng-doc/core';
 
 const GettingStartedPage: NgDocPage = {
-  title: `Початок`,
+  title: `Getting started`,
   mdFile: './index.md',
   order: 1,
 };

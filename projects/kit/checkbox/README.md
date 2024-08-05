@@ -1,4 +1,4 @@
-# KRAI Kit
+ # KRAI Kit
 ## CheckboxComponent
 
 The `CheckboxComponent` is an extension of the standard checkbox element with additional theming capabilities.

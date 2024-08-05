@@ -1,19 +1,26 @@
-## Інсталяція
+# Introduction
+Welcome to the **KRAI Kit** documentation!
 
-`@krai-kit` — це потужний набір компонентів інтерфейсу для Angular з відкритим кодом.
+# What it is?
 
-### Завантажити
+**KRAI Kit** is an Angular UI component library designed to help you create modern, beautiful and accessible user interfaces effortlessly.
+
+# Installation
 
 ```bash
-npm install @krai-tech/kit @krai-tech/cdk
+npm install @krai-tech/kit
 ```
 
-### Стилі
+```bash
+yarn i @krai-tech/kit
+```
 
-Стилі є необхідними файлами css/scss компонентів.
-Їх треба імпортувати у файл angular.json або src/styles.css
+## Styles
 
-#### angular.json
+Styles are the required CSS/SCSS files for the components. <br>
+They need to be imported into the `angular.json` file or `src/styles.css`.
+
+### angular.json
 
 ```json
 {
@@ -21,8 +28,20 @@ npm install @krai-tech/kit @krai-tech/cdk
 }
 ```
 
-#### styles.css/scss
+### styles.css/scss
 
 ```sass
   @import "@krai-tech/kit/style/theme/fonts-face.scss";
 ```
+
+# Community
+
+We’re thrilled to see the community embrace **KRAI Kit**, report issues, and share feedback. <br>
+Whether it’s a feature request, a bug report, or a project showcase, we encourage you to get involved!
+
+[Twitter](https://x.com), [Discord](https://discord.com/), [GitHub](https://github.com/krai-tech/krai-kit/blob/alpha/CONTRIBUTING)
+
+# Contributing
+
+Pull requests for **KRAI Kit** are always welcome. <br>
+Please check out our [contribution guidelines](https://github.com/krai-tech/krai-kit/blob/alpha/CONTRIBUTING) to find out how you can contribute to the project.
