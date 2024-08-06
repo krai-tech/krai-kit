@@ -1,21 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   InputTextDirective,
   InputTextLabelDirective,
   InputTextSize,
 } from '@krai-tech/kit/input-text';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'kri-input-text-demo',
   standalone: true,
-  imports: [CommonModule, InputTextDirective, InputTextLabelDirective],
+  imports : [CommonModule, InputTextDirective, InputTextLabelDirective, FormsModule],
   templateUrl: './input-text-demo.component.html',
   styleUrl: './input-text-demo.component.scss',
 })
-export class InputTextDemoComponent {
+export class InputTextDemoComponent implements OnInit {
   @Input() placeholder = '';
   @Input() error = false;
   @Input() disabled = false;
   @Input() size: InputTextSize = 'medium';
+  @Input() showReset = false;
+  @Input() showDefaultText = false;
+
+  vm = '';
+
+  ngOnInit(): void {
+    if (this.showDefaultText) {
+      this.vm = 'John Doe';
+    }
+  }
 }

@@ -1,64 +1,66 @@
 # {{ NgDocPage.title }}
 
-Є розширенням стандартного елемента введення з стилізацією.
-
-### API
-
-Посилання на **API** - `InputTextDirective`, `InputTextLabelDirective`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`InputTextDirective` extends the standard input element by adding custom styling.
 
 ```ts
 import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/input-text';
 ```
 
-### Базовий приклад
+## Base
 
-`InputTextDirective` застосовується до поля введення за допомогою директиви **kriInputText**, що забезпечує додаткову стилізацію та функціональність.
+`InputTextDirective` is applied to input fields using the `kriInputText` directive, providing additional styling and functionality.
 
-```html name="input-text.directive.ts"
-<input kriInputText [placeholder]="placeholder" id="textInput" [error]="error" [disabled]="disabled" [size]="size" />
+```html
+<input kriInputText 
+       [placeholder]="placeholder" 
+       id="textInput" 
+       [error]="error" 
+       [disabled]="disabled" 
+       [size]="size" />
 ```
 
 {{ NgDocActions.demo("InputTextDemoComponent", { container: false }) }}
 
-### Плаваючий лейбл
+## Floating label
 
-Плаваючий лейбл з’являється у верхній частині поля введення, коли на нього наводиться фокус або коли в полі є введений текст.
+The floating label appears at the top of the input field when it is focused or when there is text entered in the field.
 
-```html name="input-text.directive.ts, input-text-label.directive.ts"
+```html
 <div class="kri-float-label">
-  <input kriInputText [placeholder]="placeholder" id="textInput" [error]="error" [disabled]="disabled" [size]="size" />
-  <label for="textInput" kriInputTextLabel [size]="size">Label</label>
+  <input kriInputText 
+         [placeholder]="placeholder" 
+         id="textInput" 
+         [error]="error" 
+         [disabled]="disabled" 
+         [size]="size" />
+  <label kriInputTextLabel for="textInput" [size]="size">Label</label>
 </div>
 ```
 
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false }) }}
 
-З предустановленним значенням
+With a preset value
 
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { showDefaultText: true } }) }}
 
-### Стани
+## States
 
-#### Неактивний
+### Inactive
 
-Використовується як стандартний стан поля введення до моменту, коли користувач почне взаємодію з ним.
+Used as the default state of the input field until the user begins to interact with it.
 
-```html name="input-text.directive.ts"
+```html
 <input kriInputText placeholder="Text" />
 ```
 
 {{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { placeholder: "Text"} }) }}
 
-#### Вимкнено
+### Disabled
 
-Використовується, коли введення даних не є можливим або дозволеним в поточному контексті.
-Це може бути корисно для відображення полів, які тимчасово або постійно недоступні для редагування.
+Used when data entry is not possible or allowed in the current context. <br>
+This can be useful for displaying fields that are temporarily or permanently unavailable for editing.
 
-```html name="input-text.directive.ts"
+```html
 <input kriInputText placeholder="Text" [disabled]="true" />
 ```
 
@@ -66,30 +68,36 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { disabled: true } }) }}
 
-#### Помилка
+### Error
 
-Використовується, коли введені дані не відповідають вимогам валідації або містять помилку.
-Це допомагає користувачеві зрозуміти, що потрібно виправити.
+Used when the entered data does not meet validation requirements or contains an error. <br>
+This helps users understand what needs to be corrected.
 
-```html name="input-text.directive.ts"
+```html
 <input kriInputText placeholder="Text" [error]="true" />
 ```
 
-#### Очистити інпут
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { error: true } }) }}
 
-```html name="input-text.directive.ts"
+{{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { error: true } }) }}
+
+## Clear input
+
+```html
 <input kriInputText [showReset]="true" />
 ```
 
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: {showDefaultText: true, showReset: true } }) }}
+
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { showDefaultText: true, showReset: true } }) }}
 
-### Розміри
+## Sizes
 
-#### Великий
+### Large
 
-Використовується, коли потрібне більш помітне поле введення, наприклад, у формах з великим обсягом тексту або для покращення читабельності.
+Used when a more prominent input field is needed, such as in forms with large amounts of text or to improve readability.
 
-```html name="input-text.directive.ts"
+```html
 <input kriInputText placeholder="Text" [size]="large" />
 ```
 
@@ -97,11 +105,11 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { size: "large" } }) }}
 
-#### Маленький
+### Small
 
-Використовується, коли необхідне компактне поле введення, наприклад, у формах з обмеженим простором або для введення коротких текстів.
+Used when a compact input field is needed, such as in forms with limited space or for entering short texts.
 
-```html name="input-text.directive.ts"
+```html
 <input kriInputText placeholder="Text" [size]="small" />
 ```
 
@@ -109,16 +117,11 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 
 {{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { size: "small" } }) }}
 
-### Пісочниця
+## Accessibility
 
-{{ NgDocActions.playground("InputTextLabelPlayground") }}
-
-### Доступність
-
-Щоб надати опис для цього компонента, можна використовувати тег `label` у поєднанні з атрибутом `id`, або скористатися атрибутами `aria-labelledby` чи `aria-label`.
-
+To provide a description for this component, you can use the `label` tag with the `id` attribute, or use the `aria-labelledby` or `aria-label` attributes.
 > **Note**
-> Це допомагає скрінрідерам озвучувати призначення та інструкції для поля введення.
+> This helps screen readers announce the purpose and instructions for the input field.
 
 ```html
 <span id="lastname">Lastname</span>
@@ -126,3 +129,7 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 
 <input kriInputText aria-label="Age" />
 ```
+
+## Sandbox
+
+{{ NgDocActions.playground("InputTextLabelPlayground") }}

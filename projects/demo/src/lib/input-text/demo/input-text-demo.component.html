@@ -1,8 +1,10 @@
 <input
   kriInputText
-  [placeholder]="placeholder"
   id="textInput"
+  [placeholder]="placeholder"
+  [showReset]="showReset"
   [error]="error"
   [disabled]="disabled"
   [size]="size"
+  [(ngModel)]="vm"
 />
