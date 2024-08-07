@@ -1,90 +1,69 @@
 # {{ NgDocPage.title }}
 
-Перемикач - компонент для перемикання станів. Він дозволяє обрати один з двох взаємосуперечливих варіантів, при цьому один з них обраний за замовчуванням.
-
-### API
-
-Посилання на **API** - `ToggleComponent`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`ToggleComponent` - a component for toggling states. It allows selecting one of two mutually exclusive options, with one of them being selected by default.
 
 ```ts
 import { ToggleComponent } from '@krai-tech/kit/toggle';
 ```
 
-### Базовий приклад
+## Basic
 
-Компонент **Перемикач**, на відміну від **Чекбоксу**, завжди дає негайний результат, для зміни його статусу не потрібно натискати кнопку зберегти. Якщо дія не несе моментального результату краще використовувати **чекбокс** або інший, більш відповідний елемент вибору.
-
-```html name="toggle.component.ts"
+```html
 <kri-toggle [(checked)]="vm" (toggleChange)="toggleChange($event)"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleVmDemoComponent", { container: true }) }}
 
-### Cтани
+## States
 
-#### Увімкнений
+### Enabled
 
-Використовується для вказівки на те, що опція активна чи увімкнена.
+Used to indicate that the option is active or enabled.
 
-```html name="toggle.component.ts"
+```html
 <kri-toggle [checked]="true"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleComponent", { container: false, inputs: { checked: true } }) }}
 
-#### Вимкнутий
+### Disabled
 
-Використовується для вказівки на те, що опція не активна чи вимкнута.
+Used to indicate that the option is inactive or disabled.
 
-```html name="toggle.component.ts"
+```html
 <kri-toggle [checked]="false"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleComponent", { container: false, inputs: { checked: false } }) }}
 
-#### Увімкнений, але недоступний для змін
+### Enabled but not editable
 
-Використовується для вказівки на те, що опція активна, але тимчасово або постійно не може бути змінена користувачем.
+Used to indicate that the option is active but temporarily or permanently not editable by the user.
 
-```html name="toggle.component.ts"
+```html
 <kri-toggle [checked]="true" [disabled]="true"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleComponent", { container: false, inputs: { checked: true, disabled: true } }) }}
 
-#### Вимкнений, і недоступний
+### Disabled and unavailable
 
-Використовується для вказівки на те, що опція неактивна і тимчасово або постійно не може бути змінена користувачем.
+Used to indicate that the option is inactive and temporarily or permanently cannot be changed by the user.
 
-```html name="toggle.component.ts"
+```html
 <kri-toggle [disabled]="true"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleComponent", { container: false, inputs: { disabled: true } }) }}
 
-> **Note**
-> Компонент Toggle не має стану помилки валідації.
->
-> Якщо змінити положення перемикача неможливо слід використовувати стан **Вимкнутий**
+## Size
 
-### Розмір
+### Large
 
-#### Великий
+Used when a more prominent switch is needed, for example, to draw attention to important settings or on large screens.
 
-Використовується, коли потрібен більш помітний перемикач, наприклад, для привертання уваги до важливих налаштувань або на великих екранах.
-
-```html name="toggle.component.ts"
+```html
 <kri-toggle size="large"></kri-toggle>
 ```
 
 {{ NgDocActions.demo("ToggleComponent", { container: false, inputs: { size: 'large' } }) }}
-
-### Пісочниця
-
-Цей розділ дозволяє взаємодіяти з різними варіантами перемикача та налаштовувати їх параметри у реальному часі, щоб побачити, як вони будуть виглядати та поводитися в інтерфейсі.
-
-{{ NgDocActions.playground("TogglePlayground") }}
