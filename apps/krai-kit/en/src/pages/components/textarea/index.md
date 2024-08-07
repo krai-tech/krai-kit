@@ -1,135 +1,130 @@
 # {{ NgDocPage.title }}
 
-Є розширенням стандартного елемента textarea та додає стилі та функції автоматичного зміни розміру.
-
-### API
-
-Посилання на **API** - `TextareaDirective`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`TextareaDirective` is an extension of the standard `textarea` element, adding styling and automatic resizing functionality.
 
 ```ts
 import { TextareaDirective } from '@krai-tech/kit/textarea';
 ```
 
-### Базовий приклад
+## Basic
 
-`TextareaDirective` додається до поля введення за допомогою директиви **kriTextarea**, що забезпечує додаткову стилізацію та функціональність.
-
-```html name="textarea.directive.ts"
-<textarea kriTextarea placeholder="Text" id="textArea" [error]="error" [disabled]="disabled"> </textarea>
+```html
+<textarea kriTextarea
+          id="textArea"
+          placeholder="Text" 
+          [error]="error" 
+          [disabled]="disabled">
+</textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false }) }}
 
-### Плаваючий лейбл
+## Floating label
 
-Плаваючий лейбл з’являється у верхній частині поля введення, коли на нього наводиться фокус або коли в полі є введений текст.
+The floating label appears at the top of the input field when it is focused or when there is text entered in the field.
 
-```html name="textarea.directive.ts"
+```html
 <div class="kri-float-label">
-  <textarea kriTextarea placeholder="Text" id="textArea" [error]="error" [disabled]="disabled"> </textarea>
+  <textarea kriTextarea
+            id="textArea"
+            placeholder="Text" 
+            [error]="error" 
+            [disabled]="disabled">
+  </textarea>
   <label for="textArea">Label</label>
 </div>
 ```
 
 {{ NgDocActions.demo("TextareaLabelDemoComponent", { container: false }) }}
 
-### Стани
+## States
 
-#### Неактивний
+### Inactive
 
-Використовується як стандартний стан поля введення до моменту, коли користувач почне взаємодію з ним.
+Used as the default state of the input field until the user begins to interact with it.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea> </textarea>
+```html
+<textarea kriTextarea></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false }) }}
 
-#### Вимкнено
+### Disabled
 
-Використовується, коли введення даних не є можливим або дозволеним в поточному контексті.
-Це може бути корисно для відображення полів, які тимчасово або постійно недоступні для редагування.
+Used when data entry is not possible or allowed in the current context. <br>
+This can be useful for displaying fields that are temporarily or permanently unavailable for editing.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea [disabled]="true"> </textarea>
+```html
+<textarea kriTextarea [disabled]="true"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { disabled: true } }) }}
 
 {{ NgDocActions.demo("TextareaLabelDemoComponent", { container: false, inputs: { disabled: true } }) }}
 
-#### Помилка
+### Error
 
-Використовується, коли введені дані не відповідають вимогам валідації або містять помилку.
-Це допомагає користувачеві зрозуміти, що потрібно виправити.
+Used when the entered data does not meet validation requirements or contains an error. <br>
+This helps the user understand what needs to be corrected.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea [error]="true"> </textarea>
+```html
+<textarea kriTextarea [error]="true"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { error: true } }) }}
 
 {{ NgDocActions.demo("TextareaLabelDemoComponent", { container: false, inputs: { error: true } }) }}
 
-#### Максимальна кількість символів
+## Maximum number of characters
 
-Використовується, коли необхідно обмежити кількість символів, які користувач може ввести в текстову область.
-Лічильник символів допомагає користувачу відслідковувати залишок доступних символів.
+Used when you need to limit the number of characters a user can enter in a text area. <br>
+A character counter helps the user track the remaining available characters.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea maxlength="120" [showCounter]="true"> </textarea>
+```html
+<textarea kriTextarea maxlength="120" [showCounter]="true"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { showCounter: true } }) }}
 
-### Зміна розміру
+## Resize
 
-#### Вертикальний
+### Vertical
 
-Використовується, коли потрібно дозволити користувачу змінювати висоту текстової області, зберігаючи при цьому фіксовану ширину.
+Used when you want to allow the user to adjust the height of the text area while keeping the width fixed.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea resize="vertical"> </textarea>
+```html
+<textarea kriTextarea resize="vertical"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { resize: 'vertical' } }) }}
 
-#### Горизонтальний
+### Horizontal
 
-Використовується, коли потрібно дозволити користувачу змінювати ширину текстової області, зберігаючи при цьому фіксовану висоту.
+Used when you want to allow the user to adjust the width of the text area while keeping the height fixed.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea resize="horizontal"> </textarea>
+```html
+<textarea kriTextarea resize="horizontal"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { resize: 'horizontal' } }) }}
 
-#### Обидва
+### Both
 
-Використовується, коли потрібно дозволити користувачу змінювати як ширину, так і висоту текстової області для більшої гнучкості введення.
+Used when you want to allow the user to adjust both the width and height of the text area for greater input flexibility.
 
-```html name="textarea.directive.ts"
-<textarea kriTextarea resize="both"> </textarea>
+```html
+<textarea kriTextarea resize="both"></textarea>
 ```
 
 {{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { resize: 'both' } }) }}
 
-### Пісочниця
+## Accessibility
 
-{{ NgDocActions.playground("TextareaLabelPlayground") }}
-
-### Accessibility
-
-Ви можете додати опис до цього компонента за допомогою тега `label`, який пов'язаний з `textarea` через атрибут `id`.
-Також можна використовувати атрибути `aria-labelledby` або `aria-label` для надання додаткових пояснень.
+You can add a description to this component using the `label` tag associated with the `textarea` through the `id` attribute. <br> 
+Additionally, you can use the `aria-labelledby` or `aria-label` attributes to provide further explanations.
 
 > **Note**
-> Використовується для забезпечення доступності текстових полів для користувачів із вадами зору, допомагаючи скрінрідерам правильно озвучувати призначення та інструкції для текстової області.
-
+> Used to ensure the accessibility of text fields for users with visual impairments by helping screen readers accurately announce the purpose and instructions for the text area.
 ```html
 <textarea kriTextarea id="address1"></textarea>
 
