@@ -1,93 +1,97 @@
 # {{ NgDocPage.title }}
 
-Є розширенням стандартного елемента радіокнопки з стилізацією.
-
-### API
-
-Посилання на **API** - `RadioButtonComponent`
-
-### Імпорт
-
-Для використання компонента кнопки, імпортуйте його наступним чином:
+`RadioButtonComponent` extends the standard radio button element with styling.
 
 ```ts
 import { RadioButtonComponent } from '@krai-tech/kit/radio-button';
 ```
 
-### Базовий приклад
+## Basic
 
-Радіокнопка дозволить вибирати лише один елемент
+A radio button allows selecting only one element.
 
-```html name="radio-button.component.ts"
-<kri-radio name="demo" value="18-35" [(ngModel)]="vm" (ngModelChange)="valueChange($event)"> </kri-radio>
+```html
+<kri-radio name="demo" 
+           value="18-35" 
+           [(ngModel)]="vm" 
+           (ngModelChange)="valueChange($event)">
+</kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonComponent", { container: false, inputs: { name: 'demo', value: "18-35" } }) }}
 
-### Динамічно побудований
+## Dynamic
 
-```html name="radio-button.component.ts"
-<kri-radio *ngFor="let item of testItems" name="age" [value]="item" [(ngModel)]="vmItem" (ngModelChange)="valueChange($event)">
+```html
+<kri-radio *ngFor="let item of testItems" 
+           name="age" 
+           [value]="item" 
+           [(ngModel)]="vmItem" 
+           (ngModelChange)="valueChange($event)">
   <span>{{ item }}</span>
 </kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonDemoComponent", { container: true }) }}
 
-### Стани
+## States
 
-#### Активний
+### Active
 
-Використовується як стандартний стан для радіо-кнопки, коли вона доступна для взаємодії і вибрана користувачем.
+Used as the default state for a radio button when it is available for interaction and selected by the user.
 
-```html name="radio-button.component.ts"
+```html
 <kri-radio name="demo" value="36-45" [checked]="true"></kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonComponent", { container: false, inputs: { name: 'demo', value: "36-45", checked: true } }) }}
 
-#### Неактивний
+### Inactive
 
-Використовується як стандартний стан для радіо-кнопки, коли вона доступна для взаємодії і ще не вибрана користувачем.
+Used as the default state for a radio button when it is available for interaction but has not yet been selected by the user.
 
-```html name="radio-button.component.ts"
+```html
 <kri-radio name="demo" value="36-45"></kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonComponent", { container: false, inputs: { name: 'demo', value: "36-45" } }) }}
 
-#### Вимкнений
+### Disabled
 
-Використовується, коли радіокнопка повинна бути відображена, але не доступна для взаємодії користувача.
-Це може бути корисним для тимчасово недоступних опцій або для індикації обмежень.
+Used when the radio button should be displayed but not available for user interaction. <br>
+This can be useful for temporarily unavailable options or indicating restrictions.
 
-```html name="radio-button.component.ts"
+```html
 <kri-radio name="demo" value="36-45" [disabled]="true"></kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonComponent", { container: false, inputs: { name: 'demo', value: "36-45", disabled: true } }) }}
 
-#### Вибраний і вимкнений
+### Selected and disabled
 
-Використовується, коли необхідно відобразити обрану за замовчуванням опцію, але при цьому користувач не повинен мати можливості змінити цей вибір.
-Це може бути корисним для обов’язкових опцій або умов.
+Used when you need to display a default selected option while preventing the user from changing this choice. <br>
+This can be useful for mandatory options or conditions.
 
-```html name="radio-button.component.ts"
-<kri-radio name="demo" value="36-45" [disabled]="true" [checked]="true"></kri-radio>
+```html
+<kri-radio name="demo" 
+           value="36-45" 
+           [disabled]="true" 
+           [checked]="true">
+</kri-radio>
 ```
 
 {{ NgDocActions.demo("RadioButtonComponent", { container: false, inputs: { name: 'demo', value: "36-45", disabled: true, checked: true } }) }}
 
-### Доступність
+## Accessibility
 
-#### Screen Reader
+### Screen Reader
 
-Компонент `RadioButton` використовує прихований нативний елемент `radio`, який видимий лише для скрінрідерів.
-Значення для опису компонента можна надати за допомогою атрибутів `ariaLabelledBy` та `ariaLabel`.
+The `RadioButton` component uses a hidden native `radio` element that is only visible to screen readers. <br>
+Descriptions for the component can be provided using the `aria-labelledby` and `aria-label` attributes.
 
 > **Note**
-> Використовується для забезпечення доступності радіокнопок для користувачів із вадами зору.
-> Атрибути ariaLabelledBy та ariaLabel допомагають скрінрідерам озвучувати призначення радіокнопок.
+> Used to ensure accessibility of radio buttons for users with visual impairments.
+> The `aria-labelledby` and `aria-label` attributes help screen readers announce the purpose of radio buttons.
 
 ```html
 <span id="rb2">Two</span>
