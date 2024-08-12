@@ -6,11 +6,12 @@ import {
   InputTextSize,
 } from '@krai-tech/kit/input-text';
 import { FormsModule } from '@angular/forms';
+import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-input';
 
 @Component({
   selector: 'kri-input-text-demo',
   standalone: true,
-  imports : [CommonModule, InputTextDirective, InputTextLabelDirective, FormsModule],
+  imports : [CommonModule, InputTextDirective, InputTextLabelDirective, FormsModule, ResetInputDirective],
   templateUrl: './input-text-demo.component.html',
   styleUrl: './input-text-demo.component.scss',
 })

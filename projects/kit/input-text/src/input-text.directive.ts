@@ -2,7 +2,6 @@ import { Directive, ElementRef, input, InputSignal } from '@angular/core';
 import { InputTextSize } from './input-text.type';
 import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
 import { FocusDirective } from '@krai-tech/cdk/directives/focus';
-import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-input';
 import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
 
 /**
@@ -35,11 +34,6 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
     {
       directive: HasValueDirective,
       outputs: ['hasValue']
-    },
-    {
-      directive: ResetInputDirective,
-      inputs: ['initValue', 'showCounter', 'showReset', 'selectedItems'],
-      outputs: ['resetInput']
     }
   ]
 })
