@@ -4,13 +4,15 @@ import { SelectComponent, SelectConfig } from '@krai-tech/kit/select';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-single-select-demo',
+  selector: 'kri-single-select-demo',
   standalone: true,
   imports: [CommonModule, SelectComponent, FormsModule],
   templateUrl: './single-select-demo.component.html',
   styleUrl: './single-select-demo.component.scss',
 })
 export class SingleSelectDemoComponent {
+  @Input() vmResult = true;
+
   @Input() floatLabel = '';
 
   @Input() multiple = false;
@@ -18,7 +20,7 @@ export class SingleSelectDemoComponent {
   @Input() disabled = false;
 
   @Input() config: SelectConfig = {
-    placeholder: "Обрати ім'я",
+    placeholder: "Choose a name",
   };
 
   vm = null;

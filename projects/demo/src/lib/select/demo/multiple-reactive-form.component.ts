@@ -4,7 +4,7 @@ import { SelectComponent, SelectConfig } from '@krai-tech/kit/select';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-multiple-reactive-form',
+  selector: 'kri-multiple-reactive-form',
   standalone: true,
   imports: [CommonModule, SelectComponent, ReactiveFormsModule],
   templateUrl: './multiple-reactive-form.component.html',
@@ -16,11 +16,7 @@ export class MultipleReactiveFormComponent {
   @Input() multiple = true;
 
   @Input() config: SelectConfig = {
-    displayKey: 'name',
-    limitTo: 0,
     search: true,
-    direction: 'bottom',
-    size: 'large',
   };
 
   form = this.fb.group({
@@ -33,21 +29,7 @@ export class MultipleReactiveFormComponent {
           picture: 'http://placehold.it/32x32',
           name: 'Burns Dalton',
           disabled: true,
-        },
-        {
-          _id: '5a66d6c3657e60c6073a2d22',
-          index: 1,
-          balance: '$2,984.98',
-          picture: 'http://placehold.it/32x32',
-          name: 'Mcintyre Lawson',
-        },
-        {
-          _id: '5a66d6c376be165a5a7fae33',
-          index: 2,
-          balance: '$2,794.16',
-          picture: 'http://placehold.it/32x32',
-          name: 'Amie Franklin',
-        },
+        }
       ],
       Validators.required,
     ],

@@ -1,9 +1,12 @@
 <kri-select
   [config]="config"
   [options]="options"
-  [(ngModel)]="vm"
   [multiple]="multiple"
   [floatLabel]="floatLabel"
   [disabled]="disabled"
-></kri-select>
-<span class="vm-status">VM: {{ vm | json }}</span>
+  [(ngModel)]="vm">
+</kri-select>
+<br>
+@if(vmResult) {
+  Current Select: {{ vm | json }}
+}

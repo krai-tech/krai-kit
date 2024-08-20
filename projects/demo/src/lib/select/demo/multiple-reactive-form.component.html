@@ -1,11 +1,12 @@
 <form [formGroup]="form">
   <kri-select
+    formControlName="select"
     [config]="config"
     [options]="options"
-    formControlName="select"
     [multiple]="multiple"
     (searchChange)="onSelectSearchChange($event)"
     (selectChange)="onSelectChange($event)"
   ></kri-select>
 </form>
-Form value: {{ form.value | json }} Form valid: {{ form.valid | json }}
+<br>
+Form value: {{ form.value | json }}
