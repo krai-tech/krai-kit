@@ -10,7 +10,7 @@ export type SelectConfig = {
   displayFn?: (item: any) => string;
 
   /**
-   * Key of the object array to be displayed. Defaults to 'description'.
+   * Key of the object array to be displayed. Defaults to 'name'.
    */
   displayKey?: string;
 
@@ -36,11 +36,6 @@ export type SelectConfig = {
    * Limits the number of options displayed in the UI. If zero, options will not be limited. Defaults to 0.
    */
   limitTo?: number;
-
-  /**
-   * Text to display when more than one item is selected, e.g., 'Option 1 + 5 more'.
-   */
-  moreText?: string;
 
   /**
    * Text to display when no items are found during a search.

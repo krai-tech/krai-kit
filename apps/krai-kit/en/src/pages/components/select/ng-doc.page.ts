@@ -1,10 +1,7 @@
 import { NgDocPage } from '@ng-doc/core';
 import ComponentsCategory from '../ng-doc.category';
 import {
-  MultipleComponent,
-  MultipleReactiveFormComponent,
-  MultipleTemplateOptionComponent,
-  SingleSelectDemoComponent
+  SingleSelectDemoComponent, SingleTemplateOptionsComponent
 } from '@krai-tech/demo';
 
 
@@ -15,9 +12,7 @@ const SelectPage: NgDocPage = {
   category: ComponentsCategory,
   demos: {
     SingleSelectDemoComponent,
-    MultipleReactiveFormComponent,
-    MultipleComponent,
-    MultipleTemplateOptionComponent,
+    SingleTemplateOptionsComponent
   },
 };
 

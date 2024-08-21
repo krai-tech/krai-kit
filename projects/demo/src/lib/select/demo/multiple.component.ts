@@ -15,19 +15,11 @@ export class MultipleComponent {
 
   @Input() floatLabel = '';
 
-  @Input() config: SelectConfig = {
-    placeholder: "Обрати ім'я",
-  };
+  @Input() disabled = false;
 
-  vm = [
-    {
-      _id: '5a66d6c3657e60c6073a2d22',
-      index: 1,
-      balance: '$2,984.98',
-      picture: 'http://placehold.it/32x32',
-      name: 'Mcintyre Lawson',
-    },
-  ];
+  @Input() config: SelectConfig = {};
+
+  vm = [];
 
   options = [
     {

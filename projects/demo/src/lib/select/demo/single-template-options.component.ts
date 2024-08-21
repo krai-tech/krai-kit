@@ -1,25 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectComponent, SelectConfig } from '@krai-tech/kit/select';
-import { FormsModule } from '@angular/forms';
 import { IconComponent } from '@krai-tech/kit/icon';
+import { SelectComponent } from '@krai-tech/kit/select';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'kri-multiple-template-option',
+  selector: 'kri-single-template-options',
   standalone: true,
-  imports: [CommonModule, SelectComponent, FormsModule, IconComponent],
-  templateUrl: './multiple-template-option.component.html',
-  styleUrl: './multiple-template-option.component.scss',
+  imports : [CommonModule, IconComponent, SelectComponent, FormsModule],
+  templateUrl: './single-template-options.component.html',
+  styleUrl: './single-template-options.component.scss',
 })
-export class MultipleTemplateOptionComponent {
-  @Input() multiple = false;
-
-  @Input() floatLabel = '';
-
-  @Input() config: SelectConfig = {
-    placeholder: "Обрати ім'я",
-  };
-
+export class SingleTemplateOptionsComponent {
   vm = [
     {
       _id: '5a66d6c3657e60c6073a2d22',

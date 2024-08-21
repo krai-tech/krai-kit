@@ -10,7 +10,6 @@ import { SelectConfig } from './select.type';
  * - limitTo: Limit the number of items displayed.
  * - customComparator: Custom comparator function for sorting options.
  * - noResultsFound: Message displayed when no results are found.
- * - moreText: Text displayed when there are more items than the limit.
  * - searchOnKey: Key to search on if search is enabled.
  * - selectAllLabel: Label for the "Select all" option.
  * - enableSelectAll: Boolean to enable or disable the "Select all" option.
@@ -24,7 +23,6 @@ export const config: SelectConfig = {
   limitTo: 0,
   customComparator: undefined,
   noResultsFound: "Please try searching differently.",
-  moreText: "more",
   searchOnKey: '',
   selectAllLabel: "Select all",
   enableSelectAll: false,

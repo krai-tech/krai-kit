@@ -1,0 +1,7 @@
+.option-container {
+  display: flex;
+  align-items: center;
+  &__name {
+    margin-left: 8px;
+  }
+}

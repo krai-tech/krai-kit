@@ -1,17 +1,13 @@
 <kri-select
-  [config]="config"
   [optionItemTemplate]="optionTemplate"
   [options]="options"
   [(ngModel)]="vm"
-  [multiple]="multiple"
-  [floatLabel]="floatLabel"
 ></kri-select>
 <ng-template #optionTemplate let-item="item">
   <div class="option-container">
-    <kri-icon icon="role"></kri-icon>
+    <kri-icon icon="users"></kri-icon>
     <span class="option-container__name">{{ item.name }}</span>
   </div>
 </ng-template>
-
 <br>
 Current Select: {{ vm | json }}

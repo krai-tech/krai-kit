@@ -89,7 +89,13 @@
     </li>
   } @else {
     <li class="kri-dropdown-item" [class.active]="selectService.isItemSelected(item)" [class.disabled]="item.disabled">
-      {{ config.displayFn ? config.displayFn(item) : item[config.displayKey] || item }}
+      @if(inputs.optionItemTemplate()) {
+        <ng-container [ngTemplateOutlet]="inputs.optionItemTemplate()"
+                      [ngTemplateOutletContext]="{ item: item, config: state.config(), selectedItems: state.selectedItems() }">
+        </ng-container>
+      } @else {
+        {{ config.displayFn ? config.displayFn(item) : item[config.displayKey] || item }}
+      }
     </li>
   }
 </ng-template>

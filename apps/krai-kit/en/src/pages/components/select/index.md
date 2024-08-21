@@ -1,7 +1,6 @@
 # {{ NgDocPage.title }}
 
-`SelectComponent` is a custom dropdown that provides features for multi-selection, custom option templates, and search.
-
+`SelectComponent` is a custom dropdown designed for selecting a single item from a list, custom option templates and search. 
 
 ```ts
 import { SelectComponent } from '@krai-tech/kit/select';
@@ -13,9 +12,9 @@ import { SelectComponent } from '@krai-tech/kit/select';
 <kri-select [options]="options"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { vmResult: true } }) }}
 
-## Floating label
+## Floating Label
 
 The floating label appears at the top when an item is selected in the field or when the field is focused.
 
@@ -25,71 +24,65 @@ The floating label appears at the top when an item is selected in the field or w
 
 {{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text' } }) }}
 
-## Multiselect
+## States
 
-The multiselect is used to provide users with the ability to conveniently select multiple values from a set of options simultaneously.
+### Disabled
+
+Use the select component with a `disabled` state when you need to indicate that the dropdown is currently not available for interaction, such as for options that are conditionally hidden, inactive due to a previous selection, or restricted based on user permissions or application state.
 
 ```html
-<kri-select floatLabel="Label Text"
-            [multiple]="true" 
-            [options]="options">
+<kri-select [disabled]="true"></kri-select>
+```
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { disabled: true } }) }}
+
+## Change Placeholder
+
+The `placeholder` configuration allows you to customize the text displayed when no item is selected.
+
+```html
+<kri-select [options]="options"
+            [config]="{ placeholder: 'Choose a name' }">
 </kri-select>
 ```
 
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { floatLabel: 'Label Text', multiple: true } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { placeholder: 'Choose a name' } } }) }}
 
-## Multiselect with search
+## Display Options by Key
 
-The multiselect with search allows users to easily select multiple values from a set of options while providing a search function to quickly find specific options within a large list.
+The `displayKey` configuration specifies the key of the object array to be displayed in the dropdown. <br>
+By default, the key used is `name`.
 
-```html
-<kri-select floatLabel="Label Text"
-            [multiple]="true" 
-            [options]="options"
-            [config]="{ search: true }">
-</kri-select>
-```
-
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { floatLabel: 'Label Text', multiple: true, config: { search: true } } }) }}
-
-### Select All
-
-```html
-<kri-select floatLabel="Label Text"
-            [multiple]="true" 
-            [options]="options"
-            [config]="{ enableSelectAll: true }">
-</kri-select>
-```
-
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { floatLabel: 'Label Text', multiple: true, config: { enableSelectAll: true } } }) }}
-
-### Change ‘Select All’ Label
-
-```html
-<kri-select floatLabel="Label Text"
-            [multiple]="true" 
-            [options]="options"
+```html {3}
+<kri-select [options]="options"
             [config]="{ 
-              enableSelectAll: true, 
-              selectAllLabel: 'Select Everything' 
+              displayKey: 'balance' 
             }">
 </kri-select>
 ```
+Array of data:
 
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { floatLabel: 'Label Text', multiple: true, config: { enableSelectAll: true, selectAllLabel: 'Select Everything' } } }) }}
+```ts {5}
+[
+    {
+      _id: '5a66d6c3657e60c6073a2d22',
+      index: 1,
+      balance: '$2,984.98',
+      picture: 'http://placehold.it/32x32',
+      name: 'Mcintyre Lawson',
+    },
+];
+```
 
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { displayKey: 'balance' } } }) }}
 
-## Template for options
+## Template for Options
 
-The custom template for options enables users to define a unique layout and style for the options within a multiselect component, allowing for a more personalized and visually appealing presentation of the available choices.
-
+The custom template for options allows users to define a unique layout and style for the options, enabling a more personalized and visually appealing presentation of the available choices.
 ```html
 <kri-select
-  floatLabel="Label Text"
   [optionItemTemplate]="optionTemplate"
   [options]="options"
-  [multiple]="true"
 ></kri-select>
 
 <ng-template #optionTemplate let-item="item">
@@ -100,51 +93,22 @@ The custom template for options enables users to define a unique layout and styl
 </ng-template>
 ```
 
-{{ NgDocActions.demo("MultipleTemplateOptionComponent", { container: false, inputs: { floatLabel: 'Label Text', multiple: true } }) }}
+{{ NgDocActions.demo("SingleTemplateOptionsComponent", { container: false }) }}
 
-## From
+## Limits Options Displayed
 
-```html
-<form [formGroup]="form">
-  <kri-select
-    formControlName="select"
-    [config]="{ search: true }"
-    [options]="options"
-    [multiple]="multiple">
-  </kri-select>
-</form>
+The `limitTo` configuration restricts the number of options shown in the dropdown. In this example, only the first three options are displayed. <br> 
+If set to `0`, all options are shown. 
+
+```html {4}
+<kri-select
+  [optionItemTemplate]="optionTemplate"
+  [options]="options"
+  [config]="{ limitTo: 3 }">
+</kri-select>
 ```
 
-```ts
-  form = this.fb.group({
-  select: [
-    [
-      {
-        _id: '5a66d6c31d5e4e36c7711b7a',
-        index: 0,
-        balance: '$2,806.37',
-        picture: 'http://placehold.it/32x32',
-        name: 'Burns Dalton',
-        disabled: true,
-      }
-    ],
-    Validators.required,
-  ],
-});
-```
-
-{{ NgDocActions.demo("MultipleReactiveFormComponent", { container: false, inputs: { multiple: true } }) }}
-
-## States
-
-### Disabled
-
-Use the select component with a `disabled` state when you need to indicate that the dropdown is currently not available for interaction, such as for options that are conditionally hidden, inactive due to a previous selection, or restricted based on user permissions or application state.
-```html
-<kri-select [disabled]="true"></kri-select>
-```
-
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { disabled: true } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { limitTo: 3 } } }) }}
 
 ## Size
 
@@ -154,7 +118,7 @@ Use the select component with a `disabled` state when you need to indicate that 
 <kri-select [options]="options" [config]="{ size: 'small' }"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'small'}, vmResult: false } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'small'} } }) }}
 
 ### Medium
 
@@ -162,7 +126,7 @@ Use the select component with a `disabled` state when you need to indicate that 
 <kri-select [options]="options" [config]="{ size: 'medium' }"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'medium'}, vmResult: false } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'medium'} } }) }}
 
 ### Large
 
@@ -170,4 +134,4 @@ Use the select component with a `disabled` state when you need to indicate that 
 <kri-select [options]="options" [config]="{ size: 'large' }"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'large' }, vmResult: false } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { size: 'large' } } }) }}

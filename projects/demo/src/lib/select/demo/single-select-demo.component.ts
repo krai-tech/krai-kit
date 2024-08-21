@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './single-select-demo.component.scss',
 })
 export class SingleSelectDemoComponent {
-  @Input() vmResult = true;
+  @Input() vmResult = false;
 
   @Input() floatLabel = '';
 
@@ -19,9 +19,7 @@ export class SingleSelectDemoComponent {
 
   @Input() disabled = false;
 
-  @Input() config: SelectConfig = {
-    placeholder: "Choose a name",
-  };
+  @Input() config: SelectConfig = {};
 
   vm = null;
 
