@@ -81,9 +81,8 @@ describe('CheckboxComponent', () => {
   it('should toggle the checked status when clicked', fakeAsync(() => {
     const checkboxEl: HTMLElement = debugEl.query(By.css('.kri-checkbox')).nativeElement;
     checkboxEl.dispatchEvent(new Event('click'));
-    tick();
     fixture.detectChanges();
-    expect(component.ref?.checked).toBeTruthy();
+    expect(component.ref?.checkedState()).toBeTruthy();
   }));
 
   it('should not change checked status when disabled', () => {
@@ -98,6 +97,6 @@ describe('CheckboxComponent', () => {
     const labelElement = fixture.nativeElement.querySelector('label');
     labelElement.click();
     fixture.detectChanges();
-    expect(component.ref?.checked()).toBeFalsy();
+    expect(component.ref?.checkedState()).toBeFalsy();
   });
 });
