@@ -27,7 +27,7 @@
   img {
     min-width: 173px;
     width: auto;
-    height: 42px;
+    height: 48px;
   }
 }
 
@@ -71,49 +71,10 @@
   .theme-switch {
     cursor: pointer;
   }
-
-  .language-switch {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid var(--ng-doc-border-color);
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-
-    .flag-icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-    }
-
-    .language-text {
-      font-size: 14px;
-      font-weight: bold;
-      color: var(--ng-doc-text-color);;
-    }
-
-    &:hover {
-      color: var(--ng-doc-text-color);;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-  }
 }
 
 @media (max-width: 768px) {
   .controls {
-    .language-switch {
-      margin-right: 5px;
-      padding: 5px 8px;
-
-      .flag-icon {
-        width: 17px;
-        height: 17px;
-      }
-    }
-
     .social {
       display: none;
 
