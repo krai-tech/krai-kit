@@ -3,6 +3,24 @@
 @import "../../style/theme/shadow";
 @import "../../style/theme/dropdown";
 
+@mixin list-item-styles {
+  font-size: $kri-font-size-14;
+  padding: 0.5em 1em;
+
+  &:hover:not(.active):not(.disabled) {
+    background-color: $kri-select-list-item-hover-bg;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $kri-select-list-item-disabled-text;
+  }
+}
+
 .kri-select {
   .kri-select-input {
     cursor: pointer;
@@ -10,6 +28,14 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    &::placeholder {
+      color: $kri-form-control-placeholder;
+    }
+  }
+
+  .kri-float-label .kri-select-input::placeholder {
+    color: transparent;
   }
 
   .kri-dropdown-menu {
@@ -18,39 +44,31 @@
     left: 2px;
     margin: 4px 0;
     cursor: pointer;
-    min-width: auto;
     max-height: 256px;
     overflow-y: auto;
     box-shadow: $kri-shadow-select $kri-select-shadow-color;
 
     .kri-dropdown-menu-wrap {
       position: relative;
+    }
+  }
 
-      .kri-select-list,
-      .kri-select-list > ul {
+  .kri-select-list,
+  .kri-select-list > ul {
+    li {
+      @include list-item-styles;
 
-        li ::ng-deep .kri-checkbox label {
-          font-size: $kri-font-size-14;
-        }
-
-        li:hover:not(.active):not(.disabled) {
-          background-color: $kri-select-list-item-hover-bg;
-        }
-
-        li.active,
-        li.active ::ng-deep .kri-checkbox label {
-          font-weight: 600;
-        }
+      ::ng-deep .kri-checkbox label {
+        font-size: $kri-font-size-14;
+        font-weight: inherit;
       }
     }
   }
 
   .kri-dropdown-item {
     font-family: $font-family;
-    clear: both;
     color: $kri-select-dropdown-item-text;
-    font-size: $kri-font-size-14;
-    padding: 0.5em 1em;
+    @include list-item-styles;
 
     &.disabled {
       cursor: not-allowed;

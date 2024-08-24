@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectComponent, SelectConfig } from '@krai-tech/kit/select';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './multiple.component.html',
   styleUrl: './multiple.component.scss',
 })
-export class MultipleComponent {
+export class MultipleComponent implements OnInit {
   @Input() multiple = false;
 
   @Input() floatLabel = '';
@@ -18,6 +18,8 @@ export class MultipleComponent {
   @Input() disabled = false;
 
   @Input() config: SelectConfig = {};
+
+  @Input() displayFn = false
 
   vm = [];
 
@@ -73,4 +75,13 @@ export class MultipleComponent {
       name: 'Goldie Barber',
     },
   ];
+
+  ngOnInit () {
+    if (this.displayFn) {
+      this.config = {
+        ...this.config,
+        displayFn: ({ name, balance }: any) => `${name} - ${balance}`
+      }
+    }
+  }
 }

@@ -76,9 +76,23 @@ Array of data:
 
 {{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { config: { displayKey: 'balance' } } }) }}
 
+## Display Options Function
+
+A function that customizes and displays text for each item based on specific conditions or parameters.
+
+```html {3}
+<kri-select
+  [options]="options"
+  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`"
+></kri-select>
+```
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { displayFn: true } }) }}
+
 ## Template for Options
 
 The custom template for options allows users to define a unique layout and style for the options, enabling a more personalized and visually appealing presentation of the available choices.
+
 ```html
 <kri-select
   [optionItemTemplate]="optionTemplate"

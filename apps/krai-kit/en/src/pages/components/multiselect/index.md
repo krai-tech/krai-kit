@@ -148,6 +148,20 @@ Array of data:
 
 {{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, config: { displayKey: 'balance' } } }) }}
 
+## Display Options Function
+
+A function that customizes and displays text for each item based on specific conditions or parameters.
+
+```html {4}
+<kri-select
+  [multiple]="true"
+  [options]="options"
+  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`"
+></kri-select>
+```
+
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, displayFn: true } }) }}
+
 ## Select All
 
 ```html {3}

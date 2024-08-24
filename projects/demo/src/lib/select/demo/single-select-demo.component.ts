@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectComponent, SelectConfig } from '@krai-tech/kit/select';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './single-select-demo.component.html',
   styleUrl: './single-select-demo.component.scss',
 })
-export class SingleSelectDemoComponent {
+export class SingleSelectDemoComponent implements OnInit {
   @Input() vmResult = false;
 
   @Input() floatLabel = '';
@@ -20,6 +20,8 @@ export class SingleSelectDemoComponent {
   @Input() disabled = false;
 
   @Input() config: SelectConfig = {};
+
+  @Input() displayFn = false
 
   vm = null;
 
@@ -74,4 +76,13 @@ export class SingleSelectDemoComponent {
       name: 'Goldie Barber',
     },
   ];
+
+  ngOnInit () {
+    if (this.displayFn) {
+      this.config = {
+        ...this.config,
+        displayFn: ({ name, balance }: any) => `${name} - ${balance}`
+      }
+    }
+  }
 }
