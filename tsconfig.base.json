@@ -22,6 +22,9 @@
       "@krai-tech/cdk/directives/focus": [
         "projects/cdk/directives/focus/src/index.ts"
       ],
+      "@krai-tech/cdk/directives/has-error": [
+        "projects/cdk/directives/has-error/src/index.ts"
+      ],
       "@krai-tech/cdk/directives/is-disabled": [
         "projects/cdk/directives/is-disabled/src/index.ts"
       ],
