@@ -1,5 +1,5 @@
 {
-  "name": "@krai-shared",
+  "name": "shared",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "projects/shared/src",
   "prefix": "kri",
