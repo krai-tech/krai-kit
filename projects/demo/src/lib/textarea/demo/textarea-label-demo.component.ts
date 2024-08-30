@@ -10,7 +10,7 @@ import { TextareaDirective } from '@krai-tech/kit/textarea';
   styleUrl: './textarea-label-demo.component.scss',
 })
 export class TextareaLabelDemoComponent {
-  @Input() error = false;
+  @Input() hasError = false;
 
   @Input() disabled = false;
 }

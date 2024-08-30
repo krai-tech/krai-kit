@@ -53,14 +53,14 @@ with [Floating Label](en/docs/components/multiselect#floating-label)
 ### Error
 
 ```html
-<kri-select [error]="true"></kri-select>
+<kri-select [hasError]="true"></kri-select>
 ```
 
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, error: true, withPresetData: true } }) }}
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, hasError: true, withPresetData: true } }) }}
 
 with [Floating Label](en/docs/components/multiselect#floating-label)
 
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, floatLabel: 'Label Text',  error: true, withPresetData: true } }) }}
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, floatLabel: 'Label Text',  hasError: true, withPresetData: true } }) }}
 
 ## Change Placeholder
 

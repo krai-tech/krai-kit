@@ -5,6 +5,7 @@ import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
 import { FocusDirective } from '@krai-tech/cdk/directives/focus';
 import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-input';
 import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
+import { HasErrorDirective } from '@krai-tech/cdk/directives/has-error';
 
 /**
  * Directive to enhance standard textarea elements with custom styles and behavior.
@@ -20,7 +21,6 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
   exportAs: 'kriTextarea',
   host: {
     'class': 'kri-textarea',
-    '[class.error]': 'error()',
     '[style.resize]': 'resize()',
     '[attr.rows]': '3',
   },
@@ -37,6 +37,10 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
       outputs: ['hasValue']
     },
     {
+      directive: HasErrorDirective,
+      inputs: ['hasError']
+    },
+    {
       directive: ResetInputDirective,
       inputs: ['initValue', 'showCounter', 'selectedItems'],
       outputs: ['resetInput']
@@ -44,12 +48,6 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
   ]
 })
 export class TextareaDirective implements AfterViewInit, OnDestroy {
-  /**
-   * Optional.
-   * Indicates whether the textarea has an input error.
-   */
-  error: InputSignal<boolean> = input<boolean>(false);
-
   /**
    * Optional.
    * Indicates whether the textarea can be resized. The options are: None, Horizontal, Vertical, and Both.

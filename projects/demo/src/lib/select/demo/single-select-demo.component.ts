@@ -25,7 +25,7 @@ export class SingleSelectDemoComponent implements OnInit {
 
   @Input() withPresetData = false
 
-  @Input() error = false
+  @Input() hasError = false
 
   vm: any = null;
 

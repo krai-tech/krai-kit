@@ -10,7 +10,7 @@ import { TextareaDirective, TextareaResize } from '@krai-tech/kit/textarea';
   styleUrl: './textarea-demo.component.scss',
 })
 export class TextareaDemoComponent {
-  @Input() error = false;
+  @Input() hasError = false;
 
   @Input() disabled = false;
 

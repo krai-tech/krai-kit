@@ -42,7 +42,7 @@ export class SelectInputsDirective {
   /**
    * Boolean flag that indicates whether the select component is in an error state.
    */
-  error: InputSignal<boolean> = input<boolean>(false);
+  hasError: InputSignal<boolean> = input<boolean>(false);
 
   /**
    * Unique identifier for the select component instance.

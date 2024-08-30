@@ -64,7 +64,7 @@
            (change)="searchTextChanged()"
            [size]="state.config().size!"
            [placeholder]="state.config().placeholder"
-           [error]="inputs.error()"
+           [hasError]="inputs.hasError()"
            [disabled]="inputs.disabled()"
            [readonly]="!state.config().search"
            autocomplete="off">

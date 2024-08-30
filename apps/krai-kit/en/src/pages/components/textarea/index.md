@@ -71,9 +71,9 @@ This helps the user understand what needs to be corrected.
 <textarea kriTextarea [error]="true"></textarea>
 ```
 
-{{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { error: true } }) }}
+{{ NgDocActions.demo("TextareaDemoComponent", { container: false, inputs: { hasError: true } }) }}
 
-{{ NgDocActions.demo("TextareaLabelDemoComponent", { container: false, inputs: { error: true } }) }}
+{{ NgDocActions.demo("TextareaLabelDemoComponent", { container: false, inputs: { hasError: true } }) }}
 
 ## Maximum number of characters
 

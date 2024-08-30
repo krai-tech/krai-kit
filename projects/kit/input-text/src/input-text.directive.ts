@@ -3,6 +3,7 @@ import { InputTextSize } from './input-text.type';
 import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
 import { FocusDirective } from '@krai-tech/cdk/directives/focus';
 import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
+import { HasErrorDirective } from '@krai-tech/cdk/directives/has-error';
 
 /**
  * Directive to enhance standard input elements with custom styles and behavior.
@@ -19,7 +20,6 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
   exportAs: 'kriInputText',
   host: {
     'class': 'kri-input-text',
-    '[class.error]': 'error()',
     '[class.kri-input-text-lg]': `size() === 'large'`,
     '[class.kri-input-text-sm]': `size() === 'small'`,
     '[attr.title]': 'showTitle'
@@ -35,15 +35,14 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
     {
       directive: HasValueDirective,
       outputs: ['hasValue']
+    },
+    {
+      directive: HasErrorDirective,
+      inputs: ['hasError']
     }
   ]
 })
 export class InputTextDirective {
-  /**
-   * Input that indicates if the input has an error.
-   */
-  error: InputSignal<boolean> = input<boolean>(false);
-
   /**
    * Input that defines the size of the input.
    * Can be `InputTextSize`

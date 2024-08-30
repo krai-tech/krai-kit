@@ -23,7 +23,7 @@ export class MultipleComponent implements OnInit {
 
   @Input() withPresetData = false
 
-  @Input() error = false
+  @Input() hasError = false
 
   vm: any = [];
 

@@ -77,9 +77,9 @@ This helps users understand what needs to be corrected.
 <input kriInputText placeholder="Text" [error]="true" />
 ```
 
-{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { error: true } }) }}
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { hasError: true } }) }}
 
-{{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { error: true } }) }}
+{{ NgDocActions.demo("InputTextLabelDemoComponent", { container: false, inputs: { hasError: true } }) }}
 
 ## Clear input
 

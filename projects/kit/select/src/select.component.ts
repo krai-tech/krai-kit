@@ -51,7 +51,7 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
   hostDirectives: [
     {
       directive: SelectInputsDirective,
-      inputs: ['options', 'config', 'multiple', 'disabled', 'error', 'id', 'floatLabel', 'optionItemTemplate', 'notFoundTemplate', 'selectTemplate'],
+      inputs: ['options', 'config', 'multiple', 'disabled', 'hasError', 'id', 'floatLabel', 'optionItemTemplate', 'notFoundTemplate', 'selectTemplate'],
     },
     {
       directive: SelectOutputDirective,

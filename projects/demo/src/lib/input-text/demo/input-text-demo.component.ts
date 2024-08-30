@@ -17,7 +17,7 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
 })
 export class InputTextDemoComponent implements OnInit {
   @Input() placeholder = '';
-  @Input() error = false;
+  @Input() hasError = false;
   @Input() disabled = false;
   @Input() size: InputTextSize = 'medium';
   @Input() showReset = false;

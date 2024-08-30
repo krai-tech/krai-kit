@@ -71,5 +71,5 @@ import { SelectComponent } from '@krai-tech/kit/select';
 Використовується, коли вибрані дані не відповідають вимогам валідації або містять помилку.
 
 ```html name="select.component.ts"
-<kri-select [error]="true"></kri-select>
+<kri-select [hasError]="true"></kri-select>
 ```

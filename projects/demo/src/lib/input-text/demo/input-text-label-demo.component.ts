@@ -22,7 +22,7 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
   styleUrl: './input-text-label-demo.component.scss',
 })
 export class InputTextLabelDemoComponent implements OnInit {
-  @Input() error = false;
+  @Input() hasError = false;
   @Input() disabled = false;
   @Input() size: InputTextSize = 'medium';
   @Input() label = 'Label text';

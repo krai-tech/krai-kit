@@ -200,7 +200,7 @@ $label-bg-color: $kri-white;
     }
   }
 
-  &.error {
+  &[data-has-error="true"] {
     border-color: $kri-form-control-danger-line;
     + label {
       color: $kri-form-control-danger-label !important;

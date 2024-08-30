@@ -48,14 +48,14 @@ with [Floating Label](en/docs/components/select#floating-label)
 ### Error
 
 ```html
-<kri-select [error]="true"></kri-select>
+<kri-select [hasError]="true"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { error: true, withPresetData: true } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { hasError: true, withPresetData: true } }) }}
 
 with [Floating Label](en/docs/components/select#floating-label)
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text',  error: true, withPresetData: true } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text',  hasError: true, withPresetData: true } }) }}
 
 ## Change Placeholder
 
