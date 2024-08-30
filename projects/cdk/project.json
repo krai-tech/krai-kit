@@ -36,7 +36,7 @@
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
         "outputPath": "dist/projects/cdk",
-        "buildTarget": "@krai-cdk:build:production"
+        "buildTarget": "cdk:build:production"
       }
     }
   }
