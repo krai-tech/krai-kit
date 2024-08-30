@@ -13,7 +13,7 @@
   ],
   "homepage": "https://krai-kit.dev/en/docs/getting-started",
   "repository": "https://github.com/krai-tech/krai-kit",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/core": "^17.3.0",
     "@angular/forms": "~17.3.0",
