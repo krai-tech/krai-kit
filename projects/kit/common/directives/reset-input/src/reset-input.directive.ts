@@ -56,7 +56,7 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Signal to manually show the reset button.
    */
-  showReset: InputSignal<boolean> = input<boolean>(false);
+  showResetInput: InputSignal<boolean> = input<boolean>(false);
 
   /**
    * Signal to manually show the counter for selected items.
@@ -261,7 +261,7 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
    */
   private updateResetButtonVisibility(): void {
     const inputValue = this.control ? this.control.control?.value : this.elRef.nativeElement.value;
-    const shouldShowButton = (this.showReset() && inputValue) || this.selectedItems().length > 0;
+    const shouldShowButton = this.showResetInput() && (inputValue || this.selectedItems().length > 0);
     if (shouldShowButton) {
       if (!this.container) {
         this.createResetButton();

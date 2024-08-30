@@ -23,7 +23,11 @@ export class SingleSelectDemoComponent implements OnInit {
 
   @Input() displayFn = false
 
-  vm = null;
+  @Input() withPresetData = false
+
+  @Input() error = false
+
+  vm: any = null;
 
   options = [
     {
@@ -78,6 +82,15 @@ export class SingleSelectDemoComponent implements OnInit {
   ];
 
   ngOnInit () {
+    if (this.withPresetData) {
+      this.vm = [{
+        _id: '5a66d6c3d727c450794226de',
+        index: 6,
+        balance: '$3,915.65',
+        picture: 'http://placehold.it/32x32',
+        name: 'Goldie Barber',
+      }]
+    }
     if (this.displayFn) {
       this.config = {
         ...this.config,

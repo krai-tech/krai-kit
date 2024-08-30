@@ -18,9 +18,10 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
   standalone: true,
   exportAs: 'kriInputText',
   host: {
+    'class': 'kri-input-text',
     '[class.error]': 'error()',
-    '[class.kri-textinput-lg]': `size() === 'large'`,
-    '[class.kri-textinput-sm]': `size() === 'small'`,
+    '[class.kri-input-text-lg]': `size() === 'large'`,
+    '[class.kri-input-text-sm]': `size() === 'small'`,
     '[attr.title]': 'showTitle'
   },
   hostDirectives: [

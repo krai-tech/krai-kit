@@ -21,7 +21,11 @@ export class MultipleComponent implements OnInit {
 
   @Input() displayFn = false
 
-  vm = [];
+  @Input() withPresetData = false
+
+  @Input() error = false
+
+  vm: any = [];
 
   options = [
     {
@@ -77,6 +81,15 @@ export class MultipleComponent implements OnInit {
   ];
 
   ngOnInit () {
+    if (this.withPresetData) {
+      this.vm = [{
+        _id: '5a66d6c3d727c450794226de',
+        index: 6,
+        balance: '$3,915.65',
+        picture: 'http://placehold.it/32x32',
+        name: 'Goldie Barber',
+      }]
+    }
     if (this.displayFn) {
       this.config = {
         ...this.config,

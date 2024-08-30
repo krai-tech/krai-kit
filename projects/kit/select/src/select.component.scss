@@ -1,8 +1,10 @@
+// Import color, font, shadow, and dropdown theme styles
 @import "../../style/theme/color";
 @import "../../style/theme/font";
 @import "../../style/theme/shadow";
 @import "../../style/theme/dropdown";
 
+// Mixin for styling list items
 @mixin list-item-styles {
   font-size: $kri-font-size-14;
   padding: 0.5em 1em;
@@ -21,43 +23,42 @@
   }
 }
 
+// Styles for the select component
 .kri-select {
+  // Styles for the select input element
   .kri-select-input {
-    cursor: pointer;
-    padding-right: 2em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
+    // Placeholder styles for the select input
     &::placeholder {
       color: $kri-form-control-placeholder;
     }
+
+    // Styles for the select input when disabled
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
+  // Placeholder styles for the select input within floating label
   .kri-float-label .kri-select-input::placeholder {
     color: transparent;
   }
 
+  // Styles for the dropdown menu
   .kri-dropdown-menu {
-    display: block;
-    width: calc(100% - 4px);
-    left: 2px;
-    margin: 4px 0;
-    cursor: pointer;
-    max-height: 256px;
-    overflow-y: auto;
-    box-shadow: $kri-shadow-select $kri-select-shadow-color;
-
+    // Container for the dropdown menu items
     .kri-dropdown-menu-wrap {
       position: relative;
     }
   }
 
+  // Styles for the select list and its items
   .kri-select-list,
   .kri-select-list > ul {
     li {
+      // Apply list item styles
       @include list-item-styles;
 
+      // Override styles for checkbox labels
       ::ng-deep .kri-checkbox label {
         font-size: $kri-font-size-14;
         font-weight: inherit;
@@ -65,11 +66,13 @@
     }
   }
 
+  // Styles for individual dropdown items
   .kri-dropdown-item {
     font-family: $font-family;
     color: $kri-select-dropdown-item-text;
     @include list-item-styles;
 
+    // Styles for disabled dropdown items
     &.disabled {
       cursor: not-allowed;
       color: $kri-select-list-item-disabled-text;
@@ -77,6 +80,7 @@
   }
 }
 
+// Styles for horizontal rules (hr) used in dropdowns
 hr {
   height: 1px;
   border: none;
@@ -84,6 +88,7 @@ hr {
   background-color: $kri-select-hr-color;
 }
 
+// Styles for no-results message in dropdown
 .no-results {
   cursor: default;
   padding: 16px 12px;

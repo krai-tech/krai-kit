@@ -86,7 +86,7 @@ This helps users understand what needs to be corrected.
 ```html
 <input kriInputText
        kriResetInput
-       [showReset]="true" />
+       [showResetInput]="true" />
 ```
 
 {{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: {showDefaultText: true, showReset: true } }) }}

@@ -40,6 +40,11 @@ export class SelectInputsDirective {
   disabled: InputSignal<boolean> = input<boolean>(false);
 
   /**
+   * Boolean flag that indicates whether the select component is in an error state.
+   */
+  error: InputSignal<boolean> = input<boolean>(false);
+
+  /**
    * Unique identifier for the select component instance.
    */
   id: InputSignal<string> = input<string>(uniqueId('kri-select'));

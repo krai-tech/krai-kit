@@ -24,6 +24,11 @@ The floating label appears at the top when an item is selected in the field or w
 
 {{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text' } }) }}
 
+With a preset value
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text', withPresetData: true } }) }}
+
+
 ## States
 
 ### Disabled
@@ -34,7 +39,23 @@ Use the select component with a `disabled` state when you need to indicate that 
 <kri-select [disabled]="true"></kri-select>
 ```
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { disabled: true } }) }}
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { disabled: true, withPresetData: true } }) }}
+
+with [Floating Label](en/docs/components/select#floating-label)
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text',  disabled: true, withPresetData: true } }) }}
+
+### Error
+
+```html
+<kri-select [error]="true"></kri-select>
+```
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { error: true, withPresetData: true } }) }}
+
+with [Floating Label](en/docs/components/select#floating-label)
+
+{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { floatLabel: 'Label Text',  error: true, withPresetData: true } }) }}
 
 ## Change Placeholder
 
@@ -83,8 +104,8 @@ A function that customizes and displays text for each item based on specific con
 ```html {3}
 <kri-select
   [options]="options"
-  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`"
-></kri-select>
+  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`">
+</kri-select>
 ```
 
 {{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { displayFn: true } }) }}
@@ -96,13 +117,13 @@ The custom template for options allows users to define a unique layout and style
 ```html
 <kri-select
   [optionItemTemplate]="optionTemplate"
-  [options]="options"
-></kri-select>
+  [options]="options">
+</kri-select>
 
 <ng-template #optionTemplate let-item="item">
   <div class="option-container">
     <kri-icon icon="add-to-card"></kri-icon>
-    <span class="option-container__name">{{ item.name }}</span>
+    <span class="option-container__name">{ { item.name } }</span>
   </div>
 </ng-template>
 ```

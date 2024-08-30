@@ -19,6 +19,7 @@ import { HasValueDirective } from '@krai-tech/kit/common/directives/has-value';
   standalone: true,
   exportAs: 'kriTextarea',
   host: {
+    'class': 'kri-textarea',
     '[class.error]': 'error()',
     '[style.resize]': 'resize()',
     '[attr.rows]': '3',

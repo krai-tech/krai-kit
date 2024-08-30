@@ -43,9 +43,24 @@ Use the select component with a `disabled` state when you need to indicate that 
 </kri-select>
 ```
 
-{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, disabled: true } }) }}
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, disabled: true, withPresetData: true } }) }}
 
-{{ NgDocActions.demo("SingleSelectDemoComponent", { container: false, inputs: { disabled: true } }) }}
+with [Floating Label](en/docs/components/multiselect#floating-label)
+
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, floatLabel: 'Label Text', disabled: true, withPresetData: true } }) }}
+
+
+### Error
+
+```html
+<kri-select [error]="true"></kri-select>
+```
+
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, error: true, withPresetData: true } }) }}
+
+with [Floating Label](en/docs/components/multiselect#floating-label)
+
+{{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, floatLabel: 'Label Text',  error: true, withPresetData: true } }) }}
 
 ## Change Placeholder
 
@@ -156,8 +171,8 @@ A function that customizes and displays text for each item based on specific con
 <kri-select
   [multiple]="true"
   [options]="options"
-  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`"
-></kri-select>
+  [config]="{ displayFn: ({ name, balance }) => `${name} - ${balance}`">
+</kri-select>
 ```
 
 {{ NgDocActions.demo("MultipleComponent", { container: false, inputs: { multiple: true, displayFn: true } }) }}
@@ -228,13 +243,13 @@ The custom template for options enables users to define a unique layout and styl
 <kri-select
   [optionItemTemplate]="optionTemplate"
   [options]="options"
-  [multiple]="true"
-></kri-select>
+  [multiple]="true">
+</kri-select>
 
 <ng-template #optionTemplate let-item="item">
   <div class="option-container">
     <kri-icon icon="add-to-card"></kri-icon>
-    <span class="option-container__name">{{ item.name }}</span>
+    <span class="option-container__name">{ { item.name } }</span>
   </div>
 </ng-template>
 ```
