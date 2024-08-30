@@ -1,5 +1,5 @@
 {
-  "name": "@krai-kit",
+  "name": "kit",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "projects/kit",
   "prefix": "kri",
