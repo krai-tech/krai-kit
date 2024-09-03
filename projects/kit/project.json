@@ -36,7 +36,7 @@
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
         "outputPath": "dist/projects/kit",
-        "buildTarget": "@krai-kit:build:production"
+        "buildTarget": "kit:build:production"
       }
     }
   }
