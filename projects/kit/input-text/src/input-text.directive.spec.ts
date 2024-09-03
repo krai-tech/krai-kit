@@ -16,7 +16,7 @@ jest.mock('lodash/isEmpty', () => ({
   template   : `
     <input kriInputText placeholder="Please Enter" id="textInput" />
     <input kriInputText placeholder="Please Enter" [disabled]="true" />
-    <input kriInputText placeholder="Please Enter" [error]="true" />
+    <input kriInputText placeholder="Please Enter" [hasError]="true" />
   `
 })
 class TestInputTextComponent {}
@@ -46,10 +46,10 @@ describe('InputTextDirective', () => {
     expect(inputs[0].nativeElement.placeholder).toContain('Please Enter');
   }));
 
-  it('should have correct error class', waitForAsync(() => {
+  it('should have data-has-error attribute set to true', waitForAsync(() => {
     const inputs = debugEl.queryAll(By.css('input'));
     fixture.detectChanges();
-    expect(inputs[2].nativeElement.classList).toContain('error');
+    expect(inputs[2].nativeElement.getAttribute('data-has-error')).toBe('true');
   }));
 
   it('should have correct disabled state', waitForAsync(() => {

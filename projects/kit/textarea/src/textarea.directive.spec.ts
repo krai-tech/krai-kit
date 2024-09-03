@@ -26,7 +26,7 @@ class MockResizeObserver {
     TextareaDirective
   ],
   template   : `<textarea kriTextarea
-                          [error]="error"
+                          [hasError]="error"
                           [resize]="resize"
                           [showCounter]="showCounter"></textarea>`
 })
@@ -71,10 +71,10 @@ describe('TextareaDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('should apply error class when error is true', () => {
+  it('should apply data-has-error attribute when error is true', () => {
     component.error = true;
     fixture.detectChanges();
-    expect(textarea.classList).toContain('error');
+    expect(textarea.getAttribute('data-has-error')).toBe('true');
   });
 
   it('should apply resize style', () => {
