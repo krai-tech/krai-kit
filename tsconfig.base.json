@@ -56,10 +56,10 @@
       "@krai-tech/scripts/*": ["projects/scripts/src/*"],
       "@krai-tech/shared": ["projects/shared/src/index.ts"],
       "@krai-tech/web-api/tokens": ["projects/web-api/tokens/src/index.ts"],
-      "@ng-doc/generated/en": ["./ng-doc/@krai-kit/en/index.ts"],
-      "@ng-doc/generated/en/*": ["./ng-doc/@krai-kit/en/*"],
-      "@ng-doc/generated/ua": ["./ng-doc/@krai-kit/ua/index.ts"],
-      "@ng-doc/generated/ua/*": ["./ng-doc/@krai-kit/ua/*"]
+      "@ng-doc/generated/en": ["./ng-doc/showcase/index.ts"],
+      "@ng-doc/generated/en/*": ["./ng-doc/showcase/*"],
+      "@ng-doc/generated/ua": ["./ng-doc/kit/ua/index.ts"],
+      "@ng-doc/generated/ua/*": ["./ng-doc/kit/ua/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

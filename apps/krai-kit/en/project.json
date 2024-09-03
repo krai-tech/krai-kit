@@ -1,10 +1,10 @@
 {
-  "name": "@krai-kit/en",
+  "name": "showcase",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "apps/krai-kit/en/src",
-  "tags": ["krai-kit-en"],
+  "tags": ["showcase"],
   "targets": {
     "build": {
       "executor": "@ng-doc/builder:application",
@@ -29,7 +29,7 @@
           },
           {
             "glob": "**/*",
-            "input": "ng-doc/@krai-kit/en/assets",
+            "input": "ng-doc/showcase/assets",
             "output": "assets/ng-doc"
           },
           "apps/krai-kit/en/src/favicon.ico",
@@ -75,10 +75,10 @@
       "executor": "@ng-doc/builder:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "@krai-kit/en:build:production"
+          "buildTarget": "showcase:build:production"
         },
         "development": {
-          "buildTarget": "@krai-kit/en:build:development"
+          "buildTarget": "showcase:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "@krai-kit/en:build"
+        "buildTarget": "showcase:build"
       }
     },
     "lint": {
