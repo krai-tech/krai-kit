@@ -1,6 +1,6 @@
 {
   "name": "@krai-tech/kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The primary set of components used to build your applications",
   "keywords": [
     "angular",
