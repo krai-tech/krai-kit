@@ -28,9 +28,8 @@
     "email": "john.rusakov@gmail.com"
   },
   "peerDependencies": {
-    "@angular/common": ">=16.0.0",
-    "@angular/core": ">=16.0.0",
-    "rxjs": ">=6.4.0"
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
   },
   "dependencies": {},
   "sideEffects": false,

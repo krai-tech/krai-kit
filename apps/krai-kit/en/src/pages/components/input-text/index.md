@@ -27,7 +27,7 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 <input kriInputText placeholder="Text" />
 ```
 
-{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { placeholder: "Text", disabled: true } }) }}
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { placeholder: "Text" } }) }}
 
 ## Floating label
 
