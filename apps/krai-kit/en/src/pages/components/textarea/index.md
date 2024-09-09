@@ -12,7 +12,7 @@ import { TextareaDirective } from '@krai-tech/kit/textarea';
 <textarea kriTextarea
           id="textArea"
           placeholder="Text" 
-          [error]="error" 
+          [hasError]="error" 
           [disabled]="disabled">
 </textarea>
 ```
@@ -28,7 +28,7 @@ The floating label appears at the top of the input field when it is focused or w
   <textarea kriTextarea
             id="textArea"
             placeholder="Text" 
-            [error]="error" 
+            [hasError]="error" 
             [disabled]="disabled">
   </textarea>
   <label for="textArea">Label</label>

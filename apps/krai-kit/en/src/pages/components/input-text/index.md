@@ -14,12 +14,20 @@ import { InputTextDirective, InputTextLabelDirective } from '@krai-tech/kit/inpu
 <input kriInputText 
        [placeholder]="placeholder" 
        id="textInput" 
-       [error]="error" 
+       [hasError]="error" 
        [disabled]="disabled" 
        [size]="size" />
 ```
 
 {{ NgDocActions.demo("InputTextDemoComponent", { container: false }) }}
+
+## Placeholder
+
+```html
+<input kriInputText placeholder="Text" />
+```
+
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { placeholder: "Text", disabled: true } }) }}
 
 ## Floating label
 
@@ -30,7 +38,7 @@ The floating label appears at the top of the input field when it is focused or w
   <input kriInputText 
          [placeholder]="placeholder" 
          id="textInput" 
-         [error]="error" 
+         [hasError]="error" 
          [disabled]="disabled" 
          [size]="size" />
   <label kriInputTextLabel for="textInput" [size]="size">Label</label>
@@ -45,15 +53,15 @@ With a preset value
 
 ## States
 
-### Inactive
+### Normal
 
 Used as the default state of the input field until the user begins to interact with it.
 
 ```html
-<input kriInputText placeholder="Text" />
+<input kriInputText />
 ```
 
-{{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { placeholder: "Text"} }) }}
+{{ NgDocActions.demo("InputTextDemoComponent", { container: false }) }}
 
 ### Disabled
 
@@ -74,7 +82,7 @@ Used when the entered data does not meet validation requirements or contains an 
 This helps users understand what needs to be corrected.
 
 ```html
-<input kriInputText placeholder="Text" [error]="true" />
+<input kriInputText placeholder="Text" [hasError]="true" />
 ```
 
 {{ NgDocActions.demo("InputTextDemoComponent", { container: false, inputs: { hasError: true } }) }}

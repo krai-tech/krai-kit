@@ -41,36 +41,32 @@ $label-bg-color: $kri-white;
     padding: 0 4px;
     border-radius: $kri-border-radius-4;
 
-    // Styles for small label
     &.kri-input-label-small {
       font-size: $small-font-size;
       top: $label-top-small;
     }
 
-    // Styles for large label
     &.kri-input-label-large {
       font-size: $large-font-size;
       top: $label-top-large;
     }
   }
 
-  // Label position and style adjustments based on input state
-  > .kri-input-text,
-  > .kri-textarea {
-    &:not(.kri-select-input) {
-      &:not(:placeholder-shown) + label,
-      &:focus + label,
-      &[data-has-value="true"] + label {
-        @include active-label-styles; // Apply active label styles
-      }
+  // Apply active label styles
+  > .kri-input-text:not(.kri-select-input):focus + label,
+  > .kri-textarea:not(.kri-select-input):focus + label,
+  > .kri-input-text:not(.kri-select-input)[data-has-value="true"] + label,
+  > .kri-textarea:not(.kri-select-input)[data-has-value="true"] + label {
+    @include active-label-styles;
+  }
 
-      &:not(:placeholder-shown):not(:focus) + label {
-        top: $label-top-default;
-        left: 16px;
-        font-size: $default-font-size;
-        color: $label-color-default;
-      }
-    }
+  // Default label styles
+  > .kri-input-text:not(.kri-select-input):placeholder-shown:not(:focus) + label,
+  > .kri-textarea:not(.kri-select-input):placeholder-shown:not(:focus) + label {
+    top: $label-top-default;
+    left: 16px;
+    font-size: $default-font-size;
+    color: $label-color-default;
   }
 
   // Placeholder text color for inputs
@@ -157,22 +153,23 @@ $label-bg-color: $kri-white;
   box-shadow: 0 0 0 0 $kri-form-control-interactive-outline;
 
   &:hover {
-    border-color: $kri-form-control-line-hover; // Border color on hover
+    border-color: $kri-form-control-line-hover;
     color: $kri-form-control-line-hover;
 
     + label {
-      color: $kri-form-control-label-hover; // Label color on hover
+      color: $kri-form-control-label-hover;
     }
   }
 
   &:focus {
-    border-color: $kri-form-control-label-active; // Border color on focus
+    border-color: $kri-form-control-label-active;
   }
 
+  // Has value state
   input:not(.kri-select-input):focus + label,
   input:not(.kri-select-input)[data-focused="true"] + label,
   &[data-has-value="true"] + label {
-    @include active-label-styles; // Apply active label styles
+    @include active-label-styles;
   }
 
   // Placeholder styles
@@ -186,20 +183,23 @@ $label-bg-color: $kri-white;
     color: transparent; // Placeholder color on focus
   }
 
+  // Disabled styles
   &[disabled],
   &.disabled {
-    cursor: not-allowed; // Disable input cursor
+    cursor: not-allowed;
     background-color: $kri-form-control-disabled-bg;
     border-color: $kri-form-control-disabled-line;
     color: $kri-form-control-disabled-text;
 
+    // Apply active label styles for error state
     &:focus + label,
     &[data-focused="true"] + label,
     &[data-has-value="true"] + label {
-      @include active-label-styles; // Apply active label styles
+      @include active-label-styles;
     }
   }
 
+  // Styles for error state
   &[data-has-error="true"] {
     border-color: $kri-form-control-danger-line;
     + label {
@@ -209,7 +209,7 @@ $label-bg-color: $kri-white;
     &:focus + label,
     &[data-focused="true"] + label,
     &[data-has-value="true"] + label {
-      @include active-label-styles; // Apply active label styles for error state
+      @include active-label-styles;
     }
   }
 }
