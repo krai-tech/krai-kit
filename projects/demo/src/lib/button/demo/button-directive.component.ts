@@ -22,7 +22,7 @@ export class ButtonDirectiveComponent {
   @Input() size: ButtonSize = '32';
   @Input() disabled = false;
   @Input() fullWidth = false;
-  @Input() icon: IconTypes | '' = '';
+  @Input() icon: IconTypes | undefined;
   @Input() iconColor = '';
   @Input() iconSize = '';
   @Input() iconRotate = 0;

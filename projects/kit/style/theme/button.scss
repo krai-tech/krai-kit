@@ -1,7 +1,7 @@
-@import "../../style/theme/border";
-@import "../../style/theme/font";
-@import "../../style/theme/color";
-@import "../../style/theme/animation";
+@import "border";
+@import "font";
+@import "color";
+@import "animation";
 
 $kri-btn-padding: var(--kri-btn-padding, 10px 22px);
 $kri-btn-font-size: $kri-font-size-16;

@@ -20,10 +20,11 @@ import { IconTypes } from '@krai-tech/kit/icon';
 })
 export class ButtonIconDirective {
   /**
-   * Optional.
-   * The icon to be displayed. It can be of type `IconTypes`, or an empty string.
+   * Required.
+   * The icon to be displayed.
+   * It can be of type `IconTypes`.
    */
-  icon: InputSignal<IconTypes | string> = input<IconTypes | string>('');
+  icon: InputSignal<IconTypes | undefined> = input.required<IconTypes | undefined>();
 
   /**
    * Optional.
@@ -62,9 +63,9 @@ export class ButtonIconDirective {
   constructor(private el: ElementRef, private renderer: Renderer2) {
     effect(() => {
       if (this.icon()) {
-        this.ensureContainerExists();
-        this.ensureIconElementExists();
-        this.updateIconElement();
+        this.createIconContainer();
+        this.createIcon();
+        this.setStyleToIcon();
       } else {
         this.removeIconAndContainer();
       }
@@ -74,9 +75,9 @@ export class ButtonIconDirective {
 
   /**
    * @internal
-   * Ensures that the container element exists. If it does not, creates it.
+   * Ensures that the container element does not exists, then creates it.
    */
-  private ensureContainerExists() {
+  private createIconContainer(): void {
     if (!this.container) {
       this.container = this.renderer.createElement('span');
       this.renderer.addClass(this.container, 'kri-btn-icon-container');
@@ -85,9 +86,9 @@ export class ButtonIconDirective {
 
   /**
    * @internal
-   * Ensures that the icon element exists. If it does not, creates it.
+   * Ensures that the icon element does not exists, then creates it.
    */
-  private ensureIconElementExists() {
+  private createIcon(): void {
     if (!this.iconElement) {
       this.iconElement = this.renderer.createElement('i');
       this.renderer.addClass(this.iconElement, 'kri-btn-icon');
@@ -97,9 +98,9 @@ export class ButtonIconDirective {
 
   /**
    * @internal
-   * Updates the icon element by clearing and setting classes and styles.
+   * Set styles and attributes for the icon element.
    */
-  private updateIconElement() {
+  private setStyleToIcon(): void {
     this.clearIconClassesAndStyles();
     this.setIconClassesAndStyles();
   }
@@ -108,7 +109,7 @@ export class ButtonIconDirective {
    * @internal
    * Clears existing icon classes and styles.
    */
-  private clearIconClassesAndStyles() {
+  private clearIconClassesAndStyles(): void {
     const currentIconClasses = this.iconElement?.className.split(' ').filter(c => c.startsWith('icon-'));
     currentIconClasses?.forEach(c => this.renderer.removeClass(this.iconElement, c));
 
@@ -124,9 +125,10 @@ export class ButtonIconDirective {
    * @internal
    * Sets new classes and styles for the icon element.
    */
-  private setIconClassesAndStyles() {
+  private setIconClassesAndStyles(): void {
     this.renderer.addClass(this.iconElement, `icon-${this.icon()}`);
     this.renderer.setStyle(this.iconElement, 'font-size', `${this.iconSize()}px`);
+    this.renderer.setAttribute(this.iconElement, 'aria-hidden', 'true');
 
     if (this.iconRotate() === 'infinite') {
       this.renderer.addClass(this.iconElement, 'kri-btn-icon-spin');
@@ -149,7 +151,7 @@ export class ButtonIconDirective {
    * @internal
    * Updates the icon position based on the value of iconPosition.
    */
-  private updateIconPosition() {
+  private updateIconPosition(): void {
     if (this.icon()) {
       if (this.container && this.container.parentElement) {
         this.renderer.removeChild(this.container.parentElement, this.container);
@@ -167,7 +169,7 @@ export class ButtonIconDirective {
    * @internal
    * Removes the icon element and container from the DOM.
    */
-  private removeIconAndContainer() {
+  private removeIconAndContainer(): void {
     if (this.iconElement) {
       this.clearIconClassesAndStyles();
       this.renderer.removeChild(this.container, this.iconElement);

@@ -1,6 +1,4 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
   Directive,
   ElementRef,
   HostBinding,
@@ -10,10 +8,8 @@ import {
   output,
   OutputEmitterRef,
   Renderer2,
-  ViewEncapsulation
 } from '@angular/core';
 import { ButtonSize, ButtonAppearance, ButtonType } from './button.type';
-import { withStyles } from '@krai-tech/cdk/utils';
 import { IsDisabledDirective } from '@krai-tech/cdk/directives/is-disabled';
 
 const SELECTOR_CLASS_PAIR: { selector: string; class: string }[] = [
@@ -42,18 +38,6 @@ const SELECTOR_CLASS_PAIR: { selector: string; class: string }[] = [
     class: 'kri-btn-link'
   }
 ];
-
-/**
- * Component representing a button with custom styles and behaviors.
- */
-@Component({
-  template: '',
-  standalone: true,
-  styleUrls: ['./button.directive.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
-class ButtonComponent {}
 
 /**
  * Directive to add custom behavior to buttons.
@@ -118,7 +102,6 @@ export class ButtonDirective {
    * @param renderer - The renderer for manipulating the DOM.
    */
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    withStyles(ButtonComponent)
     this.applySelectorClassPair()
   }
 

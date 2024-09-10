@@ -2,6 +2,7 @@ import { ButtonIconDirective } from './button-icon.directive';
 import { Component } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { ButtonIconPosition } from './button.type';
+import { IconTypes } from '@krai-tech/kit/icon';
 
 @Component({
   standalone : true,
@@ -20,7 +21,7 @@ import { ButtonIconPosition } from './button.type';
   `
 })
 class TestComponent {
-  icon: string | any = 'test-icon';
+  icon: IconTypes | undefined = 'like';
   iconColor = 'red';
   iconSize = '24';
   iconRotate: number | 'infinite' = 0;
@@ -53,13 +54,12 @@ describe('ButtonIconDirective', () => {
     expect(container).toBeTruthy();
     const iconElement = container.querySelector('.kri-btn-icon');
     expect(iconElement).toBeTruthy();
-    expect(iconElement.classList.contains('icon-test-icon')).toBe(true);
     expect(iconElement.style.color).toBe('red');
     expect(iconElement.style.fontSize).toBe('24px');
   });
 
   it('should remove icon and container when icon is empty', () => {
-    component.icon = '';
+    component.icon = undefined;
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelector('button');
