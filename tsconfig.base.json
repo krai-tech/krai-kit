@@ -14,6 +14,8 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@krai-tech/cdk": ["projects/cdk/src/index.ts"],
@@ -40,6 +42,9 @@
       "@krai-tech/kit/alert": ["projects/kit/alert/src/index.ts"],
       "@krai-tech/kit/button": ["projects/kit/button/src/index.ts"],
       "@krai-tech/kit/checkbox": ["projects/kit/checkbox/src/index.ts"],
+      "@krai-tech/kit/common/services": [
+        "projects/kit/common/services/index.ts"
+      ],
       "@krai-tech/kit/common/directives/has-value": [
         "projects/kit/common/directives/has-value/src/index.ts"
       ],
