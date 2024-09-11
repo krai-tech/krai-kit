@@ -39,6 +39,7 @@
       ],
       "@krai-tech/cdk/utils": ["projects/cdk/utils/src/index.ts"],
       "@krai-tech/demo": ["projects/demo/src/index.ts"],
+      "@krai-tech/kit/version": ["projects/kit/version.service.ts"],
       "@krai-tech/kit/alert": ["projects/kit/alert/src/index.ts"],
       "@krai-tech/kit/button": ["projects/kit/button/src/index.ts"],
       "@krai-tech/kit/checkbox": ["projects/kit/checkbox/src/index.ts"],

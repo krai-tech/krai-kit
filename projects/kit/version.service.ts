@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import packageJson from '../../package.json';
+import { version } from './package.json';
 
 /**
  * Service for retrieving application version information.
@@ -11,5 +11,5 @@ export class VersionService {
   /**
    * The application version obtained from `package.json`.
    */
-  readonly version = packageJson.version;
+  readonly version = version;
 }

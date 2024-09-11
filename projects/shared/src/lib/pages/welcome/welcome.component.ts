@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { VersionService } from '@krai-tech/kit/common/services';
+import { VersionService } from '@krai-tech/kit/version';
 
 @Component({
   selector: 'kri-welcome',
