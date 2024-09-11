@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { VersionService } from './version.service';
-import packageJson from '../../package.json';
+import packageJson from './package.json';
 
 describe('VersionService', () => {
   let service: VersionService;
