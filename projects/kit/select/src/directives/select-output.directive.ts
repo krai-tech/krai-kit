@@ -1,5 +1,5 @@
-import { Directive, forwardRef, output, OutputEmitterRef } from '@angular/core';
-import { createTokenFactory } from '@krai-tech/cdk/utils';
+import { Directive, output, OutputEmitterRef } from '@angular/core';
+import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 
 export const SELECT_OUTPUT = createTokenFactory(() => new SelectOutputDirective());
 
@@ -9,10 +9,7 @@ export const SELECT_OUTPUT = createTokenFactory(() => new SelectOutputDirective(
 @Directive({
   selector: '[kriSelectOutput]',
   standalone: true,
-  providers: [{
-    provide: SELECT_OUTPUT,
-    useExisting: forwardRef(() => SelectOutputDirective),
-  }]
+  providers: [provide(SELECT_OUTPUT, SelectOutputDirective)]
 })
 export class SelectOutputDirective {
   /**

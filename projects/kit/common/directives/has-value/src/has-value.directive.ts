@@ -6,13 +6,13 @@ import {
   output,
   OutputEmitterRef,
   inject,
-  forwardRef, Signal
+  Signal
 } from '@angular/core';
 import { signal, WritableSignal } from '@angular/core';
 import isEmpty from 'lodash/isEmpty';
 import { NgControl } from '@angular/forms';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { createTokenFactory } from '@krai-tech/cdk/utils';
+import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 import { tap, delay, map } from 'rxjs/operators';
 import { of } from 'rxjs/internal/observable/of';
 
@@ -36,10 +36,7 @@ export const HAS_VALUE_INPUT = createTokenFactory(() => new HasValueDirective())
     '(blur)': 'onBlurOrFocus()',
     '(focus)': 'onBlurOrFocus()'
   },
-  providers: [{
-    provide: HAS_VALUE_INPUT,
-    useExisting: forwardRef(() => HasValueDirective)
-  }]
+  providers: [provide(HAS_VALUE_INPUT, HasValueDirective)]
 })
 export class HasValueDirective implements OnInit {
   /**

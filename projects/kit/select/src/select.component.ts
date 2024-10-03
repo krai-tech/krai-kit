@@ -24,6 +24,7 @@ import { FilterByPipe, LimitToPipe } from './pipes';
 import { config as defaultConfig } from './select.config';
 import { FocusDirective } from '@krai-tech/cdk/directives/focus';
 import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-input';
+import { ChevronDirective } from '@krai-tech/kit/common/directives/chevron';
 
 /**
  * `SelectComponent` is a custom select dropdown component.
@@ -39,7 +40,7 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
   standalone: true,
   imports : [
     CommonModule, FormsModule, FilterByPipe, LimitToPipe, InputTextDirective, CheckboxComponent, FocusDirective,
-    ResetInputDirective, InputTextLabelDirective
+    ResetInputDirective, InputTextLabelDirective, ChevronDirective
   ],
   host: {
     '(click)': 'state.clickedInside.set(true)',

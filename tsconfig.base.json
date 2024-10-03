@@ -39,18 +39,23 @@
       ],
       "@krai-tech/cdk/utils": ["projects/cdk/utils/src/index.ts"],
       "@krai-tech/demo": ["projects/demo/src/index.ts"],
-      "@krai-tech/kit/version": ["projects/kit/version.service.ts"],
       "@krai-tech/kit/alert": ["projects/kit/alert/src/index.ts"],
       "@krai-tech/kit/button": ["projects/kit/button/src/index.ts"],
       "@krai-tech/kit/checkbox": ["projects/kit/checkbox/src/index.ts"],
-      "@krai-tech/kit/common/services": [
-        "projects/kit/common/services/index.ts"
+      "@krai-tech/kit/common/directives/chevron": [
+        "projects/kit/common/directives/chevron/src/index.ts"
+      ],
+      "@krai-tech/kit/common/directives/dropdown": [
+        "projects/kit/common/directives/dropdown/src/index.ts"
       ],
       "@krai-tech/kit/common/directives/has-value": [
         "projects/kit/common/directives/has-value/src/index.ts"
       ],
       "@krai-tech/kit/common/directives/reset-input": [
         "projects/kit/common/directives/reset-input/src/index.ts"
+      ],
+      "@krai-tech/kit/common/services": [
+        "projects/kit/common/services/index.ts"
       ],
       "@krai-tech/kit/icon": ["projects/kit/icon/src/index.ts"],
       "@krai-tech/kit/input-text": ["projects/kit/input-text/src/index.ts"],
@@ -59,6 +64,7 @@
       "@krai-tech/kit/style/*": ["projects/kit/style/*"],
       "@krai-tech/kit/textarea": ["projects/kit/textarea/src/index.ts"],
       "@krai-tech/kit/toggle": ["projects/kit/toggle/src/index.ts"],
+      "@krai-tech/kit/version": ["projects/kit/version.service.ts"],
       "@krai-tech/scripts/*": ["projects/scripts/src/*"],
       "@krai-tech/shared": ["projects/shared/src/index.ts"],
       "@krai-tech/web-api/tokens": ["projects/web-api/tokens/src/index.ts"],

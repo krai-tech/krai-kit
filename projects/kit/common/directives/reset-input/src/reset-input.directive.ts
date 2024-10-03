@@ -5,9 +5,6 @@ import {
   AfterViewInit,
   OnDestroy,
   ViewContainerRef,
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
   InputSignal,
   effect,
   ComponentRef,
@@ -15,26 +12,16 @@ import {
   output,
   OutputEmitterRef,
   inject,
-  forwardRef,
   OnInit,
   DestroyRef
 } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { IconComponent } from '@krai-tech/kit/icon';
-import { createTokenFactory, withStyles } from '@krai-tech/cdk/utils';
+import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs/operators';
 
 export const RESET_INPUT = createTokenFactory(() => new ResetInputDirective());
-
-@Component({
-  template: '',
-  standalone: true,
-  styleUrls: ['./reset-input.directive.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-class ResetInputComponent {}
 
 /**
  * Directive to add a reset button to an input element and optionally show a counter for selected items.
@@ -47,10 +34,7 @@ class ResetInputComponent {}
     '(blur)': 'onBlur()',
     '(input)': 'onInput()'
   },
-  providers: [{
-    provide: RESET_INPUT,
-    useExisting: forwardRef(() => ResetInputDirective)
-  }]
+  providers: [provide(RESET_INPUT, ResetInputDirective)]
 })
 export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
   /**
@@ -117,12 +101,11 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
    * @internal
    */
   constructor() {
-    withStyles(ResetInputComponent);
     effect(() => {
       if (this.showCounter()) {
         this.updateCounter();
       }
-      this.updateResetButtonVisibility();
+      this.update();
     });
   }
 
@@ -130,11 +113,11 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
    * @internal
    */
   ngOnInit (): void {
-    this.updateResetButtonVisibility();
+    this.update();
     if (this.control && this.control.valueChanges) {
       this.control.valueChanges.pipe(
         takeUntilDestroyed(this.destroyRef),
-        tap(() => this.updateResetButtonVisibility())
+        tap(() => this.update())
       ).subscribe();
     }
   }
@@ -143,43 +126,40 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
    * @internal
    */
   ngAfterViewInit(): void {
-    this.updateResetButtonVisibility();
+    this.update();
     this.addPaddingToInput();
   }
 
   ngOnDestroy(): void {
-    this.checkExistingButtonOrRemove();
+    this.clear();
   }
 
   /**
    * Handler for focus events on the input element.
    */
   onFocus(): void {
-    this.updateResetButtonVisibility();
+    this.update();
   }
 
   /**
    * Handler for blur events on the input element.
    */
   onBlur(): void {
-    this.updateResetButtonVisibility();
+    this.update();
   }
 
   /**
    * Handler for input events on the input element.
    */
   onInput(): void {
-    this.updateResetButtonVisibility();
+    this.update();
   }
 
   /**
    * Creates the reset button and adds it to the DOM.
    */
-  private createResetButton(): void {
+  private create(): void {
     const parent = this.elRef.nativeElement.parentNode;
-
-    this.checkExistingButtonOrRemove();
-
     this.container = this.renderer.createElement('div');
     this.renderer.addClass(this.container, 'kri-reset-input');
 
@@ -217,11 +197,11 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Checks if a reset button already exists and removes it if present.
    */
-  private checkExistingButtonOrRemove(): void {
+  private clear(): void {
     const parent = this.elRef.nativeElement.parentNode;
-    const existingIndicator = parent.querySelector('.kri-reset-input');
-    if (existingIndicator) {
-      this.renderer.removeChild(parent, existingIndicator);
+    const resetInput = parent.querySelector('.kri-reset-input');
+    if (resetInput) {
+      this.renderer.removeChild(parent, resetInput);
       this.container = undefined;
     }
   }
@@ -240,7 +220,7 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
     if (this.showCounter()) {
       this.updateCounter();
     }
-    this.updateResetButtonVisibility();
+    this.update();
     this.resetInput.emit();
   }
 
@@ -252,25 +232,26 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
     if (this.selectedItems().length > 0) {
       this.renderer.setProperty(span, 'innerText', this.selectedItems().length.toString());
     } else {
-      this.checkExistingButtonOrRemove();
+      this.clear();
     }
   }
 
   /**
    * Updates the visibility of the reset button based on the input value and selected items.
    */
-  private updateResetButtonVisibility(): void {
+  private update(): void {
     const inputValue = this.control ? this.control.control?.value : this.elRef.nativeElement.value;
     const shouldShowButton = this.showResetInput() && (inputValue || this.selectedItems().length > 0);
     if (shouldShowButton) {
       if (!this.container) {
-        this.createResetButton();
+        this.clear();
+        this.create();
         this.addPaddingToInput();
       } else {
         this.renderer.setStyle(this.container, 'display', 'flex');
       }
     } else {
-      this.checkExistingButtonOrRemove();
+      this.clear();
       this.removePaddingFromInput();
     }
   }

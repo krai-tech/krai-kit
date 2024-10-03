@@ -25,6 +25,11 @@ $label-bg-color: $kri-white;
 
 .kri-float-label {
   position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 
   label {
     position: absolute;
@@ -219,7 +224,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 0s; // Ensure background color remains consistent
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 // Disable animation for labels with class .no-animation

@@ -1,6 +1,37 @@
 <div class="kri-select kri-drop{{ state.config().direction === 'bottom' ? 'down' : 'up' }}">
-  <div [class.disabled]="inputs.disabled()" (click)="onDropdownClick($event)">
-    <ng-container [ngTemplateOutlet]="inputTemplate"></ng-container>
+  <div class="kri-form-group"
+       [class.disabled]="inputs.disabled()"
+       (click)="onDropdownClick($event)">
+    @if (inputs.floatLabel()) {
+      <div class="kri-float-label">
+        <ng-template [ngTemplateOutlet]="input"></ng-template>
+        <label kriInputTextLabel [size]="state.config().size!">{{ inputs.floatLabel() }}</label>
+      </div>
+    } @else {
+      <ng-template [ngTemplateOutlet]="input"></ng-template>
+    }
+    <ng-template #input>
+      <input name="select-input"
+             class="kri-select-input"
+             kriInputText
+             kriResetInput
+             kriChevron
+             [showResetInput]="inputs.multiple()"
+             [showCounter]="inputs.multiple()"
+             [selectedItems]="state.selectedItems()"
+             (resetInput)="reset()"
+             [value]="state.displayText()"
+             (focus)="onSearchFocus()"
+             (blur)="onSearchBlur()"
+             (input)="searchTextInput($event)"
+             (change)="searchTextChanged()"
+             [size]="state.config().size!"
+             [placeholder]="state.config().placeholder"
+             [hasError]="inputs.hasError()"
+             [disabled]="inputs.disabled()"
+             [readonly]="!state.config().search"
+             autocomplete="off">
+    </ng-template>
   </div>
   @if (state.toggleDropdown()) {
     <div class="kri-dropdown-menu"
@@ -37,39 +68,6 @@
     </div>
   }
 </div>
-
-<ng-template #inputTemplate>
-  @if (inputs.floatLabel()) {
-    <div class="kri-float-label">
-      <ng-template [ngTemplateOutlet]="input"></ng-template>
-      <label kriInputTextLabel [size]="state.config().size!">{{ inputs.floatLabel() }}</label>
-    </div>
-  } @else {
-    <ng-template [ngTemplateOutlet]="input"></ng-template>
-  }
-
-  <ng-template #input>
-    <input name="select-input"
-           class="kri-select-input"
-           kriInputText
-           kriResetInput
-           [showResetInput]="inputs.multiple()"
-           [showCounter]="inputs.multiple()"
-           [selectedItems]="state.selectedItems()"
-           (resetInput)="reset()"
-           [value]="state.displayText()"
-           (focus)="onSearchFocus()"
-           (blur)="onSearchBlur()"
-           (input)="searchTextInput($event)"
-           (change)="searchTextChanged()"
-           [size]="state.config().size!"
-           [placeholder]="state.config().placeholder"
-           [hasError]="inputs.hasError()"
-           [disabled]="inputs.disabled()"
-           [readonly]="!state.config().search"
-           autocomplete="off">
-  </ng-template>
-</ng-template>
 
 <ng-template #notFound>
   <div class="no-results">{{ state.config().noResultsFound }}</div>

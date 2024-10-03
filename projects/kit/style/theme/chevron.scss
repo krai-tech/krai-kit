@@ -1,0 +1,14 @@
+.kri-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  kri-icon {
+    position: absolute;
+    right: 12px;
+    height: 24px;
+    z-index: 2;
+    display: block;
+    text-align: center;
+    pointer-events: none;
+  }
+}

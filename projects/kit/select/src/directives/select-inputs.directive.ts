@@ -1,6 +1,6 @@
-import { Directive, forwardRef, input, InputSignal, TemplateRef } from '@angular/core';
+import { Directive, input, InputSignal, TemplateRef } from '@angular/core';
 import { SelectConfig } from '../select.type';
-import { createTokenFactory } from '@krai-tech/cdk/utils';
+import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 import { config } from '../select.config';
 import uniqueId from 'lodash/uniqueId';
 
@@ -12,10 +12,7 @@ export const SELECT_INPUTS = createTokenFactory(() => new SelectInputsDirective(
 @Directive({
   selector: '[kriSelectInputs]',
   standalone: true,
-  providers: [{
-    provide: SELECT_INPUTS,
-    useExisting: forwardRef(() => SelectInputsDirective),
-  }]
+  providers: [provide(SELECT_INPUTS, SelectInputsDirective)]
 })
 export class SelectInputsDirective {
   /**
@@ -68,4 +65,12 @@ export class SelectInputsDirective {
    * Template reference for custom select input rendering.
    */
   selectTemplate: InputSignal<TemplateRef<any> | null> = input<TemplateRef<any> | null>(null);
+
+  /**
+   * Determines whether clicks inside the dropdown menu should be allowed to
+   * keep the menu open or not. When set to `true`, clicking inside the menu
+   * does not close it. When set to `false`, clicking inside the menu will
+   * close it, unless other conditions override this behavior.
+   */
+  allowInsideClick: InputSignal<boolean> = input<boolean>(false);
 }
