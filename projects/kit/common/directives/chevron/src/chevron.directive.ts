@@ -12,7 +12,7 @@ import {
 import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 import { ChevronDirection } from './chevron-direction.type';
 import { IconComponent } from '@krai-tech/kit/icon';
-import { DROPDOWN, DropdownStatus } from '../../dropdown/src';
+import { DROPDOWN } from '../../dropdown/src';
 
 export const CHEVRON = createTokenFactory(() => new ChevronDirective());
 
@@ -66,7 +66,7 @@ export class ChevronDirective implements OnInit, OnDestroy {
 
   constructor () {
     effect(() => {
-      this.dropdown?.status() === DropdownStatus.OPEN ? this.changeChevronDirection('up') : this.changeChevronDirection('down');
+      this.dropdown?.isOpen() ? this.changeChevronDirection('up') : this.changeChevronDirection('down');
     });
   }
 
