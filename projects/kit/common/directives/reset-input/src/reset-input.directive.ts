@@ -17,7 +17,7 @@ import {
 } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { IconComponent } from '@krai-tech/kit/icon';
-import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
+import { createTokenFactory, hasAdjacentClasses, provide } from '@krai-tech/cdk/utils';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs/operators';
 
@@ -260,7 +260,9 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
    * Adds padding to the input element to make space for the reset button.
    */
   private addPaddingToInput(): void {
-    this.renderer.setStyle(this.elRef.nativeElement, 'padding-right', '30px');
+    const hasChevron = hasAdjacentClasses(this.elRef.nativeElement, ['kri-chevron'])
+    this.renderer.setStyle(this.elRef.nativeElement, 'padding-right', `${hasChevron ? 85 : 30}px`);
+    this.renderer.setStyle(this.container, 'margin-right', `${hasChevron ? 30 : 0}px`);
   }
 
   /**
