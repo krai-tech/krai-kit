@@ -79,7 +79,7 @@ export class DropdownMenuDirective implements OnDestroy {
   /**
    * Removes the click listener from the document.
    */
-  private removeDocumentClickListener(): void {
+  removeDocumentClickListener(): void {
     this.document.removeEventListener('click', this.onDocumentClick, true);
   }
 
