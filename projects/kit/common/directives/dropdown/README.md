@@ -21,11 +21,11 @@ import { DropdownDirective, DropdownToggleDirective, DropdownMenuDirective } fro
 ```html
 <div kriDropdown #dropdown="dropdown">
     <button kriDropdownToggle>Toggle Dropdown</button>
-    <div *ngIf="dropdown.isOpen()">
+    @if(dropdown.isOpen()) {
       <div kriDropdownMenu>
         Dropdown content here
       </div>
-    </div>
+    }
 </div>
 ```
 
