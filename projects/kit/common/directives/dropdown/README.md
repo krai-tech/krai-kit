@@ -13,7 +13,7 @@ yarn i @krai-tech/kit
 
 ### Import
 ```ts
-import { DropdownDirective, kriDropdownToggle, DropdownMenuDirective } from '@krai-tech/common/dropdown';
+import { DropdownDirective, DropdownToggleDirective, DropdownMenuDirective } from '@krai-tech/kit/common/directives/dropdown';
 ```
 
 ## Use the directive:
